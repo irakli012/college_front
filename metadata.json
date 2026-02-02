@@ -1,0 +1,8 @@
+{
+  "name": "College Ilia - Academic Excellence",
+  "description": "A comprehensive portal for College Ilia featuring academic programs, news, library resources, and gallery.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

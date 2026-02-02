@@ -1,0 +1,136 @@
+
+import { Program, NewsItem, Book, TeamMember, GalleryItem } from './types';
+
+export const PROGRAMS: Program[] = [
+  {
+    id: '1',
+    title: 'Pharmacy',
+    category: 'Health Sciences',
+    description: 'Master the science of medicine and clinical research with our accredited Pharmaceutical Science degree.',
+    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800',
+    icon: 'medication'
+  },
+  {
+    id: '2',
+    title: 'Information Technology',
+    category: 'Technology',
+    description: 'Advance your career in software engineering, cybersecurity, and data science in our tech-driven labs.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
+    icon: 'developer_board'
+  },
+  {
+    id: '3',
+    title: 'Veterinary Medicine',
+    category: 'Veterinary Arts',
+    description: 'Compassionate care meets animal science. Gain hands-on clinical experience with domestic and exotic animals.',
+    image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=800',
+    icon: 'pets'
+  },
+  {
+    id: '4',
+    title: 'Early Childhood Ed',
+    category: 'Education',
+    description: 'Shaping the leaders of tomorrow. Explore modern pedagogy and child development psychology.',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
+    icon: 'school'
+  }
+];
+
+export const NEWS: NewsItem[] = [
+  {
+    id: '1',
+    title: 'Engineering Team Wins National Robotics Grand Prix',
+    category: 'Achievement',
+    date: 'Oct 24, 2023',
+    readTime: '5 min read',
+    description: 'Our multidisciplinary team outperformed 50 other institutions to secure first place in the annual challenge held in Boston.',
+    image: 'https://images.unsplash.com/photo-1531746790731-6c2079ee396b?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: '2',
+    title: 'The Future of Generative AI Guest Lecture',
+    category: 'Event',
+    date: 'Oct 22, 2023',
+    description: 'Join us this Thursday as industry leaders discuss the ethical implications of AI in modern society.',
+    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: '3',
+    title: 'Spring 2024 Registration Now Open',
+    category: 'Announcement',
+    date: 'Oct 20, 2023',
+    description: 'Students can now register for Spring 2024 courses via the portal. Early registration is encouraged.'
+  },
+  {
+    id: '4',
+    title: 'Biomedical Lab Secures $2.4M Research Grant',
+    category: 'Research',
+    date: 'Oct 18, 2023',
+    description: 'The grant will fund a three-year study into biodegradable drug delivery systems.',
+    image: 'https://images.unsplash.com/photo-1532187875605-18382124bf60?auto=format&fit=crop&q=80&w=800'
+  }
+];
+
+export const BOOKS: Book[] = [
+  {
+    id: '1',
+    title: 'Clinical Pharmacology: Core Concepts',
+    author: 'Dr. Michael Rosenbaum',
+    category: 'Pharmacy',
+    image: 'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?auto=format&fit=crop&q=80&w=400',
+    badge: 'Updated 2023'
+  },
+  {
+    id: '2',
+    title: 'Advanced Drug Delivery Systems',
+    author: 'Elena Kostas, PhD',
+    category: 'Biological Sciences',
+    image: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=400',
+    badge: 'Bestseller'
+  },
+  {
+    id: '3',
+    title: 'Pharmacy Practice & Management',
+    author: 'Robert L. Henderson',
+    category: 'Management',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400'
+  }
+];
+
+export const TEAM: TeamMember[] = [
+  {
+    id: '1',
+    name: 'Dr. Helena Vance',
+    role: 'College President',
+    bio: 'A leader in educational policy with 25 years of experience in higher education management.',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: '2',
+    name: 'Marcus Sterling',
+    role: 'Dean of Academics',
+    bio: 'Specializes in curriculum development and interdisciplinary learning initiatives.',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: '3',
+    name: 'Sarah Jenkins',
+    role: 'Director of Admissions',
+    bio: 'Dedicated to creating inclusive pathways for students from diverse backgrounds.',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: '4',
+    name: 'Dr. Robert Chen',
+    role: 'VP of Research',
+    bio: 'Pioneering investigator in applied sciences and industry partnerships.',
+    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400'
+  }
+];
+
+export const GALLERY: GalleryItem[] = [
+  { id: '1', title: 'Campus Archway', category: 'Architecture', image: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800' },
+  { id: '2', title: 'Main Library', category: 'Facilities', image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800' },
+  { id: '3', title: 'Student Lab', category: 'Academic', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800' },
+  { id: '4', title: 'Commencement', category: 'Events', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800' }
+];
