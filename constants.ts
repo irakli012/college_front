@@ -32,7 +32,7 @@ export const PROGRAMS: Program[] = [
   {
     id: '4',
     title: 'Early Childhood Ed',
-    slug: 'early-childhood-ed',
+    slug: 'early-childhood-education',
     category: 'Education',
     description: 'Shaping the leaders of tomorrow. Explore modern pedagogy and child development psychology.',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
