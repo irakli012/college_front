@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
 
@@ -30,6 +31,11 @@ const Navbar: React.FC = () => {
 
   const toggleTheme = () => setIsDark(!isDark);
 
+  const toggleLanguage = () => {
+    const nextLang = i18n.language === 'en' ? 'ka' : 'en';
+    i18n.changeLanguage(nextLang);
+  };
+
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-10 py-3 sticky top-0 z-50">
       <div className="flex items-center gap-8">
@@ -37,15 +43,15 @@ const Navbar: React.FC = () => {
           <div className="size-6 text-primary">
             <span className="material-symbols-outlined text-3xl">school</span>
           </div>
-          <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">College Ilia</h2>
+          <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">Ilia College</h2>
         </Link>
         <nav className="hidden md:flex items-center gap-9">
-          <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Home</Link>
-          <Link to="/about" className={`text-sm leading-normal transition-colors ${isActive('/about') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>About</Link>
-          <Link to="/programs" className={`text-sm leading-normal transition-colors ${isActive('/programs') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Programs</Link>
-          <Link to="/news" className={`text-sm leading-normal transition-colors ${isActive('/news') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>News</Link>
-          <Link to="/gallery" className={`text-sm leading-normal transition-colors ${isActive('/gallery') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Gallery</Link>
-          <Link to="/library" className={`text-sm leading-normal transition-colors ${isActive('/library') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Library</Link>
+          <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.home')}</Link>
+          <Link to="/about" className={`text-sm leading-normal transition-colors ${isActive('/about') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.about')}</Link>
+          <Link to="/programs" className={`text-sm leading-normal transition-colors ${isActive('/programs') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.programs')}</Link>
+          <Link to="/news" className={`text-sm leading-normal transition-colors ${isActive('/news') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.news')}</Link>
+          <Link to="/gallery" className={`text-sm leading-normal transition-colors ${isActive('/gallery') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.gallery')}</Link>
+          <Link to="/library" className={`text-sm leading-normal transition-colors ${isActive('/library') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.library')}</Link>
         </nav>
       </div>
       <div className="flex flex-1 justify-end gap-4 items-center">
@@ -59,6 +65,13 @@ const Navbar: React.FC = () => {
         </label>
         
         <button 
+          onClick={toggleLanguage}
+          className="flex items-center justify-center px-3 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-[#111318] dark:text-gray-300 text-xs font-bold uppercase"
+        >
+          {i18n.language === 'en' ? 'KA' : 'EN'}
+        </button>
+
+        <button 
           onClick={toggleTheme}
           className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
           aria-label="Toggle dark mode"
@@ -69,7 +82,7 @@ const Navbar: React.FC = () => {
         </button>
 
         <button className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
-          Apply Now
+          {t('home.applyNow')}
         </button>
       </div>
     </header>

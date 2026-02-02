@@ -1,0 +1,226 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "news": "News",
+    "gallery": "Gallery",
+    "library": "Library"
+  },
+  "home": {
+    "heroTitle": "Empowering Futures,\nBuilding Excellence",
+    "heroSubtitle": "Join a diverse multi-disciplinary community dedicated to academic rigor and professional success in the heart of the city.",
+    "applyNow": "Apply Now",
+    "explorePrograms": "Explore Programs",
+    "resources": "Quick Links",
+    "ourMainPrograms": "Our Main Programs",
+    "programsDescription": "Pioneering specialized education across multiple disciplines with state-of-the-art facilities and industry-leading faculty.",
+    "learnMore": "Learn More",
+    "readyToStart": "Ready to start your journey?",
+    "newsletterSubtitle": "Get notified about upcoming enrollment dates and scholarships.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe"
+  },
+  "about": {
+    "heroTitle": "Empowering Minds, Shaping Futures",
+    "heroSubtitle": "Since 1982, College Ilia has been at the forefront of multi-disciplinary excellence, fostering innovation and a global perspective for every student.",
+    "foundation": "Our Foundation",
+    "missionVision": "Mission & Vision",
+    "missionSubtitle": "At Ilia, we don't just teach courses; we nurture leaders and problem-solvers ready to tackle the challenges of a rapidly changing world.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "To provide a transformative educational experience through interdisciplinary research, innovative teaching methods, and a commitment to academic integrity.",
+    "visionTitle": "Our Vision",
+    "visionDesc": "To be recognized globally as a center of intellectual discovery that inspires students to achieve their highest potential and lead with purpose.",
+    "journeyTitle": "Our Journey Through Time",
+    "journeyDesc": "Founded in 1982 by visionaries who believed in breaking down the silos of traditional education, College Ilia began as a single-building campus.",
+    "yearsExcellence": "Years of Excellence",
+    "history": {
+      "foundation": "Foundation",
+      "foundationDesc": "The college opens with 300 students and 5 departments.",
+      "innovationHub": "Innovation Hub",
+      "innovationDesc": "Inauguration of the state-of-the-art Research & Development Center.",
+      "globalReach": "Global Reach",
+      "globalDesc": "Ranked in the top 5% of global multi-disciplinary institutions."
+    },
+    "leadership": "Leadership",
+    "adminTeam": "Administration Team",
+    "meetFaculty": "Meet all faculty",
+    "team": {
+      "1": { "name": "Dr. Helena Vance", "role": "College President", "bio": "A leader in educational policy with 25 years of experience in higher education management." },
+      "2": { "name": "Marcus Sterling", "role": "Dean of Academics", "bio": "Specializes in curriculum development and interdisciplinary learning initiatives." },
+      "3": { "name": "Sarah Jenkins", "role": "Director of Admissions", "bio": "Dedicated to creating inclusive pathways for students from diverse backgrounds." },
+      "4": { "name": "Dr. Robert Chen", "role": "VP of Research", "bio": "Pioneering investigator in applied sciences and industry partnerships." }
+    }
+  },
+  "news": {
+    "title": "College News & Updates",
+    "subtitle": "Stay informed with the latest announcements, achievements, and events from across our campus community.",
+    "searchPlaceholder": "Search for news, events, or announcements...",
+    "searchButton": "Search",
+    "readMore": "Read More",
+    "loadMore": "Load More Updates",
+    "items": {
+      "1": { "title": "Engineering Team Wins National Robotics Grand Prix", "description": "Our multidisciplinary team outperformed 50 other institutions to secure first place in the annual challenge held in Boston.", "category": "Achievement" },
+      "2": { "title": "The Future of Generative AI Guest Lecture", "description": "Join us this Thursday as industry leaders discuss the ethical implications of AI in modern society.", "category": "Event" },
+      "3": { "title": "Spring 2024 Registration Now Open", "description": "Students can now register for Spring 2024 courses via the portal. Early registration is encouraged.", "category": "Announcement" },
+      "4": { "title": "Biomedical Lab Secures $2.4M Research Grant", "description": "The grant will fund a three-year study into biodegradable drug delivery systems.", "category": "Research" }
+    }
+  },
+  "gallery": {
+    "title": "Campus Gallery",
+    "subtitle": "Glimpses into student life, state-of-the-art facilities, and historic moments at Stellar College.",
+    "items": {
+      "1": { "title": "Campus Archway", "category": "Architecture" },
+      "2": { "title": "Main Library", "category": "Facilities" },
+      "3": { "title": "Student Lab", "category": "Academic" },
+      "4": { "title": "Commencement", "category": "Events" }
+    }
+  },
+  "programs": {
+    "information-technology": {
+      "title": "Information Technology",
+      "description": "Master software engineering, cybersecurity, and artificial intelligence.",
+      "degree": "B.Sc. Information Technology",
+      "subtitle": "Master the digital landscape through hands-on experience in software engineering, cloud computing, and cybersecurity.",
+      "overview1": "Our Information Technology program is designed to bridge the gap between academic theory and industry practice. In an era of rapid digital transformation, we equip students with the technical proficiency and critical thinking skills needed to architect, implement, and manage complex IT systems.",
+      "overview2": "Students engage in collaborative projects, utilizing cutting-edge laboratories and real-world case studies to solve contemporary technological challenges. From the fundamentals of programming to the complexities of artificial intelligence, our curriculum evolves alongside the industry.",
+      "careerText": "Graduates of our Information Technology program are highly sought after by global tech firms, financial institutions, and innovative startups. 95% of our graduates find employment within 6 months of graduation.",
+      "roles": ["Systems Architect", "DevOps Engineer", "Data Scientist", "IT Project Manager", "Security Consultant", "Software Engineer"],
+      "curriculumItems": [
+        { "title": "Software Development", "text": "Full-stack development, algorithms, and object-oriented design." },
+        { "title": "Networking & Infrastructure", "text": "Cloud architecture, network security, and distributed systems." },
+        { "title": "Artificial Intelligence", "text": "Machine learning models, neural networks, and data ethics." },
+        { "title": "Cybersecurity", "text": "Threat analysis, encryption, and digital forensics." },
+        { "title": "Database Management", "text": "SQL/NoSQL systems, data warehousing, and big data analytics." },
+        { "title": "Systems Integration", "text": "API design, enterprise service buses, and middleware." }
+      ],
+      "quickFacts": {
+        "duration": "4 Years (Full-time)",
+        "credits": "130 Credit Hours",
+        "startDate": "September 15, 2024",
+        "tuition": "$12,500 / Semester"
+      }
+    },
+    "pharmacy": {
+      "title": "Pharmacy",
+      "description": "Leading-edge pharmaceutical sciences and clinical practice.",
+      "degree": "B.Sc. Pharmacy",
+      "subtitle": "Advance your career in pharmaceutical sciences, clinical research, and drug development in our state-of-the-art medical labs.",
+      "overview1": "Our Pharmacy program provides a comprehensive foundation in the chemical, biological, and clinical sciences that underpin modern pharmaceutical practice. We prepare students to become healthcare leaders who ensure the safe and effective use of medications.",
+      "overview2": "Through a blend of rigorous classroom instruction and clinical rotations, students gain hands-on experience in community pharmacies, hospitals, and research laboratories, developing the expertise needed for a rewarding career in healthcare.",
+      "careerText": "Graduates of our Pharmacy program are essential members of the healthcare ecosystem, finding roles in clinical, industrial, and regulatory settings. 98% of our graduates pass the licensure exam on their first attempt.",
+      "roles": ["Clinical Pharmacist", "Research Scientist", "Quality Control Manager", "Regulatory Affairs Agent", "Hospital Pharmacy Dir.", "Drug Safety Expert"],
+      "curriculumItems": [
+        { "title": "Pharmacology", "text": "Study of drug action on biological systems and therapeutic uses." },
+        { "title": "Medicinal Chemistry", "text": "Design and synthesis of new drug molecules and structures." },
+        { "title": "Clinical Practice", "text": "Patient care, medication therapy management, and counseling." },
+        { "title": "Pharmaceutics", "text": "Drug formulation, delivery systems, and manufacturing processes." },
+        { "title": "Pharmacokinetics", "text": "Mathematical modeling of drug absorption and distribution." },
+        { "title": "Biopharmaceuticals", "text": "Development of vaccines and protein-based therapeutic agents." }
+      ],
+      "quickFacts": {
+        "duration": "4 Years (Full-time)",
+        "credits": "135 Credit Hours",
+        "startDate": "September 10, 2024",
+        "tuition": "$13,800 / Semester"
+      }
+    },
+    "veterinary-medicine": {
+      "title": "Veterinary Medicine",
+      "description": "Animal healthcare, clinical diagnosis, and advanced surgery.",
+      "degree": "B.Sc. Veterinary Medicine",
+      "subtitle": "Compassionate care meets animal science. Gain hands-on clinical experience with domestic and exotic animals.",
+      "overview1": "Our Veterinary Medicine program is dedicated to the health and well-being of all animal species. We combine rigorous scientific training with practical clinical experience to produce veterinarians who are prepared for the complexities of modern animal healthcare.",
+      "overview2": "From small animal internal medicine to large animal surgery and exotic species conservation, our curriculum provides a well-rounded education in all aspects of veterinary science, supported by our on-campus teaching hospital.",
+      "careerText": "Our graduates are ready to enter private practice, research, or public health sectors. 96% of our alumni are employed in veterinary-related fields within a year.",
+      "roles": ["Private Practitioner", "Research Scientist", "Zoo Veterinarian", "Food Safety inspector", "Wildlife Biologist", "Veterinary Surgeon"],
+      "curriculumItems": [
+        { "title": "Small Animal Care", "text": "Diagnosis and treatment of common domestic pets." },
+        { "title": "Large Animal Medicine", "text": "Healthcare for livestock, horses, and farm animals." },
+        { "title": "Veterinary Surgery", "text": "Advanced surgical techniques and post-operative care." },
+        { "title": "Animal Physiology", "text": "Fundamental biological processes across different species." },
+        { "title": "Epidemiology", "text": "Study of disease patterns and prevention in animal populations." },
+        { "title": "Forest Species", "text": "Conservation and medical care for non-traditional animals." }
+      ],
+      "quickFacts": {
+        "duration": "4 Years (Full-time)",
+        "credits": "140 Credit Hours",
+        "startDate": "September 20, 2024",
+        "tuition": "$11,500 / Semester"
+      }
+    },
+    "early-childhood-education": {
+      "title": "Early Childhood Education",
+      "description": "Child development psychology and modern teaching methods.",
+      "degree": "B.Sc. Early Childhood Ed",
+      "subtitle": "Shaping the leaders of tomorrow. Explore modern pedagogy and child development psychology.",
+      "overview1": "Our Early Childhood Education program centers on the crucial developmental years of a child's life. We prepare educators to create inclusive, engaging, and effective learning environments that foster cognitive, social, and emotional growth.",
+      "overview2": "Through a combination of theoretical study and practical placements in diverse educational settings, students learn to design and implement curricula that respect the unique needs of every child, ensuring they have the strongest possible start in life.",
+      "careerText": "Our graduates are highly sought after by preschools, primary schools, and educational non-profits. 100% of our students complete at least 500 hours of supervised teaching practice.",
+      "roles": ["Preschool Teacher", "Education Consultant", "Childcare Director", "Curriculum Developer", "Special Ed Coordinator", "School Administrator"],
+      "curriculumItems": [
+        { "title": "Child Development", "text": "Social, emotional, and cognitive growth from birth to age 8." },
+        { "title": "Curriculum Design", "text": "Creating age-appropriate and engaging learning activities." },
+        { "title": "Inclusive Education", "text": "Supporting students with diverse needs and backgrounds." },
+        { "title": "Family Engagement", "text": "Building strong partnerships between schools and families." },
+        { "title": "Educational Psychology", "text": "Theories of learning and behavior in early childhood." },
+        { "title": "Creative Arts", "text": "Integrating art, music, and movement into early education." }
+      ],
+      "quickFacts": {
+        "duration": "4 Years (Full-time)",
+        "credits": "120 Credit Hours",
+        "startDate": "September 1, 2024",
+        "tuition": "$9,800 / Semester"
+      }
+    }
+  },
+  "footer": {
+    "description": "Inspiring students to explore, innovate, and lead. Our multi-disciplinary approach prepares you for the careers of tomorrow.",
+    "quickLinks": "Quick Links",
+    "resources": "Resources",
+    "support": "Support",
+    "allRightsReserved": "College Ilia. All rights reserved."
+  },
+  "programsPage": {
+    "title": "Academic Programs",
+    "subtitle": "Explore our diverse range of multi-disciplinary programs designed to shape the leaders of tomorrow with hands-on learning and research excellence.",
+    "searchPlaceholder": "Search for programs, majors, or keywords...",
+    "allFaculties": "All Faculties",
+    "viewAll": "View All Programs",
+    "showing": "Showing {{count}} programs available",
+    "faculties": {
+      "All Faculties": "All Faculties",
+      "Health Sciences": "Health Sciences",
+      "Technology": "Technology",
+      "Veterinary Arts": "Veterinary Arts",
+      "Education": "Education"
+    }
+  },
+  "programDetail": {
+    "learnMore": "Learn More",
+    "overview": "Program Overview",
+    "curriculum": "Core Curriculum",
+    "careers": "Career Opportunities",
+    "facultySpotlight": "Faculty Spotlight",
+    "quickFacts": "Quick Facts",
+    "applyNow": "Apply Now",
+    "downloadBrochure": "Download Brochure",
+    "facts": {
+      "duration": "Duration",
+      "credits": "Credits",
+      "startDate": "Next Start Date",
+      "tuition": "Tuition"
+    },
+    "departments": {
+      "it": "Department of Engineering & CS",
+      "pharmacy": "Department of Health Sciences",
+      "vet": "Department of Veterinary Arts",
+      "ece": "Department of Education"
+    },
+    "questions": {
+      "title": "Have Questions?",
+      "subtitle": "Connect with our admissions team for a 1-on-1 consultation.",
+      "link": "Contact Admissions"
+    }
+  }
+}

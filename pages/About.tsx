@@ -1,8 +1,10 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { TEAM } from '../constants';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-10">
       {/* Hero Section */}
@@ -15,10 +17,10 @@ const About: React.FC = () => {
         >
           <div className="flex flex-col gap-4 text-center z-10 max-w-3xl">
             <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-6xl">
-              Empowering Minds, Shaping Futures
+              {t('about.heroTitle')}
             </h1>
             <h2 className="text-white/90 text-base font-medium leading-relaxed sm:text-lg">
-              Since 1982, College Ilia has been at the forefront of multi-disciplinary excellence, fostering innovation and a global perspective for every student.
+              {t('about.heroSubtitle')}
             </h2>
           </div>
         </div>
@@ -28,12 +30,12 @@ const About: React.FC = () => {
       <section className="py-16">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-4 text-center items-center">
-            <h2 className="text-primary text-sm font-bold uppercase tracking-widest">Our Foundation</h2>
+            <h2 className="text-primary text-sm font-bold uppercase tracking-widest">{t('about.foundation')}</h2>
             <h3 className="text-[#111318] dark:text-white text-4xl font-bold leading-tight max-w-[720px]">
-              Mission & Vision
+              {t('about.missionVision')}
             </h3>
             <p className="text-[#616f89] dark:text-[#9ea7b8] text-lg font-normal leading-relaxed max-w-[720px]">
-              At Ilia, we don't just teach courses; we nurture leaders and problem-solvers ready to tackle the challenges of a rapidly changing world.
+              {t('about.missionSubtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -42,9 +44,9 @@ const About: React.FC = () => {
                 <span className="material-symbols-outlined text-3xl">lightbulb</span>
               </div>
               <div className="flex flex-col gap-3">
-                <h4 className="text-[#111318] dark:text-white text-2xl font-bold">Our Mission</h4>
+                <h4 className="text-[#111318] dark:text-white text-2xl font-bold">{t('about.missionTitle')}</h4>
                 <p className="text-[#616f89] dark:text-[#9ea7b8] text-base leading-relaxed">
-                  To provide a transformative educational experience through interdisciplinary research, innovative teaching methods, and a commitment to academic integrity.
+                  {t('about.missionDesc')}
                 </p>
               </div>
             </div>
@@ -53,9 +55,9 @@ const About: React.FC = () => {
                 <span className="material-symbols-outlined text-3xl">visibility</span>
               </div>
               <div className="flex flex-col gap-3">
-                <h4 className="text-[#111318] dark:text-white text-2xl font-bold">Our Vision</h4>
+                <h4 className="text-[#111318] dark:text-white text-2xl font-bold">{t('about.visionTitle')}</h4>
                 <p className="text-[#616f89] dark:text-[#9ea7b8] text-base leading-relaxed">
-                  To be recognized globally as a center of intellectual discovery that inspires students to achieve their highest potential and lead with purpose.
+                  {t('about.visionDesc')}
                 </p>
               </div>
             </div>
@@ -74,19 +76,19 @@ const About: React.FC = () => {
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg hidden md:block">
               <p className="text-4xl font-bold">40+</p>
-              <p className="text-sm">Years of Excellence</p>
+              <p className="text-sm">{t('about.yearsExcellence')}</p>
             </div>
           </div>
           <div className="flex flex-col gap-6">
-            <h2 className="text-[#111318] dark:text-white text-3xl font-bold leading-tight">Our Journey Through Time</h2>
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold leading-tight">{t('about.journeyTitle')}</h2>
             <p className="text-[#616f89] dark:text-[#9ea7b8] text-lg leading-relaxed">
-              Founded in 1982 by visionaries who believed in breaking down the silos of traditional education, College Ilia began as a single-building campus.
+              {t('about.journeyDesc')}
             </p>
             <div className="flex flex-col gap-8 mt-4">
               {[
-                { year: '1982', title: 'Foundation', desc: 'The college opens with 300 students and 5 departments.' },
-                { year: '2005', title: 'Innovation Hub', desc: 'Inauguration of the state-of-the-art Research & Development Center.' },
-                { year: '2023', title: 'Global Reach', desc: 'Ranked in the top 5% of global multi-disciplinary institutions.' }
+                { year: '1982', title: t('about.history.foundation'), desc: t('about.history.foundationDesc') },
+                { year: '2005', title: t('about.history.innovationHub'), desc: t('about.history.innovationDesc') },
+                { year: '2023', title: t('about.history.globalReach'), desc: t('about.history.globalDesc') }
               ].map((step, idx) => (
                 <div key={idx} className="flex gap-4">
                   <div className="flex-none w-12 text-primary font-bold text-lg">{step.year}</div>
@@ -106,23 +108,23 @@ const About: React.FC = () => {
         <div className="flex flex-col gap-10">
           <div className="flex items-end justify-between">
             <div className="flex flex-col gap-2">
-              <h2 className="text-primary text-sm font-bold uppercase tracking-widest">Leadership</h2>
-              <h3 className="text-[#111318] dark:text-white text-3xl font-bold">Administration Team</h3>
+              <h2 className="text-primary text-sm font-bold uppercase tracking-widest">{t('about.leadership')}</h2>
+              <h3 className="text-[#111318] dark:text-white text-3xl font-bold">{t('about.adminTeam')}</h3>
             </div>
             <a className="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
-              Meet all faculty <span className="material-symbols-outlined">arrow_forward</span>
+              {t('about.meetFaculty')} <span className="material-symbols-outlined">arrow_forward</span>
             </a>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {TEAM.map((member) => (
               <div key={member.id} className="bg-white dark:bg-[#1c2331] rounded-xl overflow-hidden border border-[#dbdfe6] dark:border-[#2a303c] shadow-sm group hover:shadow-lg transition-all">
                 <div className="aspect-square overflow-hidden bg-gray-200">
-                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={member.image} alt={member.name}/>
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={member.image} alt={t(`about.team.${member.id}.name`)}/>
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-bold dark:text-white">{member.name}</h4>
-                  <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                  <p className="text-[#616f89] dark:text-[#9ea7b8] text-xs leading-relaxed">{member.bio}</p>
+                  <h4 className="text-lg font-bold dark:text-white">{t(`about.team.${member.id}.name`)}</h4>
+                  <p className="text-primary text-sm font-medium mb-3">{t(`about.team.${member.id}.role`)}</p>
+                  <p className="text-[#616f89] dark:text-[#9ea7b8] text-xs leading-relaxed">{t(`about.team.${member.id}.bio`)}</p>
                 </div>
               </div>
             ))}

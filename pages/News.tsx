@@ -1,22 +1,24 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { NEWS } from '../constants';
 
 const News: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-8 flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-2">
         <a className="text-[#616f89] dark:text-gray-400 text-sm font-medium flex items-center gap-1 hover:text-primary" href="#">
-          <span className="material-symbols-outlined text-sm">home</span> Home
+          <span className="material-symbols-outlined text-sm">home</span> {t('nav.home')}
         </a>
         <span className="text-[#616f89] dark:text-gray-500 text-sm font-medium">/</span>
-        <span className="text-[#111318] dark:text-white text-sm font-medium">News & Updates</span>
+        <span className="text-[#111318] dark:text-white text-sm font-medium">{t('nav.news')}</span>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h1 className="text-[#111318] dark:text-white text-5xl font-black leading-tight tracking-[-0.033em]">College News & Updates</h1>
+        <h1 className="text-[#111318] dark:text-white text-5xl font-black leading-tight tracking-[-0.033em]">{t('news.title')}</h1>
         <p className="text-[#616f89] dark:text-gray-400 text-lg font-normal leading-normal max-w-2xl">
-          Stay informed with the latest announcements, achievements, and events from across our campus community.
+          {t('news.subtitle')}
         </p>
       </div>
 
@@ -29,11 +31,11 @@ const News: React.FC = () => {
               </div>
               <input 
                 className="w-full bg-transparent border-none text-[#111318] dark:text-white focus:ring-0 px-4 placeholder:text-[#616f89]" 
-                placeholder="Search for news, events, or announcements..." 
+                placeholder={t('news.searchPlaceholder')}
               />
             </div>
           </div>
-          <button className="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition-all">Search</button>
+          <button className="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition-all">{t('news.searchButton')}</button>
         </div>
       </div>
 
@@ -50,7 +52,7 @@ const News: React.FC = () => {
                   <div className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${
                     item.category === 'Achievement' ? 'bg-primary' : item.category === 'Event' ? 'bg-orange-500' : 'bg-purple-600'
                   }`}>
-                    {item.category}
+                    {t(`news.items.${item.id}.category`)}
                   </div>
                 </div>
               )}
@@ -61,13 +63,13 @@ const News: React.FC = () => {
                   {item.readTime && <span className="mx-1">• {item.readTime}</span>}
                 </div>
                 <h3 className="text-xl font-bold text-[#111318] dark:text-white mb-3 leading-tight group-hover:text-primary transition-colors">
-                  {item.title}
+                  {t(`news.items.${item.id}.title`)}
                 </h3>
                 <p className="text-[#616f89] dark:text-gray-400 text-sm leading-relaxed mb-4">
-                  {item.description}
+                  {t(`news.items.${item.id}.description`)}
                 </p>
                 <div className="flex items-center text-primary font-bold text-sm">
-                  Read More <span className="material-symbols-outlined ml-1 text-base">arrow_forward</span>
+                  {t('news.readMore')} <span className="material-symbols-outlined ml-1 text-base">arrow_forward</span>
                 </div>
               </div>
             </div>
@@ -77,7 +79,7 @@ const News: React.FC = () => {
 
       <div className="flex justify-center py-10">
         <button className="flex items-center gap-2 px-8 py-3 bg-white dark:bg-gray-900 border border-[#f0f2f4] dark:border-gray-800 rounded-lg text-primary font-bold hover:bg-[#f0f2f4] dark:hover:bg-gray-800 transition-all">
-          Load More Updates <span className="material-symbols-outlined">expand_more</span>
+          {t('news.loadMore')} <span className="material-symbols-outlined">expand_more</span>
         </button>
       </div>
     </div>

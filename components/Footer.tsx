@@ -1,31 +1,33 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-white dark:bg-[#111318] border-t border-[#f0f2f4] dark:border-[#2a303c] py-12">
       <div className="max-w-[1200px] mx-auto w-full px-6 flex flex-col md:flex-row justify-between gap-10">
         <div className="flex flex-col gap-4 max-w-sm">
           <div className="flex items-center gap-2 text-primary">
             <span className="material-symbols-outlined text-2xl font-bold">school</span>
-            <h2 className="text-xl font-bold text-[#111318] dark:text-white">Stellar College</h2>
+            <h2 className="text-xl font-bold text-[#111318] dark:text-white">Ili College</h2>
           </div>
           <p className="text-[#616f89] dark:text-[#9ea7b8] text-sm">
-            Inspiring students to explore, innovate, and lead. Our multi-disciplinary approach prepares you for the careers of tomorrow.
+            {t('footer.description')}
           </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
           <div className="flex flex-col gap-4">
-            <h5 className="font-bold dark:text-white text-sm">Quick Links</h5>
+            <h5 className="font-bold dark:text-white text-sm">{t('footer.quickLinks')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
-              <li><a className="hover:text-primary" href="/#/programs">Programs</a></li>
+              <li><a className="hover:text-primary" href="/#/programs">{t('nav.programs')}</a></li>
               <li><a className="hover:text-primary" href="#">Admissions</a></li>
               <li><a className="hover:text-primary" href="#">Campus Life</a></li>
               <li><a className="hover:text-primary" href="#">Alumni</a></li>
             </ul>
           </div>
           <div className="flex flex-col gap-4">
-            <h5 className="font-bold dark:text-white text-sm">Resources</h5>
+            <h5 className="font-bold dark:text-white text-sm">{t('footer.resources')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
               <li><a className="hover:text-primary" href="#">Student Portal</a></li>
               <li><a className="hover:text-primary" href="/#/library">Library</a></li>
@@ -34,7 +36,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div className="flex flex-col gap-4">
-            <h5 className="font-bold dark:text-white text-sm">Support</h5>
+            <h5 className="font-bold dark:text-white text-sm">{t('footer.support')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
               <li><a className="hover:text-primary" href="#">Contact Us</a></li>
               <li><a className="hover:text-primary" href="#">Help Desk</a></li>
@@ -45,7 +47,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="max-w-[1200px] mx-auto w-full px-6 pt-12 mt-12 border-t border-[#f0f2f4] dark:border-[#2a303c] text-center text-[#616f89] dark:text-[#9ea7b8] text-xs">
-        © 2024 Stellar College. All rights reserved.
+        © 2024 {t('footer.allRightsReserved')}
       </div>
     </footer>
   );
