@@ -70,7 +70,7 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img 
-              className="rounded-xl shadow-2xl object-cover h-[500px] w-full" 
+              className="rounded-xl shadow-2xl object-cover h-[300px] sm:h-[500px] w-full" 
               src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800" 
               alt="Campus History"
             />
@@ -104,14 +104,14 @@ const About: React.FC = () => {
       </section>
 
       {/* Administration */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="flex flex-col gap-10">
-          <div className="flex items-end justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="flex flex-col gap-2">
               <h2 className="text-primary text-sm font-bold uppercase tracking-widest">{t('about.leadership')}</h2>
               <h3 className="text-[#111318] dark:text-white text-3xl font-bold">{t('about.adminTeam')}</h3>
             </div>
-            <a className="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+            <a className="text-primary font-bold flex items-center gap-2 hover:underline self-start sm:self-auto" href="#">
               {t('about.meetFaculty')} <span className="material-symbols-outlined">arrow_forward</span>
             </a>
           </div>

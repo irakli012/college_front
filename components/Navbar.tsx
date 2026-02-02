@@ -63,9 +63,7 @@ const Navbar: React.FC = () => {
         </button>
 
         <Link to="/" className="flex items-center gap-2 lg:gap-4 text-[#111318] dark:text-white">
-          <div className="size-6 text-primary">
-            <span className="material-symbols-outlined text-3xl">school</span>
-          </div>
+          <span className="material-symbols-outlined text-primary text-3xl">school</span>
           <h2 className="text-base lg:text-lg font-bold leading-tight tracking-[-0.015em]">Ilia College</h2>
         </Link>
         <nav className="hidden md:flex items-center gap-4 lg:gap-9">

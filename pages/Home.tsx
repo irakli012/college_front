@@ -10,16 +10,16 @@ const Home: React.FC = () => {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <section className="mt-8">
-        <div className="relative overflow-hidden rounded-xl h-[520px]">
+        <div className="relative overflow-hidden rounded-xl h-[500px] sm:h-[520px]">
           <div 
             className="absolute inset-0 bg-cover bg-center" 
             style={{
               backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600")'
             }}
           ></div>
-          <div className="absolute inset-0 flex flex-col items-start justify-end p-8 sm:p-16">
+          <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-16">
             <div className="max-w-2xl">
-              <h1 className="text-white text-4xl sm:text-6xl font-black leading-[1.1] mb-4 whitespace-pre-line">
+              <h1 className="text-white text-3xl sm:text-6xl font-black leading-[1.1] mb-4 whitespace-pre-line">
                 {t('home.heroTitle')}
               </h1>
               <p className="text-white/90 text-lg sm:text-xl font-normal mb-8 leading-relaxed">
