@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -24,6 +25,7 @@ const LoadingFallback = () => (
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-background-light dark:bg-background-dark">
         <Navbar />
         <main className="flex-1 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto w-full">
