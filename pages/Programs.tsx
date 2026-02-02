@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PROGRAMS } from '../constants';
 
 const Programs: React.FC = () => {
@@ -72,10 +73,10 @@ const Programs: React.FC = () => {
               </p>
               <div className="mt-6 flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-400">{prog.category}</span>
-                <a className="text-primary text-sm font-bold flex items-center gap-1 hover:underline group cursor-pointer">
+                <Link to={`/programs/${prog.slug}`} className="text-primary text-sm font-bold flex items-center gap-1 hover:underline group cursor-pointer">
                   Learn More
                   <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

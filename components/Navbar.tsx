@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
-  const { t, i18n } = useTranslation();
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
 
@@ -32,46 +31,46 @@ const Navbar: React.FC = () => {
   const toggleTheme = () => setIsDark(!isDark);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-solid border-[#f0f2f4] dark:border-[#2a303c] bg-white/95 dark:bg-[#101622]/95 backdrop-blur-sm transition-colors duration-300">
-      <div className="max-w-[1280px] mx-auto px-6 py-3 flex items-center justify-between gap-8">
-        <div className="flex items-center gap-10">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="text-primary text-3xl">
-              <span className="material-symbols-outlined text-4xl">school</span>
-            </div>
-            <h2 className="text-[#111318] dark:text-white text-xl font-bold leading-tight tracking-tight">College Ilia</h2>
-          </Link>
-          <nav className="hidden lg:flex items-center gap-7">
-            <Link to="/" className={`text-sm font-medium transition-colors ${isActive('/') ? 'text-primary' : 'text-[#111318] dark:text-gray-300 hover:text-primary'}`}>Home</Link>
-            <Link to="/about" className={`text-sm font-medium transition-colors ${isActive('/about') ? 'text-primary' : 'text-[#111318] dark:text-gray-300 hover:text-primary'}`}>About Us</Link>
-            <Link to="/programs" className={`text-sm font-medium transition-colors ${isActive('/programs') ? 'text-primary' : 'text-[#111318] dark:text-gray-300 hover:text-primary'}`}>Programs</Link>
-            <Link to="/news" className={`text-sm font-medium transition-colors ${isActive('/news') ? 'text-primary' : 'text-[#111318] dark:text-gray-300 hover:text-primary'}`}>News</Link>
-            <Link to="/gallery" className={`text-sm font-medium transition-colors ${isActive('/gallery') ? 'text-primary' : 'text-[#111318] dark:text-gray-300 hover:text-primary'}`}>Gallery</Link>
-            <Link to="/library" className={`text-sm font-medium transition-colors ${isActive('/library') ? 'text-primary' : 'text-[#111318] dark:text-gray-300 hover:text-primary'}`}>Library</Link>
-          </nav>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="hidden sm:flex items-stretch bg-[#f0f2f4] dark:bg-[#1e2433] rounded-lg h-10 overflow-hidden border border-transparent focus-within:border-primary">
-            <div className="flex items-center justify-center pl-3 text-gray-500">
-              <span className="material-symbols-outlined text-[20px]">search</span>
-            </div>
-            <input className="w-full bg-transparent border-none text-sm focus:ring-0 px-2 placeholder:text-gray-500 dark:text-white" placeholder="Search resources..." type="text"/>
+    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-10 py-3 sticky top-0 z-50">
+      <div className="flex items-center gap-8">
+        <Link to="/" className="flex items-center gap-4 text-[#111318] dark:text-white">
+          <div className="size-6 text-primary">
+            <span className="material-symbols-outlined text-3xl">school</span>
           </div>
-          
-          <button 
-            onClick={toggleTheme}
-            className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#1e2433] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
-            aria-label="Toggle dark mode"
-          >
-            <span className="material-symbols-outlined">
-              {isDark ? 'light_mode' : 'dark_mode'}
-            </span>
-          </button>
+          <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">College Ilia</h2>
+        </Link>
+        <nav className="hidden md:flex items-center gap-9">
+          <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Home</Link>
+          <Link to="/about" className={`text-sm leading-normal transition-colors ${isActive('/about') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>About</Link>
+          <Link to="/programs" className={`text-sm leading-normal transition-colors ${isActive('/programs') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Programs</Link>
+          <Link to="/news" className={`text-sm leading-normal transition-colors ${isActive('/news') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>News</Link>
+          <Link to="/gallery" className={`text-sm leading-normal transition-colors ${isActive('/gallery') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Gallery</Link>
+          <Link to="/library" className={`text-sm leading-normal transition-colors ${isActive('/library') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>Library</Link>
+        </nav>
+      </div>
+      <div className="flex flex-1 justify-end gap-4 items-center">
+        <label className="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
+          <div className="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+            <div className="text-[#616f89] flex border-none bg-[#f0f2f4] dark:bg-[#2a303c] items-center justify-center pl-4">
+              <span className="material-symbols-outlined text-xl">search</span>
+            </div>
+            <input className="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f2f4] dark:bg-[#2a303c] focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-base font-normal leading-normal" placeholder="Search Programs" />
+          </div>
+        </label>
+        
+        <button 
+          onClick={toggleTheme}
+          className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
+          aria-label="Toggle dark mode"
+        >
+          <span className="material-symbols-outlined">
+            {isDark ? 'light_mode' : 'dark_mode'}
+          </span>
+        </button>
 
-          <button className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg text-sm font-bold tracking-tight transition-all">
-            Apply Now
-          </button>
-        </div>
+        <button className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
+          Apply Now
+        </button>
       </div>
     </header>
   );

@@ -5,6 +5,7 @@ export const PROGRAMS: Program[] = [
   {
     id: '1',
     title: 'Pharmacy',
+    slug: 'pharmacy',
     category: 'Health Sciences',
     description: 'Master the science of medicine and clinical research with our accredited Pharmaceutical Science degree.',
     image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800',
@@ -13,6 +14,7 @@ export const PROGRAMS: Program[] = [
   {
     id: '2',
     title: 'Information Technology',
+    slug: 'information-technology',
     category: 'Technology',
     description: 'Advance your career in software engineering, cybersecurity, and data science in our tech-driven labs.',
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
@@ -21,6 +23,7 @@ export const PROGRAMS: Program[] = [
   {
     id: '3',
     title: 'Veterinary Medicine',
+    slug: 'veterinary-medicine',
     category: 'Veterinary Arts',
     description: 'Compassionate care meets animal science. Gain hands-on clinical experience with domestic and exotic animals.',
     image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=800',
@@ -29,6 +32,7 @@ export const PROGRAMS: Program[] = [
   {
     id: '4',
     title: 'Early Childhood Ed',
+    slug: 'early-childhood-ed',
     category: 'Education',
     description: 'Shaping the leaders of tomorrow. Explore modern pedagogy and child development psychology.',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',

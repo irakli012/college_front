@@ -2,6 +2,7 @@
 export interface Program {
   id: string;
   title: string;
+  slug: string;
   category: string;
   description: string;
   image: string;

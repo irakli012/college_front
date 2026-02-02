@@ -76,7 +76,7 @@ const Home: React.FC = () => {
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{prog.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed line-clamp-2">{prog.description}</p>
                 <div className="mt-auto">
-                  <Link to="/programs" className="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                  <Link to={`/programs/${prog.slug}`} className="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
                     Learn More <span className="material-symbols-outlined text-sm">chevron_right</span>
                   </Link>
                 </div>

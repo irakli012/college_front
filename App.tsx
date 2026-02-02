@@ -10,6 +10,10 @@ const Programs = lazy(() => import('./pages/Programs'));
 const News = lazy(() => import('./pages/News'));
 const Library = lazy(() => import('./pages/Library'));
 const Gallery = lazy(() => import('./pages/Gallery'));
+const InformationTechnology = lazy(() => import('./pages/programs/InformationTechnology'));
+const Pharmacy = lazy(() => import('./pages/programs/Pharmacy'));
+const VeterinaryMedicine = lazy(() => import('./pages/programs/VeterinaryMedicine'));
+const EarlyChildhoodEducation = lazy(() => import('./pages/programs/EarlyChildhoodEducation'));
 
 const LoadingFallback = () => (
   <div className="flex h-[60vh] w-full items-center justify-center">
@@ -28,6 +32,10 @@ const App: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/programs" element={<Programs />} />
+              <Route path="/programs/information-technology" element={<InformationTechnology />} />
+              <Route path="/programs/pharmacy" element={<Pharmacy />} />
+              <Route path="/programs/veterinary-medicine" element={<VeterinaryMedicine />} />
+              <Route path="/programs/early-childhood-ed" element={<EarlyChildhoodEducation />} />
               <Route path="/news" element={<News />} />
               <Route path="/library" element={<Library />} />
               <Route path="/gallery" element={<Gallery />} />
