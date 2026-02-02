@@ -94,18 +94,18 @@ const Home: React.FC = () => {
 
       {/* CTA Section */}
       <section className="mt-20 mb-20">
-        <div className="bg-primary rounded-xl p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="text-white">
-            <h2 className="text-3xl font-bold mb-2">{t('home.readyToStart')}</h2>
+        <div className="bg-primary rounded-xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="text-white text-center lg:text-left">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2">{t('home.readyToStart')}</h2>
             <p className="text-white/80">{t('home.newsletterSubtitle')}</p>
           </div>
-          <div className="flex w-full lg:w-auto gap-3">
+          <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-3">
             <input 
-              className="flex-1 min-w-[280px] rounded-lg border-none px-4 py-3 focus:ring-2 focus:ring-white/50 text-gray-800" 
+              className="w-full sm:flex-1 lg:min-w-[300px] rounded-lg border-none px-4 py-3 focus:ring-2 focus:ring-white/50 text-gray-800" 
               placeholder={t('home.emailPlaceholder')}
               type="email"
             />
-            <button className="bg-white text-primary font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-primary font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap">
               {t('home.subscribe')}
             </button>
           </div>
