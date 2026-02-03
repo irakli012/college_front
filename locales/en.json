@@ -172,6 +172,54 @@
         "startDate": "September 1, 2024",
         "tuition": "$9,800 / Semester"
       }
+    },
+    "financial-services": {
+      "title": "Financial Services",
+      "description": "Master global finance, investment banking, and capital markets.",
+      "degree": "B.A. Financial Services",
+      "subtitle": "Excel in the world of global finance with expert-led training in banking, investment, and market analysis.",
+      "overview1": "Our Financial Services program is designed to provide students with a deep understanding of financial markets, reporting, and investment management. We focus on ethical practices and strategic decision-making in the high-stakes world of finance.",
+      "overview2": "By bridging the gap between theory and practice, our curriculum prepares students for the complexities of modern economic systems, ensuring they are ready to lead in banking, insurance, and corporate finance sectors.",
+      "careerText": "Financial Services graduates are in high demand and find success in diverse roles within the banking and investment sectors globally.",
+      "roles": ["Financial Analyst", "Investment Banker", "Risk Manager", "Portfolio Manager", "Wealth Advisor", "Credit Officer"],
+      "curriculumItems": [
+        { "title": "Corporate Finance", "text": "Analyzing financial decisions and investments for business success." },
+        { "title": "Investment Analysis", "text": "Evaluation of securities and portfolio management strategies." },
+        { "title": "FinTech & Innovation", "text": "The impact of technology on traditional financial services." },
+        { "title": "Banking Operations", "text": "Core principles of commercial and retail banking management." },
+        { "title": "Risk Management", "text": "Identifying and mitigating financial risks in volatile markets." },
+        { "title": "International Finance", "text": "Understanding global economic systems and exchange rates." }
+      ],
+      "quickFacts": {
+        "duration": "3.5 Years",
+        "credits": "120 Credit Hours",
+        "startDate": "October 5, 2024",
+        "tuition": "$10,500 / Semester"
+      }
+    },
+    "administrative-services": {
+      "title": "Administrative Services",
+      "description": "Optimize organizational efficiency and leadership through advanced management.",
+      "degree": "B.A. Administrative Services",
+      "subtitle": "Gain the skills to manage complex organizations and lead teams towards operational excellence.",
+      "overview1": "The Administrative Services program focuses on the essential skills required to run modern organizations effectively. From strategic planning to human resource management, we cover all facets of organizational leadership.",
+      "overview2": "Our students develop strong communication, problem-solving, and managerial skills, preparing them for a wide range of leadership roles in both the public and private sectors.",
+      "careerText": "Our graduates lead departments and organizations, driving efficiency and fostering positive work cultures across various industries.",
+      "roles": ["Office Manager", "HR Coordinator", "Operations Lead", "Administrative Director", "Project Manager", "Executive Assistant"],
+      "curriculumItems": [
+        { "title": "Organizational Behavior", "text": "Understanding human dynamics and culture in the workplace." },
+        { "title": "Human Resources", "text": "Strategic recruitment, training, and employee relations." },
+        { "title": "Business Writing", "text": "Professional communication for impact and clarity." },
+        { "title": "Project Management", "text": "Methods for planning, executing, and closing complex tasks." },
+        { "title": "Strategic Leadership", "text": "Leading teams and organizations through change and growth." },
+        { "title": "Information Systems", "text": "Managing digital resources and organizational data." }
+      ],
+      "quickFacts": {
+        "duration": "3 Years",
+        "credits": "100 Credit Hours",
+        "startDate": "October 10, 2024",
+        "tuition": "$8,900 / Semester"
+      }
     }
   },
   "footer": {
@@ -193,7 +241,8 @@
       "Health Sciences": "Health Sciences",
       "Technology": "Technology",
       "Veterinary Arts": "Veterinary Arts",
-      "Education": "Education"
+      "Education": "Education",
+      "Business": "Business"
     }
   },
   "programDetail": {
@@ -215,7 +264,8 @@
       "it": "Department of Engineering & CS",
       "pharmacy": "Department of Health Sciences",
       "vet": "Department of Veterinary Arts",
-      "ece": "Department of Education"
+      "ece": "Department of Education",
+      "business": "Department of Business & Finance"
     },
     "questions": {
       "title": "Have Questions?",

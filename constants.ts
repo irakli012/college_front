@@ -37,6 +37,24 @@ export const PROGRAMS: Program[] = [
     description: 'Shaping the leaders of tomorrow. Explore modern pedagogy and child development psychology.',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
     icon: 'school'
+  },
+  {
+    id: '5',
+    title: 'Financial Services',
+    slug: 'financial-services',
+    category: 'Business',
+    description: 'Master global finance, investment banking, and capital markets with our professional certification track.',
+    image: 'https://images.unsplash.com/photo-1454165833762-02651296ee46?auto=format&fit=crop&q=80&w=800',
+    icon: 'payments'
+  },
+  {
+    id: '6',
+    title: 'Administrative Services',
+    slug: 'administrative-services',
+    category: 'Business',
+    description: 'Optimize organizational efficiency and leadership through advanced administrative and management training.',
+    image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800',
+    icon: 'business_center'
   }
 ];
 
