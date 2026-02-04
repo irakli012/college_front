@@ -147,20 +147,22 @@ const Home: React.FC = () => {
 
       {/* CTA Section */}
       <section className="mt-20 mb-20">
-        <div className="bg-primary rounded-xl p-6 sm:p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="text-white text-center lg:text-left">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2">{t('home.readyToStart')}</h2>
-            <p className="text-white/80">{t('home.newsletterSubtitle')}</p>
+        <div className="bg-primary rounded-[2.5rem] p-8 sm:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden relative">
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 size-[400px] bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 size-[400px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="text-white text-center lg:text-left relative z-10 max-w-xl">
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight leading-tight">{t('home.readyToStart')}</h2>
+            <p className="text-white/80 text-lg sm:text-xl font-medium">{t('home.newsletterSubtitle')}</p>
           </div>
-          <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-3">
-            <input 
-              className="w-full sm:flex-1 lg:min-w-[300px] rounded-lg border-none px-4 py-3 focus:ring-2 focus:ring-white/50 text-gray-800" 
-              placeholder={t('home.emailPlaceholder')}
-              type="email"
-            />
-            <button className="bg-white text-primary font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap">
-              {t('home.subscribe')}
-            </button>
+          
+          <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-4 relative z-10">
+            <Link to="/register" className="bg-white text-primary font-black px-10 py-5 rounded-2xl hover:bg-gray-100 transition-all text-center shadow-xl shadow-black/10 active:scale-95">
+              {t('home.applyNow')}
+            </Link>
+            <Link to="/about" className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-black px-10 py-5 rounded-2xl hover:bg-white/20 transition-all text-center active:scale-95">
+              {t('nav.about')}
+            </Link>
           </div>
         </div>
       </section>

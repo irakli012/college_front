@@ -100,9 +100,9 @@ const FinancialServices: React.FC = () => {
                 ))}
               </div>
               <div className="mt-8 flex flex-col gap-3">
-                <button className="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-md">
+                <Link to="/register" className="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-md flex items-center justify-center">
                   {t('programDetail.applyNow')}
-                </button>
+                </Link>
                 <button className="w-full bg-transparent border border-[#dbdfe6] dark:border-[#2a303c] dark:text-white py-4 rounded-lg font-bold hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
                   {t('programDetail.downloadBrochure')}
                 </button>

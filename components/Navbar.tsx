@@ -172,9 +172,9 @@ const Navbar: React.FC = () => {
           </span>
         </button>
 
-        <button className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-xs lg:text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
+        <Link to="/register" className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-xs lg:text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
           {t('home.applyNow')}
-        </button>
+        </Link>
       </div>
     </header>
   );

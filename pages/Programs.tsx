@@ -6,7 +6,7 @@ import { PROGRAMS } from '../constants';
 
 const Programs: React.FC = () => {
   const { t } = useTranslation();
-  const faculties = ['All Faculties', 'Health Sciences', 'Technology', 'Veterinary Arts', 'Education'];
+  const faculties = ['All Faculties', 'Health Sciences', 'Technology', 'Veterinary Arts', 'Education', 'Business'];
   const [activeTab, setActiveTab] = useState('All Faculties');
 
   const filteredPrograms = activeTab === 'All Faculties' 

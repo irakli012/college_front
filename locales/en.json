@@ -229,6 +229,35 @@
     "support": "Support",
     "allRightsReserved": "College Ilia. All rights reserved."
   },
+  "register": {
+    "title": "Start Your Journey",
+    "subtitle": "Join a community of innovators and leaders. Fill out the form below to begin your application process.",
+    "successTitle": "Application Received!",
+    "successMessage": "Thank you for choosing College Ilia. Our admissions office will review your application and contact you within 48 business hours.",
+    "backToForm": "Submit another application",
+    "submitButton": "Submit Application",
+    "disclaimer": "By submitting, you agree to our terms of service and privacy policy regarding your student data.",
+    "perks": {
+      "accredited": "Full Accreditation",
+      "accreditedDesc": "All our programs are internationally recognized and certified.",
+      "support": "Career Support",
+      "supportDesc": "Lifetime access to our job placement and networking services.",
+      "flexible": "Flexible Learning",
+      "flexibleDesc": "Day, evening, and weekend classes available for all programs.",
+      "scholarship": "Financial Aid",
+      "scholarshipDesc": "Multiple scholarship opportunities for eligible students."
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "program": "Select Program",
+      "selectProgram": "Choose your course of study",
+      "message": "Additional Message (Optional)",
+      "messagePlaceholder": "Tell us about your background or ask any questions..."
+    }
+  },
   "programsPage": {
     "title": "Academic Programs",
     "subtitle": "Explore our diverse range of multi-disciplinary programs designed to shape the leaders of tomorrow with hands-on learning and research excellence.",
