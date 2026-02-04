@@ -255,7 +255,8 @@
       "program": "Select Program",
       "selectProgram": "Choose your course of study",
       "message": "Additional Message (Optional)",
-      "messagePlaceholder": "Tell us about your background or ask any questions..."
+      "messagePlaceholder": "Tell us about your background or ask any questions...",
+      "errorMessage": "Something went wrong. Please check your connection and try again."
     }
   },
   "programsPage": {

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 import { PROGRAMS } from '../constants';
 
 const Register: React.FC = () => {
   const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -22,8 +24,40 @@ const Register: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Registration Data:', formData);
-    setSubmitted(true);
+    setLoading(true);
+
+    // Use environment variables for production security
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const templateParams = {
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      from_email: formData.email,
+      phone: formData.phone,
+      program: formData.program,
+      message: formData.message,
+      to_email: 'iraklimate@gmail.com'
+    };
+
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      console.error('EmailJS keys are missing from environment!');
+      alert('Configuration error. Please contact administration.');
+      setLoading(false);
+      return;
+    }
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then(() => {
+        setSubmitted(true);
+      })
+      .catch((err) => {
+        console.error('EmailJS Error:', err);
+        alert(t('register.form.errorMessage') || 'Something went wrong. Please try again.');
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   if (submitted) {
@@ -166,10 +200,17 @@ const Register: React.FC = () => {
 
             <button 
               type="submit"
-              className="mt-4 bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group"
+              disabled={loading}
+              className={`mt-4 bg-primary text-white py-4 rounded-xl font-bold transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-primary/90'}`}
             >
-              {t('register.submitButton')}
-              <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+              {loading ? (
+                <div className="size-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              ) : (
+                <>
+                  {t('register.submitButton')}
+                  <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </>
+              )}
             </button>
             <p className="text-center text-[10px] text-[#616f89] dark:text-gray-400 mt-2">
               {t('register.disclaimer')}
