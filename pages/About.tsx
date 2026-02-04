@@ -62,6 +62,25 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* New Values Section */}
+          <div className="mt-8 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1c2331] p-8 shadow-sm">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center text-primary">
+                <span className="material-symbols-outlined text-2xl">diamond</span>
+              </div>
+              <h4 className="text-[#111318] dark:text-white text-2xl font-bold">{t('about.valuesTitle')}</h4>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Object.keys(t('about.valuesList', { returnObjects: true })).map((key) => (
+                <div key={key} className="flex flex-col gap-2 p-4 rounded-lg bg-[#f8f9fb] dark:bg-[#2a303c]/50">
+                  <p className="text-sm text-[#111318] dark:text-white font-medium leading-relaxed">
+                    {t(`about.valuesList.${key}`)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -75,7 +94,7 @@ const About: React.FC = () => {
               alt="Campus History"
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg hidden md:block">
-              <p className="text-4xl font-bold">40+</p>
+              <p className="text-4xl font-bold">25+</p>
               <p className="text-sm">{t('about.yearsExcellence')}</p>
             </div>
           </div>
@@ -86,15 +105,20 @@ const About: React.FC = () => {
             </p>
             <div className="flex flex-col gap-8 mt-4">
               {[
-                { year: '1982', title: t('about.history.foundation'), desc: t('about.history.foundationDesc') },
-                { year: '2005', title: t('about.history.innovationHub'), desc: t('about.history.innovationDesc') },
-                { year: '2023', title: t('about.history.globalReach'), desc: t('about.history.globalDesc') }
-              ].map((step, idx) => (
-                <div key={idx} className="flex gap-4">
-                  <div className="flex-none w-12 text-primary font-bold text-lg">{step.year}</div>
-                  <div>
-                    <h5 className="font-bold dark:text-white">{step.title}</h5>
-                    <p className="text-sm text-[#616f89] dark:text-[#9ea7b8]">{step.desc}</p>
+                { icon: 'history_edu', title: t('about.history.foundation'), desc: t('about.history.foundationDesc') },
+                { icon: 'track_changes', title: t('about.history.innovationHub'), desc: t('about.history.innovationDesc') },
+                { icon: 'auto_graph', title: t('about.history.globalReach'), desc: t('about.history.globalDesc') }
+              ].map((step, idx, arr) => (
+                <div key={idx} className="flex gap-6 relative">
+                  {idx !== arr.length - 1 && (
+                    <div className="absolute left-[19px] top-10 bottom-[-32px] w-[2px] bg-primary/10"></div>
+                  )}
+                  <div className="flex-none w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary z-10 border-4 border-white dark:border-[#111318]">
+                    <span className="material-symbols-outlined text-xl">{step.icon}</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h5 className="font-bold text-[#111318] dark:text-white text-lg">{step.title}</h5>
+                    <p className="text-sm text-[#616f89] dark:text-[#9ea7b8] leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
