@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <h5 className="font-bold dark:text-white text-sm">{t('footer.support')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
-              <li><a className="hover:text-primary" href="#">Contact Us</a></li>
+              <li><a className="hover:text-primary" href="/#/contact">{t('contact.title')}</a></li>
               <li><a className="hover:text-primary" href="#">Help Desk</a></li>
               <li><a className="hover:text-primary" href="#">Privacy Policy</a></li>
               <li><a className="hover:text-primary" href="#">Terms</a></li>

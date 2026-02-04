@@ -18,6 +18,7 @@ const EarlyChildhoodEducation = lazy(() => import('./pages/programs/EarlyChildho
 const FinancialServices = lazy(() => import('./pages/programs/FinancialServices'));
 const AdministrativeServices = lazy(() => import('./pages/programs/AdministrativeServices'));
 const Register = lazy(() => import('./pages/Register'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 const LoadingFallback = () => (
   <div className="flex h-[60vh] w-full items-center justify-center">
@@ -47,6 +48,7 @@ const App: React.FC = () => {
               <Route path="/library" element={<Library />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </Suspense>
         </main>

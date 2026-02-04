@@ -56,12 +56,12 @@ const Home: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icon: 'person', label: 'Student Portal' },
-            { icon: 'school', label: 'Admissions' },
-            { icon: 'calendar_today', label: 'Academic Calendar' },
-            { icon: 'map', label: 'Campus Map' }
+            { icon: 'person', label: 'Student Portal', link: '#' },
+            { icon: 'school', label: 'Admissions', link: '/#/register' },
+            { icon: 'calendar_today', label: 'Academic Calendar', link: '#' },
+            { icon: 'map', label: 'Campus Map', link: '/#/contact' }
           ].map((item, idx) => (
-            <a key={idx} href="#" className="group flex items-center gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1e2433] hover:border-primary/50 hover:shadow-lg transition-all">
+            <a key={idx} href={item.link} className="group flex items-center gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1e2433] hover:border-primary/50 hover:shadow-lg transition-all">
               <div className="bg-primary/10 text-primary p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                 <span className="material-symbols-outlined">{item.icon}</span>
               </div>

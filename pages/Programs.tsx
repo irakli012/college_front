@@ -81,7 +81,7 @@ const Programs: React.FC = () => {
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
                   {t(`programsPage.faculties.${prog.category}`)}
                 </span>
-                <Link to={`/programs/${prog.slug}`} className="text-primary text-sm font-bold flex items-center gap-1 hover:underline group cursor-pointer">
+                <Link to={`/programs/${prog.slug}`} className="text-primary text-sm font-bold flex items-center gap-1 hover:underline group cursor-pointer whitespace-nowrap shrink-0">
                   {t('programDetail.learnMore')}
                   <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
                 </Link>

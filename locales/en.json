@@ -331,5 +331,16 @@
       "subtitle": "Connect with our admissions team for a 1-on-1 consultation.",
       "link": "Contact Admissions"
     }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Write to us, call us, or visit our campus. We are always ready to help.",
+    "phone": "Phone Number",
+    "email": "Email",
+    "address": "Our Address",
+    "addressDetails": "33a Leonidze St., Sagarejo, Georgia",
+    "map": "Location",
+    "hours": "Working Hours",
+    "hoursDetails": "Monday - Friday: 09:00 - 18:00"
   }
 }
