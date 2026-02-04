@@ -50,10 +50,10 @@ const EarlyChildhoodEducation: React.FC = () => {
             <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.curriculum')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(t(`programs.${slug}.curriculumItems`, { returnObjects: true }) as any[]).map((item, idx) => {
-                const icons = ['child_care', 'menu_book', 'diversity_3', 'family_restroom', 'psychology', 'palette'];
+                const icons = ['child_care', 'edit_calendar', 'psychology', 'home_work'];
                 return (
                   <div key={idx} className="flex items-start gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1c2331] hover:shadow-md transition-shadow">
-                    <span className="material-symbols-outlined text-primary">{icons[idx]}</span>
+                    <span className="material-symbols-outlined text-primary">{icons[idx] || 'school'}</span>
                     <div>
                       <h4 className="font-bold dark:text-white">{item.title}</h4>
                       <p className="text-sm text-[#616f89] dark:text-[#9ea7b8]">{item.text}</p>
@@ -61,6 +61,24 @@ const EarlyChildhoodEducation: React.FC = () => {
                   </div>
                 );
               })}
+            </div>
+          </section>
+
+          <section className="flex flex-col gap-6" id="structure">
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.programStructure')}</h2>
+            <div className="bg-white dark:bg-[#1c2331] p-8 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c]">
+              <p className="text-[#616f89] dark:text-[#9ea7b8] text-lg leading-relaxed">
+                {t(`programs.${slug}.structure`)}
+              </p>
+            </div>
+          </section>
+
+          <section className="flex flex-col gap-6" id="evaluation">
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.evaluation')}</h2>
+            <div className="bg-white dark:bg-[#1c2331] p-8 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c]">
+              <p className="text-[#616f89] dark:text-[#9ea7b8] text-lg leading-relaxed">
+                {t(`programs.${slug}.evaluation`)}
+              </p>
             </div>
           </section>
 

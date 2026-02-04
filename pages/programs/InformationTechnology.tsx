@@ -50,10 +50,10 @@ const InformationTechnology: React.FC = () => {
             <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.curriculum')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(t(`programs.${slug}.curriculumItems`, { returnObjects: true }) as any[]).map((item, idx) => {
-                const icons = ['code', 'lan', 'psychology', 'security', 'database', 'terminal'];
+                const icons = ['computer', 'settings_input_component', 'shield', 'lan', 'wifi_tethering', 'build', 'print', 'apps', 'gpp_maybe', 'task_alt'];
                 return (
                   <div key={idx} className="flex items-start gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1c2331] hover:shadow-md transition-shadow">
-                    <span className="material-symbols-outlined text-primary">{icons[idx]}</span>
+                    <span className="material-symbols-outlined text-primary">{icons[idx] || 'check_circle'}</span>
                     <div>
                       <h4 className="font-bold dark:text-white">{item.title}</h4>
                       <p className="text-sm text-[#616f89] dark:text-[#9ea7b8]">{item.text}</p>
@@ -61,6 +61,22 @@ const InformationTechnology: React.FC = () => {
                   </div>
                 );
               })}
+            </div>
+          </section>
+
+          <section className="flex flex-col gap-6" id="structure">
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.programStructure')}</h2>
+            <div className="bg-white dark:bg-[#1c2331] p-6 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] shadow-sm">
+              <p className="text-[#616f89] dark:text-[#9ea7b8] leading-relaxed mb-4">
+                {t(`programs.${slug}.structure`)}
+              </p>
+              <div className="flex items-start gap-3 p-4 bg-primary/5 rounded-lg border border-primary/10">
+                <span className="material-symbols-outlined text-primary">info</span>
+                <p className="text-sm text-[#111318] dark:text-[#9ea7b8]">
+                  <span className="font-bold">{t('programDetail.evaluation')}: </span>
+                  {t(`programs.${slug}.evaluation`)}
+                </p>
+              </div>
             </div>
           </section>
 
@@ -109,7 +125,7 @@ const InformationTechnology: React.FC = () => {
                 {[
                   { icon: 'schedule', label: t('programDetail.facts.duration'), value: t(`programs.${slug}.quickFacts.duration`) },
                   { icon: 'credit_card', label: t('programDetail.facts.credits'), value: t(`programs.${slug}.quickFacts.credits`) },
-                  { icon: 'calendar_today', label: t('programDetail.facts.startDate'), value: t(`programs.${slug}.quickFacts.startDate`) },
+                  { icon: 'school', label: t('programDetail.facts.prerequisite'), value: t(`programs.${slug}.quickFacts.startDate`) },
                   { icon: 'attach_money', label: t('programDetail.facts.tuition'), value: t(`programs.${slug}.quickFacts.tuition`) }
                 ].map((fact, idx) => (
                   <div key={idx} className="flex items-center gap-4">

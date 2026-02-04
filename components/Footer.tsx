@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col gap-4 max-w-sm">
           <div className="flex items-center gap-2 text-primary">
             <span className="material-symbols-outlined text-2xl font-bold">school</span>
-            <h2 className="text-xl font-bold text-[#111318] dark:text-white">Ili College</h2>
+            <h2 className="text-xl font-bold text-[#111318] dark:text-white">Ilia College</h2>
           </div>
           <p className="text-[#616f89] dark:text-[#9ea7b8] text-sm">
             {t('footer.description')}

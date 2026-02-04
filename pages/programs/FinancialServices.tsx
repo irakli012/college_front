@@ -20,7 +20,7 @@ const FinancialServices: React.FC = () => {
       
       <section className="max-w-[1200px] mx-auto w-full px-6 mb-12">
         <div className="@container">
-          <div className="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end p-10 relative overflow-hidden shadow-xl" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%), url("https://images.unsplash.com/photo-1454165833762-02651296ee46?auto=format&fit=crop&q=80&w=1600")' }}>
+          <div className="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end p-10 relative overflow-hidden shadow-xl" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%), url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600")' }}>
             <div className="z-10">
               <span className="bg-primary px-3 py-1 rounded text-xs font-bold text-white uppercase tracking-wider mb-4 inline-block">{t('programDetail.departments.business')}</span>
               <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl mb-4">
@@ -50,10 +50,10 @@ const FinancialServices: React.FC = () => {
             <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.curriculum')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(t(`programs.${slug}.curriculumItems`, { returnObjects: true }) as any[]).map((item, idx) => {
-                const icons = ['payments', 'analytics', 'trending_up', 'account_balance', 'security', 'public'];
+                const icons = ['payments', 'account_balance', 'add_card', 'support_agent'];
                 return (
                   <div key={idx} className="flex items-start gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1c2331] hover:shadow-md transition-shadow">
-                    <span className="material-symbols-outlined text-primary">{icons[idx]}</span>
+                    <span className="material-symbols-outlined text-primary">{icons[idx] || 'account_balance'}</span>
                     <div>
                       <h4 className="font-bold dark:text-white">{item.title}</h4>
                       <p className="text-sm text-[#616f89] dark:text-[#9ea7b8]">{item.text}</p>
@@ -61,6 +61,24 @@ const FinancialServices: React.FC = () => {
                   </div>
                 );
               })}
+            </div>
+          </section>
+
+          <section className="flex flex-col gap-6" id="structure">
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.programStructure')}</h2>
+            <div className="bg-white dark:bg-[#1c2331] p-8 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c]">
+              <p className="text-[#616f89] dark:text-[#9ea7b8] text-lg leading-relaxed">
+                {t(`programs.${slug}.structure`)}
+              </p>
+            </div>
+          </section>
+
+          <section className="flex flex-col gap-6" id="evaluation">
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.evaluation')}</h2>
+            <div className="bg-white dark:bg-[#1c2331] p-8 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c]">
+              <p className="text-[#616f89] dark:text-[#9ea7b8] text-lg leading-relaxed">
+                {t(`programs.${slug}.evaluation`)}
+              </p>
             </div>
           </section>
 

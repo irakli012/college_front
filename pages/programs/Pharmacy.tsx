@@ -20,7 +20,7 @@ const Pharmacy: React.FC = () => {
       
       <section className="max-w-[1200px] mx-auto w-full px-6 mb-12">
         <div className="@container">
-          <div className="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end p-10 relative overflow-hidden shadow-xl" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%), url("https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=1600")' }}>
+          <div className="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end p-10 relative overflow-hidden shadow-xl" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%), url("https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=1600")' }}>
             <div className="z-10">
               <span className="bg-primary px-3 py-1 rounded text-xs font-bold text-white uppercase tracking-wider mb-4 inline-block">{t('programDetail.departments.pharmacy')}</span>
               <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl mb-4">
@@ -50,10 +50,10 @@ const Pharmacy: React.FC = () => {
             <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.curriculum')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(t(`programs.${slug}.curriculumItems`, { returnObjects: true }) as any[]).map((item, idx) => {
-                const icons = ['science', 'biotech', 'medical_services', 'experiment', 'analytics', 'vaccines'];
+                const icons = ['visibility', 'inventory', 'medication', 'package_2', 'support_agent', 'point_of_sale', 'clean_hands', 'description'];
                 return (
                   <div key={idx} className="flex items-start gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1c2331] hover:shadow-md transition-shadow">
-                    <span className="material-symbols-outlined text-primary">{icons[idx]}</span>
+                    <span className="material-symbols-outlined text-primary">{icons[idx] || 'check_circle'}</span>
                     <div>
                       <h4 className="font-bold dark:text-white">{item.title}</h4>
                       <p className="text-sm text-[#616f89] dark:text-[#9ea7b8]">{item.text}</p>
@@ -61,6 +61,22 @@ const Pharmacy: React.FC = () => {
                   </div>
                 );
               })}
+            </div>
+          </section>
+
+          <section className="flex flex-col gap-6" id="structure">
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.programStructure')}</h2>
+            <div className="bg-white dark:bg-[#1c2331] p-6 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] shadow-sm">
+              <p className="text-[#616f89] dark:text-[#9ea7b8] leading-relaxed mb-4">
+                {t(`programs.${slug}.structure`)}
+              </p>
+              <div className="flex items-start gap-3 p-4 bg-primary/5 rounded-lg border border-primary/10">
+                <span className="material-symbols-outlined text-primary">info</span>
+                <p className="text-sm text-[#111318] dark:text-[#9ea7b8]">
+                  <span className="font-bold">{t('programDetail.evaluation')}: </span>
+                  {t(`programs.${slug}.evaluation`)}
+                </p>
+              </div>
             </div>
           </section>
 
@@ -87,7 +103,7 @@ const Pharmacy: React.FC = () => {
                 {[
                   { icon: 'schedule', label: t('programDetail.facts.duration'), value: t(`programs.${slug}.quickFacts.duration`) },
                   { icon: 'credit_card', label: t('programDetail.facts.credits'), value: t(`programs.${slug}.quickFacts.credits`) },
-                  { icon: 'calendar_today', label: t('programDetail.facts.startDate'), value: t(`programs.${slug}.quickFacts.startDate`) },
+                  { icon: 'school', label: t('programDetail.facts.prerequisite'), value: t(`programs.${slug}.quickFacts.startDate`) },
                   { icon: 'attach_money', label: t('programDetail.facts.tuition'), value: t(`programs.${slug}.quickFacts.tuition`) }
                 ].map((fact, idx) => (
                   <div key={idx} className="flex items-center gap-4">

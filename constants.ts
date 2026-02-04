@@ -8,7 +8,7 @@ export const PROGRAMS: Program[] = [
     slug: 'pharmacy',
     category: 'Health Sciences',
     description: 'Master the science of medicine and clinical research with our accredited Pharmaceutical Science degree.',
-    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80&w=800',
     icon: 'medication'
   },
   {
@@ -44,7 +44,7 @@ export const PROGRAMS: Program[] = [
     slug: 'financial-services',
     category: 'Business',
     description: 'Master global finance, investment banking, and capital markets with our professional certification track.',
-    image: 'https://images.unsplash.com/photo-1454165833762-02651296ee46?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     icon: 'payments'
   },
   {
