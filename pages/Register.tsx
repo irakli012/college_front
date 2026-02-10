@@ -125,7 +125,7 @@ const Register: React.FC = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                   className="w-full px-5 py-3.5 rounded-xl bg-[#f6f6f8] dark:bg-[#2a303c] border-none focus:ring-2 focus:ring-primary dark:text-white outline-none transition-all"
-                  placeholder="John"
+                  placeholder=""
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -137,7 +137,7 @@ const Register: React.FC = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                   className="w-full px-5 py-3.5 rounded-xl bg-[#f6f6f8] dark:bg-[#2a303c] border-none focus:ring-2 focus:ring-primary dark:text-white outline-none transition-all"
-                  placeholder="Doe"
+                  placeholder=""
                 />
               </div>
             </div>
@@ -151,7 +151,7 @@ const Register: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-5 py-3.5 rounded-xl bg-[#f6f6f8] dark:bg-[#2a303c] border-none focus:ring-2 focus:ring-primary dark:text-white outline-none transition-all"
-                placeholder="john@example.com"
+                placeholder=""
               />
             </div>
 
@@ -164,7 +164,7 @@ const Register: React.FC = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-5 py-3.5 rounded-xl bg-[#f6f6f8] dark:bg-[#2a303c] border-none focus:ring-2 focus:ring-primary dark:text-white outline-none transition-all"
-                placeholder="+995 555 123 456"
+                placeholder=""
               />
             </div>
 

@@ -68,10 +68,36 @@
     "readMore": "Read More",
     "loadMore": "Load More Updates",
     "items": {
-      "1": { "title": "Engineering Team Wins National Robotics Grand Prix", "description": "Our multidisciplinary team outperformed 50 other institutions to secure first place in the annual challenge held in Boston.", "category": "Achievement" },
-      "2": { "title": "The Future of Generative AI Guest Lecture", "description": "Join us this Thursday as industry leaders discuss the ethical implications of AI in modern society.", "category": "Event" },
-      "3": { "title": "Spring 2024 Registration Now Open", "description": "Students can now register for Spring 2024 courses via the portal. Early registration is encouraged.", "category": "Announcement" },
-      "4": { "title": "Biomedical Lab Secures $2.4M Research Grant", "description": "The grant will fund a three-year study into biodegradable drug delivery systems.", "category": "Research" }
+      "0": {
+        "title": "Authorization Success - College Secures 6-Year Status",
+        "date": "January 16, 2026",
+        "description": "On January 16, 2026, by decision of the Authorization Council, LLC Ilia – Ilia Chavchavadze Community College of Sagarejo secured authorization for a period of 6 years!\n\nThis is the result of our team's hard work, professionalism, and striving for development.\n\nCongratulations to the college staff, students, graduates, and all supporters on this great success! 🎉📚",
+        "category": "Achievement"
+      },
+      "1": { 
+        "title": "Engineering Team Wins National Robotics Grand Prix", 
+        "date": "October 24, 2023",
+        "description": "Our multidisciplinary team outperformed 50 other institutions to secure first place in the annual challenge held in Boston.", 
+        "category": "Achievement" 
+      },
+      "2": { 
+        "title": "The Future of Generative AI Guest Lecture", 
+        "date": "October 22, 2023",
+        "description": "Join us this Thursday as industry leaders discuss the ethical implications of AI in modern society.", 
+        "category": "Event" 
+      },
+      "3": { 
+        "title": "Spring 2024 Registration Now Open", 
+        "date": "October 20, 2023",
+        "description": "Students can now register for Spring 2024 courses via the portal. Early registration is encouraged.", 
+        "category": "Announcement" 
+      },
+      "4": { 
+        "title": "Biomedical Lab Secures $2.4M Research Grant", 
+        "date": "October 18, 2023",
+        "description": "The grant will fund a three-year study into biodegradable drug delivery systems.", 
+        "category": "Research" 
+      }
     }
   },
   "gallery": {

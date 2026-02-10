@@ -11,11 +11,10 @@ export interface Program {
 
 export interface NewsItem {
   id: string;
-  title: string;
+  slug: string;
   category: 'Achievement' | 'Event' | 'Announcement' | 'Research' | 'Athletics' | 'Campus Life';
-  date: string;
+  datetime: string; // ISO 8601 format for sorting and machine readability
   readTime?: string;
-  description: string;
   image?: string;
 }
 

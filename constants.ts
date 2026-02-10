@@ -60,35 +60,43 @@ export const PROGRAMS: Program[] = [
 
 export const NEWS: NewsItem[] = [
   {
-    id: '1',
-    title: 'Engineering Team Wins National Robotics Grand Prix',
+    id: '0',
+    slug: 'authorization-2026',
     category: 'Achievement',
-    date: 'Oct 24, 2023',
+    datetime: '2026-01-16',
+    readTime: '3 min read',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: '1',
+    slug: 'robotics-grand-prix',
+    category: 'Achievement',
+    datetime: '2023-10-24',
     readTime: '5 min read',
-    description: 'Our multidisciplinary team outperformed 50 other institutions to secure first place in the annual challenge held in Boston.',
     image: 'https://images.unsplash.com/photo-1531746790731-6c2079ee396b?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: '2',
-    title: 'The Future of Generative AI Guest Lecture',
+    slug: 'generative-ai-lecture',
     category: 'Event',
-    date: 'Oct 22, 2023',
-    description: 'Join us this Thursday as industry leaders discuss the ethical implications of AI in modern society.',
+    datetime: '2023-10-22',
+    readTime: '4 min read',
     image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: '3',
-    title: 'Spring 2024 Registration Now Open',
+    slug: 'spring-registration-2024',
     category: 'Announcement',
-    date: 'Oct 20, 2023',
-    description: 'Students can now register for Spring 2024 courses via the portal. Early registration is encouraged.'
+    datetime: '2023-10-20',
+    readTime: '2 min read',
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: '4',
-    title: 'Biomedical Lab Secures $2.4M Research Grant',
+    slug: 'biomedical-grant',
     category: 'Research',
-    date: 'Oct 18, 2023',
-    description: 'The grant will fund a three-year study into biodegradable drug delivery systems.',
+    datetime: '2023-10-18',
+    readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1532187875605-18382124bf60?auto=format&fit=crop&q=80&w=800'
   }
 ];

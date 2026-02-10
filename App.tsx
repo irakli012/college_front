@@ -9,6 +9,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Programs = lazy(() => import('./pages/Programs'));
 const News = lazy(() => import('./pages/News'));
+const NewsDetail = lazy(() => import('./pages/NewsDetail'));
 const Library = lazy(() => import('./pages/Library'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const InformationTechnology = lazy(() => import('./pages/programs/InformationTechnology'));
@@ -45,6 +46,7 @@ const App: React.FC = () => {
               <Route path="/programs/financial-services" element={<FinancialServices />} />
               <Route path="/programs/administrative-services" element={<AdministrativeServices />} />
               <Route path="/news" element={<News />} />
+              <Route path="/news/:slug" element={<NewsDetail />} />
               <Route path="/library" element={<Library />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/register" element={<Register />} />

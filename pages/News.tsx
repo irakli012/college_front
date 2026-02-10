@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { NEWS } from '../constants';
 
 const News: React.FC = () => {
@@ -8,9 +9,9 @@ const News: React.FC = () => {
   return (
     <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-8 flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-2">
-        <a className="text-[#616f89] dark:text-gray-400 text-sm font-medium flex items-center gap-1 hover:text-primary" href="#">
+        <Link className="text-[#616f89] dark:text-gray-400 text-sm font-medium flex items-center gap-1 hover:text-primary" to="/">
           <span className="material-symbols-outlined text-sm">home</span> {t('nav.home')}
-        </a>
+        </Link>
         <span className="text-[#616f89] dark:text-gray-500 text-sm font-medium">/</span>
         <span className="text-[#111318] dark:text-white text-sm font-medium">{t('nav.news')}</span>
       </div>
@@ -41,7 +42,7 @@ const News: React.FC = () => {
 
       <div className="masonry-grid mt-4">
         {NEWS.map((item) => (
-          <div key={item.id} className="masonry-item">
+          <Link key={item.id} to={`/news/${item.slug}`} className="masonry-item">
             <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-[#f0f2f4] dark:border-gray-800 group cursor-pointer hover:shadow-xl transition-all">
               {item.image && (
                 <div className="relative h-64 overflow-hidden">
@@ -59,13 +60,13 @@ const News: React.FC = () => {
               <div className="p-6">
                 <div className="flex items-center gap-2 text-[#616f89] dark:text-gray-400 text-xs font-semibold mb-3">
                   <span className="material-symbols-outlined text-sm">calendar_today</span>
-                  {item.date}
+                  {t(`news.items.${item.id}.date`)}
                   {item.readTime && <span className="mx-1">• {item.readTime}</span>}
                 </div>
                 <h3 className="text-xl font-bold text-[#111318] dark:text-white mb-3 leading-tight group-hover:text-primary transition-colors">
                   {t(`news.items.${item.id}.title`)}
                 </h3>
-                <p className="text-[#616f89] dark:text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="line-clamp-3 text-[#616f89] dark:text-gray-400 text-sm leading-relaxed mb-4">
                   {t(`news.items.${item.id}.description`)}
                 </p>
                 <div className="flex items-center text-primary font-bold text-sm">
@@ -73,7 +74,7 @@ const News: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
