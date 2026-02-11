@@ -81,8 +81,8 @@ const Home: React.FC = () => {
       </section>
 
       {/* Main Programs Highlights */}
-      <section className="mt-20 -mx-4 sm:-mx-6 lg:-mx-8">
-        <div className="px-4 sm:px-6 lg:px-8">
+      <section className="mt-20">
+        <div className="px-2">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div className="max-w-2xl">
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-4">{t('home.ourMainPrograms')}</h2>
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
 
         <div 
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar px-4 sm:px-6 lg:px-8 scroll-smooth"
+          className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar px-2 scroll-smooth"
         >
           {PROGRAMS.map((prog) => (
             <div key={prog.id} className="flex-none w-[300px] sm:w-[350px] snap-start">
