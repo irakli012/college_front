@@ -8,10 +8,21 @@ const Programs: React.FC = () => {
   const { t } = useTranslation();
   const faculties = ['All Faculties', 'Health Sciences', 'Technology', 'Veterinary Arts', 'Education', 'Business'];
   const [activeTab, setActiveTab] = useState('All Faculties');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredPrograms = activeTab === 'All Faculties' 
-    ? PROGRAMS 
-    : PROGRAMS.filter(p => p.category === activeTab);
+  const filteredPrograms = PROGRAMS.filter(prog => {
+    const matchesTab = activeTab === 'All Faculties' || prog.category === activeTab;
+    
+    if (!searchQuery.trim()) return matchesTab;
+
+    const searchTerm = searchQuery.toLowerCase();
+    const localizedTitle = t(`programs.${prog.slug}.title`).toLowerCase();
+    const localizedDesc = t(`programs.${prog.slug}.description`).toLowerCase();
+
+    const matchesSearch = localizedTitle.includes(searchTerm) || localizedDesc.includes(searchTerm);
+    
+    return matchesTab && matchesSearch;
+  });
 
   return (
     <div className="animate-fade-in max-w-[1280px] mx-auto px-4 sm:px-10 py-10">
@@ -36,6 +47,8 @@ const Programs: React.FC = () => {
               <input 
                 className="w-full bg-transparent border-none text-[#111318] dark:text-white focus:outline-0 focus:ring-0 placeholder:text-[#616f89] px-4 text-base font-normal" 
                 placeholder={t('programsPage.searchPlaceholder')}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
           </label>
@@ -60,35 +73,51 @@ const Programs: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-        {filteredPrograms.map((prog) => (
-          <div key={prog.id} className="group flex flex-col bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-[#f0f2f4] dark:border-gray-800 hover:shadow-xl transition-all duration-300">
-            <div 
-              className="relative w-full aspect-[16/10] bg-center bg-no-repeat bg-cover" 
-              style={{ backgroundImage: `url("${prog.image}")` }}
+        {filteredPrograms.length > 0 ? (
+          filteredPrograms.map((prog) => (
+            <div key={prog.id} className="group flex flex-col bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-[#f0f2f4] dark:border-gray-800 hover:shadow-xl transition-all duration-300">
+              <div 
+                className="relative w-full aspect-[16/10] bg-center bg-no-repeat bg-cover" 
+                style={{ backgroundImage: `url("${prog.image}")` }}
+              >
+                <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-2 rounded-lg text-primary">
+                  <span className="material-symbols-outlined">{prog.icon}</span>
+                </div>
+              </div>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-[#111318] dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">
+                  {t(`programs.${prog.slug}.title`)}
+                </h3>
+                <p className="mt-3 text-[#616f89] dark:text-gray-400 text-sm font-normal leading-relaxed flex-1 line-clamp-3">
+                  {t(`programs.${prog.slug}.description`)}
+                </p>
+                <div className="mt-6 flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
+                  <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                    {t(`programsPage.faculties.${prog.category}`)}
+                  </span>
+                  <Link to={`/programs/${prog.slug}`} className="text-primary text-sm font-bold flex items-center gap-1 hover:underline group cursor-pointer whitespace-nowrap shrink-0">
+                    {t('programDetail.learnMore')}
+                    <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="col-span-full py-20 flex flex-col items-center justify-center text-center">
+            <span className="material-symbols-outlined text-6xl text-gray-300 dark:text-gray-700 mb-4">search_off</span>
+            <h3 className="text-xl font-bold dark:text-white mb-2">{t('programsPage.noResults')}</h3>
+            <p className="text-[#616f89] dark:text-gray-400">
+              {t('programsPage.noResultsDesc', { query: searchQuery })}
+            </p>
+            <button 
+              onClick={() => {setSearchQuery(''); setActiveTab('All Faculties');}}
+              className="mt-6 text-primary font-bold hover:underline"
             >
-              <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-2 rounded-lg text-primary">
-                <span className="material-symbols-outlined">{prog.icon}</span>
-              </div>
-            </div>
-            <div className="p-6 flex flex-col flex-1">
-              <h3 className="text-[#111318] dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">
-                {t(`programs.${prog.slug}.title`)}
-              </h3>
-              <p className="mt-3 text-[#616f89] dark:text-gray-400 text-sm font-normal leading-relaxed flex-1 line-clamp-3">
-                {t(`programs.${prog.slug}.description`)}
-              </p>
-              <div className="mt-6 flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
-                  {t(`programsPage.faculties.${prog.category}`)}
-                </span>
-                <Link to={`/programs/${prog.slug}`} className="text-primary text-sm font-bold flex items-center gap-1 hover:underline group cursor-pointer whitespace-nowrap shrink-0">
-                  {t('programDetail.learnMore')}
-                  <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </Link>
-              </div>
-            </div>
+              {t('programsPage.clearAll')}
+            </button>
           </div>
-        ))}
+        )}
       </div>
 
       <div className="mt-16 flex flex-col items-center gap-4">

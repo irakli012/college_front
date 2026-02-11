@@ -1,6 +1,6 @@
 
 import React, { Suspense, lazy } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -20,6 +20,7 @@ const FinancialServices = lazy(() => import('./pages/programs/FinancialServices'
 const AdministrativeServices = lazy(() => import('./pages/programs/AdministrativeServices'));
 const Register = lazy(() => import('./pages/Register'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Admin = lazy(() => import('./pages/Admin'));
 
 const LoadingFallback = () => (
   <div className="flex h-[60vh] w-full items-center justify-center">
@@ -51,6 +52,7 @@ const App: React.FC = () => {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/admin" element={<Admin />} />
             </Routes>
           </Suspense>
         </main>

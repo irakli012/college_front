@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col gap-4 max-w-sm">
           <div className="flex items-center gap-2 text-primary">
             <span className="material-symbols-outlined text-2xl font-bold">school</span>
-            <h2 className="text-xl font-bold text-[#111318] dark:text-white">Ilia College</h2>
+            <h2 className="text-xl font-bold text-[#111318] dark:text-white">{t('collegeName')}</h2>
           </div>
           <p className="text-[#616f89] dark:text-[#9ea7b8] text-sm">
             {t('footer.description')}
@@ -20,7 +21,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <h5 className="font-bold dark:text-white text-sm">{t('footer.quickLinks')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
-              <li><a className="hover:text-primary" href="/#/programs">{t('nav.programs')}</a></li>
+              <li><Link className="hover:text-primary" to="/programs">{t('nav.programs')}</Link></li>
               <li><a className="hover:text-primary" href="#">Admissions</a></li>
               <li><a className="hover:text-primary" href="#">Campus Life</a></li>
               <li><a className="hover:text-primary" href="#">Alumni</a></li>
@@ -30,7 +31,7 @@ const Footer: React.FC = () => {
             <h5 className="font-bold dark:text-white text-sm">{t('footer.resources')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
               <li><a className="hover:text-primary" href="#">Student Portal</a></li>
-              <li><a className="hover:text-primary" href="/#/library">Library</a></li>
+              <li><Link className="hover:text-primary" to="/library">Library</Link></li>
               <li><a className="hover:text-primary" href="#">Career Center</a></li>
               <li><a className="hover:text-primary" href="#">Safety</a></li>
             </ul>
@@ -38,7 +39,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <h5 className="font-bold dark:text-white text-sm">{t('footer.support')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
-              <li><a className="hover:text-primary" href="/#/contact">{t('contact.title')}</a></li>
+              <li><Link className="hover:text-primary" to="/contact">{t('contact.title')}</Link></li>
               <li><a className="hover:text-primary" href="#">Help Desk</a></li>
               <li><a className="hover:text-primary" href="#">Privacy Policy</a></li>
               <li><a className="hover:text-primary" href="#">Terms</a></li>

@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
 
         <Link to="/" className="flex items-center gap-2 lg:gap-4 text-[#111318] dark:text-white">
           <span className="material-symbols-outlined text-primary text-3xl">school</span>
-          <h2 className="text-base lg:text-lg font-bold leading-tight tracking-[-0.015em]">Ilia College</h2>
+          <h2 className="text-base lg:text-lg font-bold leading-tight tracking-[-0.015em]">{t('collegeName')}</h2>
         </Link>
         <nav className="hidden md:flex items-center gap-4 lg:gap-9">
           <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.home')}</Link>
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
             <div className="flex items-center justify-between p-6 border-b border-[#f0f2f4] dark:border-[#2a303c]">
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary text-3xl">school</span>
-                <span className="font-bold dark:text-white">Ilia College</span>
+                <span className="font-bold dark:text-white">{t('collegeName')}</span>
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}

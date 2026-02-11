@@ -1,4 +1,5 @@
 {
+  "collegeName": "Ilia College",
   "nav": {
     "home": "Home",
     "about": "About",
@@ -317,6 +318,9 @@
     "title": "Academic Programs",
     "subtitle": "Explore our diverse range of multi-disciplinary programs designed to shape the leaders of tomorrow with hands-on learning and research excellence.",
     "searchPlaceholder": "Search for programs, majors, or keywords...",
+    "noResults": "No results found",
+    "noResultsDesc": "We couldn't find any programs matching \"{{query}}\".",
+    "clearAll": "Clear all filters",
     "allFaculties": "All Faculties",
     "viewAll": "View All Programs",
     "showing": "Showing {{count}} programs available",

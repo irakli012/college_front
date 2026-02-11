@@ -56,17 +56,26 @@ const Home: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icon: 'person', label: 'Student Portal', link: '#' },
-            { icon: 'school', label: 'Admissions', link: '/#/register' },
-            { icon: 'calendar_today', label: 'Academic Calendar', link: '#' },
-            { icon: 'map', label: 'Campus Map', link: '/#/contact' }
+            { icon: 'person', label: 'Student Portal', link: '#', isExternal: true },
+            { icon: 'school', label: 'Admissions', link: '/register', isExternal: false },
+            { icon: 'calendar_today', label: 'Academic Calendar', link: '#', isExternal: true },
+            { icon: 'map', label: 'Campus Map', link: '/contact', isExternal: false }
           ].map((item, idx) => (
-            <a key={idx} href={item.link} className="group flex items-center gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1e2433] hover:border-primary/50 hover:shadow-lg transition-all">
-              <div className="bg-primary/10 text-primary p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                <span className="material-symbols-outlined">{item.icon}</span>
-              </div>
-              <h3 className="font-bold text-[#111318] dark:text-white">{item.label}</h3>
-            </a>
+            item.isExternal ? (
+              <a key={idx} href={item.link} className="group flex items-center gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1e2433] hover:border-primary/50 hover:shadow-lg transition-all">
+                <div className="bg-primary/10 text-primary p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                  <span className="material-symbols-outlined">{item.icon}</span>
+                </div>
+                <h3 className="font-bold text-[#111318] dark:text-white">{item.label}</h3>
+              </a>
+            ) : (
+              <Link key={idx} to={item.link} className="group flex items-center gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1e2433] hover:border-primary/50 hover:shadow-lg transition-all">
+                <div className="bg-primary/10 text-primary p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                  <span className="material-symbols-outlined">{item.icon}</span>
+                </div>
+                <h3 className="font-bold text-[#111318] dark:text-white">{item.label}</h3>
+              </Link>
+            )
           ))}
         </div>
       </section>
