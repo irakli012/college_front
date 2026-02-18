@@ -57,7 +57,7 @@ app.post('/api/login', loginLimiter, (req, res) => {
   res.status(401).json({ error: 'Invalid credentials' });
 });
 
-const LOCALES_DIR = path.join(__dirname, 'locales');
+const LOCALES_DIR = path.join(__dirname, 'src', 'locales');
 
 // Get all keys for a specific language (Protected)
 app.get('/api/locales/:lang', authenticate, async (req, res) => {
