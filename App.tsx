@@ -21,6 +21,8 @@ const AdministrativeServices = lazy(() => import('./pages/programs/Administrativ
 const Register = lazy(() => import('./pages/Register'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Admin = lazy(() => import('./pages/Admin'));
+const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
+const Teachers = lazy(() => import('./pages/Teachers'));
 
 const LoadingFallback = () => (
   <div className="flex h-[60vh] w-full items-center justify-center">
@@ -52,6 +54,8 @@ const App: React.FC = () => {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/programs-catalog" element={<ProgramsCatalog />} />
+              <Route path="/teachers" element={<Teachers />} />
               <Route path="/admin" element={<Admin />} />
             </Routes>
           </Suspense>

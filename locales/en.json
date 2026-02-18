@@ -3,7 +3,10 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "learn": "Learn",
     "programs": "Programs",
+    "programsCatalog": "Professional Education Programs Catalog",
+    "teachers": "Professional Teachers",
     "news": "News",
     "gallery": "Gallery",
     "library": "Library"
@@ -55,10 +58,10 @@
     "adminTeam": "Administration Team",
     "meetFaculty": "Meet all faculty",
     "team": {
-      "1": { "name": "Dr. Helena Vance", "role": "College President", "bio": "A leader in educational policy with 25 years of experience in higher education management." },
-      "2": { "name": "Marcus Sterling", "role": "Dean of Academics", "bio": "Specializes in curriculum development and interdisciplinary learning initiatives." },
-      "3": { "name": "Sarah Jenkins", "role": "Director of Admissions", "bio": "Dedicated to creating inclusive pathways for students from diverse backgrounds." },
-      "4": { "name": "Dr. Robert Chen", "role": "VP of Research", "bio": "Pioneering investigator in applied sciences and industry partnerships." }
+      "1": { "name": "Dr. Helena Vance", "role": "College President", "bio": "A leader in educational policy with 25 years of experience in higher education management.", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
+      "2": { "name": "Marcus Sterling", "role": "Dean of Academics", "bio": "Specializes in curriculum development and interdisciplinary learning initiatives.", "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" },
+      "3": { "name": "Sarah Jenkins", "role": "Director of Admissions", "bio": "Dedicated to creating inclusive pathways for students from diverse backgrounds.", "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" },
+      "4": { "name": "Dr. Robert Chen", "role": "VP of Research", "bio": "Pioneering investigator in applied sciences and industry partnerships.", "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400" }
     }
   },
   "news": {
@@ -372,5 +375,13 @@
     "map": "Location",
     "hours": "Working Hours",
     "hoursDetails": "Monday - Friday: 09:00 - 18:00"
+  },
+  "programsCatalog": {
+    "subtitle": "Complete catalog of professional educational programs.",
+    "comingSoon": "Coming Soon"
+  },
+  "teachers": {
+    "subtitle": "Meet our professional teachers.",
+    "comingSoon": "Coming Soon"
   }
 }

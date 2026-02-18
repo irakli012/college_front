@@ -127,37 +127,6 @@ export const BOOKS: Book[] = [
   }
 ];
 
-export const TEAM: TeamMember[] = [
-  {
-    id: '1',
-    name: 'Dr. Helena Vance',
-    role: 'College President',
-    bio: 'A leader in educational policy with 25 years of experience in higher education management.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'
-  },
-  {
-    id: '2',
-    name: 'Marcus Sterling',
-    role: 'Dean of Academics',
-    bio: 'Specializes in curriculum development and interdisciplinary learning initiatives.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400'
-  },
-  {
-    id: '3',
-    name: 'Sarah Jenkins',
-    role: 'Director of Admissions',
-    bio: 'Dedicated to creating inclusive pathways for students from diverse backgrounds.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400'
-  },
-  {
-    id: '4',
-    name: 'Dr. Robert Chen',
-    role: 'VP of Research',
-    bio: 'Pioneering investigator in applied sciences and industry partnerships.',
-    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400'
-  }
-];
-
 export const GALLERY: GalleryItem[] = [
   { id: '1', title: 'Campus Archway', category: 'Architecture', image: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800' },
   { id: '2', title: 'Main Library', category: 'Facilities', image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800' },

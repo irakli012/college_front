@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -7,12 +7,29 @@ const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLearnOpen, setIsLearnOpen] = useState(false);
+  const [isMobileLearnOpen, setIsMobileLearnOpen] = useState(false);
+  const learnRef = useRef<HTMLDivElement>(null);
   const isActive = (path: string) => location.pathname === path;
+  const isLearnActive = () => ['/programs', '/programs-catalog', '/teachers'].some(p => location.pathname.startsWith(p));
 
   // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsLearnOpen(false);
+    setIsMobileLearnOpen(false);
   }, [location.pathname]);
+
+  // Close learn dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (learnRef.current && !learnRef.current.contains(e.target as Node)) {
+        setIsLearnOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Prevent scrolling when menu is open
   useEffect(() => {
@@ -69,7 +86,34 @@ const Navbar: React.FC = () => {
         <nav className="hidden md:flex items-center gap-4 lg:gap-9">
           <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.home')}</Link>
           <Link to="/about" className={`text-sm leading-normal transition-colors ${isActive('/about') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.about')}</Link>
-          <Link to="/programs" className={`text-sm leading-normal transition-colors ${isActive('/programs') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.programs')}</Link>
+          
+          {/* Learn Dropdown */}
+          <div ref={learnRef} className="relative">
+            <button
+              onClick={() => setIsLearnOpen(!isLearnOpen)}
+              className={`flex items-center gap-1 text-sm leading-normal transition-colors ${isLearnActive() ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}
+            >
+              {t('nav.learn')}
+              <span className={`material-symbols-outlined text-base transition-transform ${isLearnOpen ? 'rotate-180' : ''}`}>expand_more</span>
+            </button>
+            {isLearnOpen && (
+              <div className="absolute top-full left-0 mt-2 w-80 lg:w-96 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2 z-50">
+                <Link to="/programs" className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive('/programs') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
+                  <span className="material-symbols-outlined text-lg shrink-0">list_alt</span>
+                  <span className="flex-1">{t('nav.programs')}</span>
+                </Link>
+                <Link to="/programs-catalog" className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive('/programs-catalog') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
+                  <span className="material-symbols-outlined text-lg shrink-0">menu_book</span>
+                  <span className="flex-1">{t('nav.programsCatalog')}</span>
+                </Link>
+                <Link to="/teachers" className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive('/teachers') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
+                  <span className="material-symbols-outlined text-lg shrink-0">groups</span>
+                  <span className="flex-1">{t('nav.teachers')}</span>
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link to="/news" className={`text-sm leading-normal transition-colors ${isActive('/news') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.news')}</Link>
           <Link to="/gallery" className={`text-sm leading-normal transition-colors ${isActive('/gallery') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.gallery')}</Link>
           <Link to="/library" className={`text-sm leading-normal transition-colors ${isActive('/library') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.library')}</Link>
@@ -103,7 +147,48 @@ const Navbar: React.FC = () => {
               {[
                 { to: '/', label: t('nav.home'), icon: 'home' },
                 { to: '/about', label: t('nav.about'), icon: 'info' },
-                { to: '/programs', label: t('nav.programs'), icon: 'list_alt' },
+              ].map((item) => (
+                <Link 
+                  key={item.to}
+                  to={item.to}
+                  className={`flex items-center gap-4 p-3 rounded-lg transition-all ${isActive(item.to) ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                >
+                  <span className="material-symbols-outlined text-xl">{item.icon}</span>
+                  <span className="font-medium text-sm">{item.label}</span>
+                </Link>
+              ))}
+
+              {/* Mobile Learn Collapsible */}
+              <button
+                onClick={() => setIsMobileLearnOpen(!isMobileLearnOpen)}
+                className={`flex items-center justify-between p-3 rounded-lg transition-all ${isLearnActive() ? 'bg-primary/10 text-primary' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+              >
+                <div className="flex items-center gap-4">
+                  <span className="material-symbols-outlined text-xl">school</span>
+                  <span className="font-medium text-sm">{t('nav.learn')}</span>
+                </div>
+                <span className={`material-symbols-outlined text-xl transition-transform ${isMobileLearnOpen ? 'rotate-180' : ''}`}>expand_more</span>
+              </button>
+              {isMobileLearnOpen && (
+                <div className="flex flex-col gap-1 ml-4 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
+                  {[
+                    { to: '/programs', label: t('nav.programs'), icon: 'list_alt' },
+                    { to: '/programs-catalog', label: t('nav.programsCatalog'), icon: 'menu_book' },
+                    { to: '/teachers', label: t('nav.teachers'), icon: 'groups' },
+                  ].map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className={`flex items-center gap-3 p-2.5 rounded-lg transition-all text-sm ${isActive(item.to) ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                    >
+                      <span className="material-symbols-outlined text-lg">{item.icon}</span>
+                      <span className="font-medium">{item.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {[
                 { to: '/news', label: t('nav.news'), icon: 'newspaper' },
                 { to: '/gallery', label: t('nav.gallery'), icon: 'photo_library' },
                 { to: '/library', label: t('nav.library'), icon: 'menu_book' }
