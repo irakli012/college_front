@@ -299,8 +299,8 @@ const Navbar: React.FC = () => {
                 <div className="flex flex-col gap-0.5 ml-3 pl-3 border-l-2 border-gray-200 dark:border-gray-700">
                   {[
                     { to: '/programs', label: t('nav.programs'), icon: 'list_alt' },
-                    { to: '/programs-catalog', label: t('nav.programsCatalog'), icon: 'menu_book' },
-                    { to: '/teachers', label: t('nav.teachers'), icon: 'groups' },
+                    { to: '/programs-catalog', label: t('nav.programsCatalogShort'), icon: 'menu_book' },
+                    { to: '/teachers', label: t('nav.teachersShort'), icon: 'groups' },
                   ].map((item) => (
                     <Link
                       key={item.to}
