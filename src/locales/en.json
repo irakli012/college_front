@@ -3,6 +3,18 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "aboutUs": "About Us",
+    "mission": "Mission, Vision & Values",
+    "structure": "Structure",
+    "authorization": "Authorization Decision",
+    "partners": "Partners",
+    "strategicLabel": "Strategic Development",
+    "strategic": {
+      "actionPlans": "Action Plans",
+      "actionReports": "Action Plan Reports",
+      "financialIndicators": "Financial Indicators",
+      "strategicPlan": "Strategic Development Plan"
+    },
     "learn": "Learn",
     "programs": "Programs",
     "programsCatalog": "Professional Education Programs Catalog",
@@ -28,6 +40,21 @@
   "about": {
     "heroTitle": "LLC Ilia - Sagarejo Community College",
     "heroSubtitle": "Two decades of experience in professional education.",
+    "universityStatus": "Community College",
+    "historyLabel": "History",
+    "historyP1": "LLC Ilia – Ilia Chavchavadze Community College of Sagarejo has been operating since 2000 and over two decades has become one of the most important centers for the development of professional education in the region. The college is multi-profile and offers students the opportunity to gain modern knowledge and practical skills in various fields. The college actively participates in the life of the local community and makes a significant contribution to the development of the region through its activities. For the people of Sagarejo, the college is not just an educational institution, but a source of initiatives and opportunities that promotes new ideas, cooperation, and professional growth. Today, when the education of young people and improvement of their labor prospects is particularly important in the region, the college continues to fulfill its mission — to provide quality professional education, promote the implementation of innovative approaches, and become an exemplary educational space that opens new opportunities for future generations.",
+    "reputationTitle": "College Ilia",
+    "reputationDesc": "Over the years, the college has built a solid reputation as a reliable educational institution distinguished not only by academic quality but also by a student-oriented environment. The professionalism of teachers, special emphasis on practical learning, and cooperation with partner organizations creates an educational space that effectively combines theory and practice. Educational programs address new and in-demand professions, which is particularly important in terms of expanding employment opportunities in the region and increasing choices for young people.",
+    "highlights": {
+      "highlight1": "Multi-profile academic programs",
+      "highlight2": "Combining practical and theoretical knowledge",
+      "highlight3": "Partnership with local organizations",
+      "highlight4": "Two decades of experience"
+    },
+    "reputationP2": "From the very beginning, the college aimed to ensure access to education for young people and adults, to create programs tailored to the needs of the local labor market, and to promote the socio-economic progress of the region.",
+    "fbTitle": "Follow Us",
+    "fbDesc": "Stay up to date with our latest news on Facebook",
+    "fbButton": "Follow us on Facebook",
     "foundation": "Our History",
     "missionVision": "Mission, Vision & Values",
     "missionSubtitle": "College Ilia has been serving the regional professional development since 2000.",
@@ -58,10 +85,30 @@
     "adminTeam": "Administration Team",
     "meetFaculty": "Meet all faculty",
     "team": {
-      "1": { "name": "Dr. Helena Vance", "role": "College President", "bio": "A leader in educational policy with 25 years of experience in higher education management.", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
-      "2": { "name": "Marcus Sterling", "role": "Dean of Academics", "bio": "Specializes in curriculum development and interdisciplinary learning initiatives.", "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" },
-      "3": { "name": "Sarah Jenkins", "role": "Director of Admissions", "bio": "Dedicated to creating inclusive pathways for students from diverse backgrounds.", "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" },
-      "4": { "name": "Dr. Robert Chen", "role": "VP of Research", "bio": "Pioneering investigator in applied sciences and industry partnerships.", "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400" }
+      "1": {
+        "name": "Dr. Helena Vance",
+        "role": "College President",
+        "bio": "A leader in educational policy with 25 years of experience in higher education management.",
+        "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
+      },
+      "2": {
+        "name": "Marcus Sterling",
+        "role": "Dean of Academics",
+        "bio": "Specializes in curriculum development and interdisciplinary learning initiatives.",
+        "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
+      },
+      "3": {
+        "name": "Sarah Jenkins",
+        "role": "Director of Admissions",
+        "bio": "Dedicated to creating inclusive pathways for students from diverse backgrounds.",
+        "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400"
+      },
+      "4": {
+        "name": "Dr. Robert Chen",
+        "role": "VP of Research",
+        "bio": "Pioneering investigator in applied sciences and industry partnerships.",
+        "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400"
+      }
     }
   },
   "news": {
@@ -78,29 +125,29 @@
         "description": "On January 16, 2026, by decision of the Authorization Council, LLC Ilia – Ilia Chavchavadze Community College of Sagarejo secured authorization for a period of 6 years!\n\nThis is the result of our team's hard work, professionalism, and striving for development.\n\nCongratulations to the college staff, students, graduates, and all supporters on this great success! 🎉📚",
         "category": "Achievement"
       },
-      "1": { 
-        "title": "Engineering Team Wins National Robotics Grand Prix", 
+      "1": {
+        "title": "Engineering Team Wins National Robotics Grand Prix",
         "date": "October 24, 2023",
-        "description": "Our multidisciplinary team outperformed 50 other institutions to secure first place in the annual challenge held in Boston.", 
-        "category": "Achievement" 
+        "description": "Our multidisciplinary team outperformed 50 other institutions to secure first place in the annual challenge held in Boston.",
+        "category": "Achievement"
       },
-      "2": { 
-        "title": "The Future of Generative AI Guest Lecture", 
+      "2": {
+        "title": "The Future of Generative AI Guest Lecture",
         "date": "October 22, 2023",
-        "description": "Join us this Thursday as industry leaders discuss the ethical implications of AI in modern society.", 
-        "category": "Event" 
+        "description": "Join us this Thursday as industry leaders discuss the ethical implications of AI in modern society.",
+        "category": "Event"
       },
-      "3": { 
-        "title": "Spring 2024 Registration Now Open", 
+      "3": {
+        "title": "Spring 2024 Registration Now Open",
         "date": "October 20, 2023",
-        "description": "Students can now register for Spring 2024 courses via the portal. Early registration is encouraged.", 
-        "category": "Announcement" 
+        "description": "Students can now register for Spring 2024 courses via the portal. Early registration is encouraged.",
+        "category": "Announcement"
       },
-      "4": { 
-        "title": "Biomedical Lab Secures $2.4M Research Grant", 
+      "4": {
+        "title": "Biomedical Lab Secures $2.4M Research Grant",
         "date": "October 18, 2023",
-        "description": "The grant will fund a three-year study into biodegradable drug delivery systems.", 
-        "category": "Research" 
+        "description": "The grant will fund a three-year study into biodegradable drug delivery systems.",
+        "category": "Research"
       }
     }
   },
@@ -108,10 +155,22 @@
     "title": "Campus Gallery",
     "subtitle": "Glimpses into student life, state-of-the-art facilities, and historic moments at College Ilia.",
     "items": {
-      "1": { "title": "Campus Archway", "category": "Architecture" },
-      "2": { "title": "Main Library", "category": "Facilities" },
-      "3": { "title": "Student Lab", "category": "Academic" },
-      "4": { "title": "Commencement", "category": "Events" }
+      "1": {
+        "title": "Campus Archway",
+        "category": "Architecture"
+      },
+      "2": {
+        "title": "Main Library",
+        "category": "Facilities"
+      },
+      "3": {
+        "title": "Student Lab",
+        "category": "Academic"
+      },
+      "4": {
+        "title": "Commencement",
+        "category": "Events"
+      }
     }
   },
   "programs": {
@@ -125,18 +184,52 @@
       "structure": "For Georgian speakers: 61 credits (17 general, 44 professional) - 11 months. For non-Georgian speakers: 76 credits (32 general, 44 professional) - 14 months.",
       "evaluation": "Credits are awarded based on the confirmation of learning outcomes (recognition of formal/informal education or assessment). Formative and summative assessment systems are used, based on competency validation.",
       "careerText": "Holders of this qualification can be employed as technical support specialists in any state/municipal organization or private company that utilizes information technology.",
-      "roles": ["Technical Support Specialist", "IT Consultant", "Network Admin Assistant"],
+      "roles": [
+        "Technical Support Specialist",
+        "IT Consultant",
+        "Network Admin Assistant"
+      ],
       "curriculumItems": [
-        { "title": "Computer Assembly", "text": "Assemble and configure a personal computer and peripheral devices." },
-        { "title": "Operating Systems", "text": "Install and set up operating systems and applications." },
-        { "title": "Security", "text": "Ensure OS security and assess hardware/software risks." },
-        { "title": "Network Fundamentals", "text": "Distinguish network principles, types, and TCP/IP, OSI models." },
-        { "title": "Internal Networking", "text": "Set up simple wired and wireless internal networks and ports." },
-        { "title": "Diagnostics & Repair", "text": "Identify and resolve hardware and software problems." },
-        { "title": "Peripherals", "text": "Install and configure various types of peripheral devices." },
-        { "title": "Applied Software", "text": "Install and configure various application software packages." },
-        { "title": "Risk Assessment", "text": "Evaluate hardware and software risks and determine preventive measures." },
-        { "title": "Practical Tasks", "text": "Implement necessary steps for completing complex technical tasks." }
+        {
+          "title": "Computer Assembly",
+          "text": "Assemble and configure a personal computer and peripheral devices."
+        },
+        {
+          "title": "Operating Systems",
+          "text": "Install and set up operating systems and applications."
+        },
+        {
+          "title": "Security",
+          "text": "Ensure OS security and assess hardware/software risks."
+        },
+        {
+          "title": "Network Fundamentals",
+          "text": "Distinguish network principles, types, and TCP/IP, OSI models."
+        },
+        {
+          "title": "Internal Networking",
+          "text": "Set up simple wired and wireless internal networks and ports."
+        },
+        {
+          "title": "Diagnostics & Repair",
+          "text": "Identify and resolve hardware and software problems."
+        },
+        {
+          "title": "Peripherals",
+          "text": "Install and configure various types of peripheral devices."
+        },
+        {
+          "title": "Applied Software",
+          "text": "Install and configure various application software packages."
+        },
+        {
+          "title": "Risk Assessment",
+          "text": "Evaluate hardware and software risks and determine preventive measures."
+        },
+        {
+          "title": "Practical Tasks",
+          "text": "Implement necessary steps for completing complex technical tasks."
+        }
       ],
       "quickFacts": {
         "duration": "11-14 Months",
@@ -153,16 +246,45 @@
       "overview1": "According to the ISCED, this qualification belongs to the field of 'Pharmacy' (code 0916). The program studies drugs, their effects on humans, preparation, distribution, and administration.",
       "overview2": "The goal is to train professionals who can manage product reception and placement, inventory control, preparation of medications by prescription, and sales of over-the-counter products.",
       "careerText": "Holders of this qualification can be employed as pharmacists or pharmacy assistants in authorized pharmacies, wholesale facilities, and medical equipment stores.",
-      "roles": ["Pharmacist", "Pharmacy Assistant", "Pharmacy Manager", "Wholesale Specialist"],
+      "roles": [
+        "Pharmacist",
+        "Pharmacy Assistant",
+        "Pharmacy Manager",
+        "Wholesale Specialist"
+      ],
       "curriculumItems": [
-        { "title": "Visual Inspection", "text": "Visually inspect products and establish identity with accompanying documentation." },
-        { "title": "Inventory Control", "text": "Perform incoming, periodic, and final control of pharmacy balances." },
-        { "title": "Medication Preparation", "text": "Prepare liquid, solid, and soft dosage forms according to prescriptions." },
-        { "title": "Packaging", "text": "Package original containers into smaller units, labeling and marking them." },
-        { "title": "Consultation", "text": "Provide consultation to users on product intake, use, and storage conditions." },
-        { "title": "Sales & Ethics", "text": "Sell over-the-counter products while following pharmaceutical ethics." },
-        { "title": "Sanitary Norms", "text": "Adhere to sanitary-hygienic norms, environmental rules, and safety regulations." },
-        { "title": "Reporting", "text": "Prepare and submit reports on product reception, inventory, and preparation." }
+        {
+          "title": "Visual Inspection",
+          "text": "Visually inspect products and establish identity with accompanying documentation."
+        },
+        {
+          "title": "Inventory Control",
+          "text": "Perform incoming, periodic, and final control of pharmacy balances."
+        },
+        {
+          "title": "Medication Preparation",
+          "text": "Prepare liquid, solid, and soft dosage forms according to prescriptions."
+        },
+        {
+          "title": "Packaging",
+          "text": "Package original containers into smaller units, labeling and marking them."
+        },
+        {
+          "title": "Consultation",
+          "text": "Provide consultation to users on product intake, use, and storage conditions."
+        },
+        {
+          "title": "Sales & Ethics",
+          "text": "Sell over-the-counter products while following pharmaceutical ethics."
+        },
+        {
+          "title": "Sanitary Norms",
+          "text": "Adhere to sanitary-hygienic norms, environmental rules, and safety regulations."
+        },
+        {
+          "title": "Reporting",
+          "text": "Prepare and submit reports on product reception, inventory, and preparation."
+        }
       ],
       "structure": "3 general modules (11 credits), 26 professional modules (109 credits), and 1 elective (3 credits). For Georgian speakers: 123 credits (22 months). For non-Georgian speakers: 153 credits (28 months).",
       "evaluation": "Credits are awarded based on learning outcomes (formal/informal recognition or assessment). Uses formative and summative assessment systems.",
@@ -181,20 +303,63 @@
       "overview1": "The program aims to prepare qualified veterinary technicians who can treat animals, respond to diseases and injuries, monitor post-operative conditions, and perform outpatient treatment.",
       "overview2": "Graduates assist veterinarians in diagnostics, laboratory sampling, and surgical procedures. They participate in pre- and post-slaughter processes and perform technical tasks for artificial insemination.",
       "careerText": "Holders of this qualification can be employed in veterinary clinics, farms, pharmacies, zoos, pet stores, animal shelters, laboratories, and meat processing plants.",
-      "roles": ["Veterinary Technician", "Farm Manager", "Vet Pharmacy Specialist", "Zoo Assistant", "Lab Technician", "Slaughterhouse Inspector"],
+      "roles": [
+        "Veterinary Technician",
+        "Farm Manager",
+        "Vet Pharmacy Specialist",
+        "Zoo Assistant",
+        "Lab Technician",
+        "Slaughterhouse Inspector"
+      ],
       "curriculumItems": [
-        { "title": "Animal Treatment", "text": "Treating animals according to veterinary prescriptions." },
-        { "title": "First Aid", "text": "Providing veterinary first aid for minor injuries and emergency cases." },
-        { "title": "Surgical Assistance", "text": "Assisting veterinary surgeons during diagnostic and surgical operations." },
-        { "title": "Artificial Insemination", "text": "Performing technical tasks for animal artificial insemination." },
-        { "title": "Lab Testing", "text": "Collecting laboratory samples and conducting express tests." },
-        { "title": "Dentistry Support", "text": "Assisting veterinarians in routine animal dental procedures." },
-        { "title": "Nutrition Monitoring", "text": "Monitoring animal feed quality and feeding processes." },
-        { "title": "Medical Records", "text": "Recording and managing medications and pharmaceutical materials." },
-        { "title": "Disease Prevention", "text": "Participating in vaccination, disinfection, and quarantine measures." },
-        { "title": "Slaughter Monitoring", "text": "Monitoring pre-slaughter and slaughter processes for quality." },
-        { "title": "Post-Slaughter Check", "text": "Carrying out post-slaughter inspections under veterinary supervision." },
-        { "title": "Consultation", "text": "Providing basic recommendations on animal diseases and injuries." }
+        {
+          "title": "Animal Treatment",
+          "text": "Treating animals according to veterinary prescriptions."
+        },
+        {
+          "title": "First Aid",
+          "text": "Providing veterinary first aid for minor injuries and emergency cases."
+        },
+        {
+          "title": "Surgical Assistance",
+          "text": "Assisting veterinary surgeons during diagnostic and surgical operations."
+        },
+        {
+          "title": "Artificial Insemination",
+          "text": "Performing technical tasks for animal artificial insemination."
+        },
+        {
+          "title": "Lab Testing",
+          "text": "Collecting laboratory samples and conducting express tests."
+        },
+        {
+          "title": "Dentistry Support",
+          "text": "Assisting veterinarians in routine animal dental procedures."
+        },
+        {
+          "title": "Nutrition Monitoring",
+          "text": "Monitoring animal feed quality and feeding processes."
+        },
+        {
+          "title": "Medical Records",
+          "text": "Recording and managing medications and pharmaceutical materials."
+        },
+        {
+          "title": "Disease Prevention",
+          "text": "Participating in vaccination, disinfection, and quarantine measures."
+        },
+        {
+          "title": "Slaughter Monitoring",
+          "text": "Monitoring pre-slaughter and slaughter processes for quality."
+        },
+        {
+          "title": "Post-Slaughter Check",
+          "text": "Carrying out post-slaughter inspections under veterinary supervision."
+        },
+        {
+          "title": "Consultation",
+          "text": "Providing basic recommendations on animal diseases and injuries."
+        }
       ],
       "structure": "The program includes 5 general modules (16 credits), 18 professional modules (64 credits), and 8 clinical training modules (40 credits). Total volume: 120 credits.",
       "evaluation": "To attain the qualification, students must accumulate 120 credits, participate in intermediate assessments, and pass the final qualification exam.",
@@ -213,12 +378,29 @@
       "overview1": "The goal of the Preschool Educator vocational educational program is to prepare qualified personnel capable of caring for, educating, and developing children at early and preschool ages. For these purposes, the educator must ensure a safe and developmental educational environment and be able to communicate with the child's family, the staff of the early and preschool education institution, and representatives of the field, while caring for their own professional development.",
       "overview2": "The program provides for the development of eight key competencies (communication, mathematical, digital, independent learning, social, entrepreneurship, and cultural expression), which are important for raising a competitive professional.",
       "careerText": "After completing the program, a person can be employed in the position of a preschool educator or work as a self-employed educator.",
-      "roles": ["Preschool Educator", "Self-employed Educator", "Preschool Institution Staff", "Educational Assistant"],
+      "roles": [
+        "Preschool Educator",
+        "Self-employed Educator",
+        "Preschool Institution Staff",
+        "Educational Assistant"
+      ],
       "curriculumItems": [
-        { "title": "Holistic Development", "text": "Holistic development of early and preschool age children, taking into account their age characteristics, interests, and individual abilities." },
-        { "title": "Planning & Management", "text": "Planning and managing a diverse, stimulating educational and pedagogical process." },
-        { "title": "Development Strategies", "text": "Using strategies that promote child development." },
-        { "title": "Environment Creation", "text": "Creating a successful, safe, and supportive educational environment." }
+        {
+          "title": "Holistic Development",
+          "text": "Holistic development of early and preschool age children, taking into account their age characteristics, interests, and individual abilities."
+        },
+        {
+          "title": "Planning & Management",
+          "text": "Planning and managing a diverse, stimulating educational and pedagogical process."
+        },
+        {
+          "title": "Development Strategies",
+          "text": "Using strategies that promote child development."
+        },
+        {
+          "title": "Environment Creation",
+          "text": "Creating a successful, safe, and supportive educational environment."
+        }
       ],
       "structure": "The program consists of 3 general mandatory modules (11 credits) and professional modules (105 credits). For Georgian speakers: 116 credits (21 months). For non-Georgian speakers: 146 credits (26 months).",
       "evaluation": "Credits are awarded based on the confirmation of learning outcomes (recognition or assessment). Formative and summative (competency validation) assessments are used.",
@@ -237,12 +419,29 @@
       "overview1": "The goal of the program is to implement a vocational program that prepares qualified financial services personnel who can provide various types of financial services and inform customers about financial services.",
       "overview2": "Graduates will master the conduct of cash and non-cash settlements, the performance of teller and banking operations, and the effective offering of banking products to clients.",
       "careerText": "Holders of this qualification can be employed as cashiers in various retail outlets, and as tellers or operators in banks and non-banking credit-financial institutions.",
-      "roles": ["Teller-Operator", "Bank Operator", "Retail Cashier", "Credit Agent"],
+      "roles": [
+        "Teller-Operator",
+        "Bank Operator",
+        "Retail Cashier",
+        "Credit Agent"
+      ],
       "curriculumItems": [
-        { "title": "Settlements", "text": "Conducting cash and non-cash settlements in retail and banking facilities." },
-        { "title": "Banking Operations", "text": "Implementing and managing teller and banking operations." },
-        { "title": "Product Offering", "text": "Introducing and offering banking products to clients." },
-        { "title": "Customer Service", "text": "Providing effective and professional service to customers." }
+        {
+          "title": "Settlements",
+          "text": "Conducting cash and non-cash settlements in retail and banking facilities."
+        },
+        {
+          "title": "Banking Operations",
+          "text": "Implementing and managing teller and banking operations."
+        },
+        {
+          "title": "Product Offering",
+          "text": "Introducing and offering banking products to clients."
+        },
+        {
+          "title": "Customer Service",
+          "text": "Providing effective and professional service to customers."
+        }
       ],
       "structure": "Students must accumulate a total of 52-67 credits. For Georgian speakers: 52 credits (9.5 months). For non-Georgian speakers: 67 credits (13.5 months).",
       "evaluation": "Credits are awarded based on the confirmation of learning outcomes (recognition or assessment). Formative and summative assessment systems are used.",
@@ -261,14 +460,39 @@
       "overview1": "The goal of the vocational educational program is to prepare personnel competitive in both local and international markets, capable of managing an organization's administrative functions.",
       "overview2": "The program covers document flow management, organization of procurement and supply, human resource issues planning, and business correspondence.",
       "careerText": "Administrative specialists can be employed in both public and private institutions as specialists in administrative structural units or as assistants to managers.",
-      "roles": ["Administrative Specialist", "Assistant Manager", "HR Assistant", "Document Flow Manager", "Procurement Specialist", "Office Manager"],
+      "roles": [
+        "Administrative Specialist",
+        "Assistant Manager",
+        "HR Assistant",
+        "Document Flow Manager",
+        "Procurement Specialist",
+        "Office Manager"
+      ],
       "curriculumItems": [
-        { "title": "Meeting Planning", "text": "Effective planning and management of organizational meetings and business trips." },
-        { "title": "Document Flow", "text": "Managing organizational document flow, including forms and requisites." },
-        { "title": "Procurement", "text": "Managing organizational procurement, supply, and logistics." },
-        { "title": "HR Management", "text": "Planning and coordinating personnel and human resource management issues." },
-        { "title": "Correspondence", "text": "Conducting business correspondence and preparing draft documents." },
-        { "title": "Archiving", "text": "Preparing and organizing organizational documents for the archive." }
+        {
+          "title": "Meeting Planning",
+          "text": "Effective planning and management of organizational meetings and business trips."
+        },
+        {
+          "title": "Document Flow",
+          "text": "Managing organizational document flow, including forms and requisites."
+        },
+        {
+          "title": "Procurement",
+          "text": "Managing organizational procurement, supply, and logistics."
+        },
+        {
+          "title": "HR Management",
+          "text": "Planning and coordinating personnel and human resource management issues."
+        },
+        {
+          "title": "Correspondence",
+          "text": "Conducting business correspondence and preparing draft documents."
+        },
+        {
+          "title": "Archiving",
+          "text": "Preparing and organizing organizational documents for the archive."
+        }
       ],
       "structure": "The program includes 14 professional and 6 general modules. For Georgian speakers: 70 credits (1 year). For non-Georgian speakers: 100 credits (1.6 years).",
       "evaluation": "Credits are awarded based on the confirmation of learning outcomes. Qualification requires accumulating defined credits and meeting legal requirements.",
@@ -349,7 +573,9 @@
     "downloadBrochure": "Download Brochure",
     "facts": {
       "duration": "Duration",
-      "credits": "Credits",      "prerequisite": "Prerequisite",      "startDate": "Next Start Date",
+      "credits": "Credits",
+      "prerequisite": "Prerequisite",
+      "startDate": "Next Start Date",
       "tuition": "Tuition"
     },
     "departments": {
@@ -383,5 +609,70 @@
   "teachers": {
     "subtitle": "Meet our professional teachers.",
     "comingSoon": "Coming Soon"
+  },
+  "missionPage": {
+    "heroTitle": "Mission, Vision & Values",
+    "heroSubtitle": "The founding principles, strategic goals, and development vision of College Ilia.",
+    "missionTitle": "Mission",
+    "missionP1": "LLC Ilia – Ilia Chavchavadze Community College of Sagarejo is a multi-profile professional educational institution whose mission is to prepare competitive and highly qualified personnel tailored to the requirements of the local and national labor market, thereby promoting the country's economic development, increasing social inclusion, and advancing individual professional growth.",
+    "missionP2": "The college aims to increase access to professional education and promote lifelong learning. It creates an inclusive, innovative, and student-centered educational environment directed at developing students' independent, entrepreneurial, and creative skills. The college's activities are based on close cooperation with the private sector and continuous improvement of compliance with modern standards of professional education.",
+    "visionTitle": "Vision",
+    "visionP1": "The vision of LLC Ilia – Ilia Chavchavadze Community College of Sagarejo is to become, within the next seven years, a multidisciplinary educational center that successfully implements professional programs of all levels across a wide range of professions tailored to the requirements of the labor market.",
+    "visionP2": "The college aims to become an example of quality professional education, innovative approaches, and collaborative culture in the region – recognized as an inspiring and desirable educational space for professional futures.",
+    "valuesTitle": "Values",
+    "valuesIntro": "The activities of LLC Ilia – Ilia Chavchavadze Community College of Sagarejo are based on values that reflect the professional ethics, vision, and culture of interaction of the college's team.",
+    "valuesList": {
+      "teamwork": "Teamwork – Collaboration, sharing experience, and joint focus on common goals;",
+      "professionalism": "Professionalism – Orientation towards high-quality, ethical and competent performance;",
+      "dedication": "Dedication – Sense of responsibility, motivation, and loyalty to the college's mission and student success;",
+      "innovation": "Innovation Support – Readiness to introduce modern approaches and technologies into the educational process;",
+      "equality": "Equality and Mutual Respect – Creating equal opportunities for all, maintaining a solidary and dignified environment."
+    }
+  },
+  "structurePage": {
+    "title": "Structure",
+    "subtitle": "The organizational structure of College Ilia.",
+    "openInDrive": "Open in Google Drive"
+  },
+  "authorizationPage": {
+    "title": "Authorization Decision",
+    "subtitle": "Documents related to the college's authorization.",
+    "infoNote": "Below are the authorization decision documents. Use the button below to open the folder directly in Google Drive.",
+    "openInDrive": "Open in Google Drive"
+  },
+  "partnersPage": {
+    "heroTitle": "Partners",
+    "heroSubtitle": "The strategic partners and collaborating organizations of College Ilia.",
+    "sectionLabel": "Our Partners",
+    "sectionTitle": "Trusted Partners",
+    "sectionDesc": "We collaborate with local and international organizations that support the professional development of our students.",
+    "ctaTitle": "Become Our Partner",
+    "ctaDesc": "Interested in collaborating with College Ilia? Get in touch with us.",
+    "ctaButton": "Contact Us"
+  },
+  "strategic": {
+    "comingSoon": "Coming Soon",
+    "comingSoonDesc": "This document will be available soon. Please check back later.",
+    "openInDrive": "Open in Google Drive",
+    "actionPlans": {
+      "title": "Action Plans",
+      "subtitle": "The college's strategic action plans.",
+      "doc1": "2025-2026 Action Plan",
+      "doc2": "2023-2025 Action Plan"
+    },
+    "actionReports": {
+      "title": "Action Plan Reports",
+      "subtitle": "Reports on the fulfillment of action plans.",
+      "doc1": "Action Plan Report 2024-2025",
+      "doc2": "Action Plan Report 2023-2024"
+    },
+    "financialIndicators": {
+      "title": "Financial Indicators",
+      "subtitle": "The college's financial indicators and reports."
+    },
+    "strategicPlan": {
+      "title": "Strategic Development Plan",
+      "subtitle": "The long-term strategic development plan of College Ilia."
+    }
   }
 }

@@ -24,6 +24,18 @@ const Admin = lazy(() => import('./pages/Admin'));
 const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
 const Teachers = lazy(() => import('./pages/Teachers'));
 
+// About sub-pages
+const MissionValues = lazy(() => import('./pages/MissionValues'));
+const Structure = lazy(() => import('./pages/Structure'));
+const Authorization = lazy(() => import('./pages/Authorization'));
+const Partners = lazy(() => import('./pages/Partners'));
+
+// Strategic sub-pages
+const ActionPlans = lazy(() => import('./pages/strategic/ActionPlans'));
+const ActionReports = lazy(() => import('./pages/strategic/ActionReports'));
+const FinancialIndicators = lazy(() => import('./pages/strategic/FinancialIndicators'));
+const StrategicPlan = lazy(() => import('./pages/strategic/StrategicPlan'));
+
 const LoadingFallback = () => (
   <div className="flex h-[60vh] w-full items-center justify-center">
     <div className="h-10 w-10 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
@@ -41,6 +53,14 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/about/mission" element={<MissionValues />} />
+              <Route path="/about/structure" element={<Structure />} />
+              <Route path="/about/authorization" element={<Authorization />} />
+              <Route path="/about/partners" element={<Partners />} />
+              <Route path="/about/strategic/action-plans" element={<ActionPlans />} />
+              <Route path="/about/strategic/action-reports" element={<ActionReports />} />
+              <Route path="/about/strategic/financial" element={<FinancialIndicators />} />
+              <Route path="/about/strategic/plan" element={<StrategicPlan />} />
               <Route path="/programs" element={<Programs />} />
               <Route path="/programs/information-technology" element={<InformationTechnology />} />
               <Route path="/programs/pharmacy" element={<Pharmacy />} />
