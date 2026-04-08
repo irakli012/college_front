@@ -37,7 +37,13 @@
     "readyToStart": "Ready to start your journey?",
     "newsletterSubtitle": "Get notified about upcoming enrollment dates and scholarships.",
     "emailPlaceholder": "Enter your email",
-    "subscribe": "Subscribe"
+    "subscribe": "Subscribe",
+    "quickLinks": {
+      "studentPortal": "Student Portal",
+      "admissions": "Admissions",
+      "academicCalendar": "Academic Calendar",
+      "campusMap": "Campus Map"
+    }
   },
   "about": {
     "heroTitle": "LLC Ilia - Sagarejo Community College",

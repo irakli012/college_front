@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 md:px-10 py-3 sticky top-0 z-50">
-      <div className="flex items-center gap-4 lg:gap-8">
+      <div className="flex items-center gap-0 md:gap-4 lg:gap-8">
         <button
           onClick={() => setIsMenuOpen(true)}
           className="flex md:hidden items-center justify-center p-2 text-[#111318] dark:text-white"
@@ -107,8 +107,8 @@ const Navbar: React.FC = () => {
           <span className="material-symbols-outlined">menu</span>
         </button>
 
-        <Link to="/" className="flex items-center gap-2 lg:gap-4 text-[#111318] dark:text-white">
-          <span className="material-symbols-outlined text-primary text-3xl">school</span>
+        <Link to="/" className="flex items-center gap-2 lg:gap-1 text-[#111318] dark:text-white">
+          <img src="https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png" alt="Logo" className="h-12 w-auto rounded-md" />
           <h2 className="text-base lg:text-lg font-bold leading-tight tracking-[-0.015em]">{t('collegeName')}</h2>
         </Link>
 
@@ -214,8 +214,8 @@ const Navbar: React.FC = () => {
         >
           <div className="flex flex-col h-full">
             <div className="flex items-center justify-between p-6 border-b border-[#f0f2f4] dark:border-[#2a303c]">
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-3xl">school</span>
+              <div className="flex items-center gap-2">
+                <img src="https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png" alt="Logo" className="h-12 w-auto rounded-md" />
                 <span className="font-bold dark:text-white">{t('collegeName')}</span>
               </div>
               <button onClick={() => setIsMenuOpen(false)} className="p-2 dark:text-white">
@@ -224,8 +224,19 @@ const Navbar: React.FC = () => {
             </div>
 
             <nav className="flex flex-col p-4 gap-1 overflow-y-auto flex-1">
+              {/* Mobile Apply Now Button */}
+              <Link
+                to="/register"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center justify-center gap-2 p-3 mb-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-all shadow-md active:scale-95"
+              >
+                <span className="material-symbols-outlined text-xl">app_registration</span>
+                <span className="font-bold text-sm">{t('home.applyNow')}</span>
+              </Link>
+
               <Link
                 to="/"
+                onClick={() => setIsMenuOpen(false)}
                 className={`flex items-center gap-3 p-3 rounded-lg transition-all ${isActive('/') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
               >
                 <span className="material-symbols-outlined text-xl shrink-0">home</span>
@@ -362,7 +373,7 @@ const Navbar: React.FC = () => {
             <div className="text-[#616f89] flex border-none bg-[#f0f2f4] dark:bg-[#2a303c] items-center justify-center pl-4">
               <span className="material-symbols-outlined text-xl">search</span>
             </div>
-            <input className="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f2f4] dark:bg-[#2a303c] focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-base font-normal leading-normal" placeholder="Search Programs" />
+            <input className="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f2f4] dark:bg-[#2a303c] focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-base font-normal leading-normal" placeholder="" />
           </div>
         </label>
 
@@ -381,7 +392,7 @@ const Navbar: React.FC = () => {
           <span className="material-symbols-outlined">{isDark ? 'light_mode' : 'dark_mode'}</span>
         </button>
 
-        <Link to="/register" className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-xs lg:text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
+        <Link to="/register" className="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-xs lg:text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
           {t('home.applyNow')}
         </Link>
       </div>

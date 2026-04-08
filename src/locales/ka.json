@@ -37,7 +37,13 @@
     "readyToStart": "მზად ხარ სწავლის დასაწყებად?",
     "newsletterSubtitle": "მიიღეთ სიახლეები რეგისტრაციისა და სტიპენდიების შესახებ.",
     "emailPlaceholder": "შეიყვანეთ ელ-ფოსტა",
-    "subscribe": "გამოწერა"
+    "subscribe": "გამოწერა",
+    "quickLinks": {
+      "studentPortal": "სტუდენტური პორტალი",
+      "admissions": "მიღება",
+      "academicCalendar": "აკადემიური კალენდარი",
+      "campusMap": "კამპუსის რუკა"
+    }
   },
   "about": {
     "heroTitle": "შპს ილია - ილია ჭავჭავაძის ქ.საგარეჯოს საზოგადოებრივი კოლეჯი",

@@ -21,8 +21,8 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="mt-8">
         <div className="relative overflow-hidden rounded-xl h-[500px] sm:h-[520px]">
-          <div 
-            className="absolute inset-0 bg-cover bg-center" 
+          <div
+            className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600")'
             }}
@@ -56,10 +56,10 @@ const Home: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icon: 'person', label: 'Student Portal', link: '#', isExternal: true },
-            { icon: 'school', label: 'Admissions', link: '/register', isExternal: false },
-            { icon: 'calendar_today', label: 'Academic Calendar', link: '#', isExternal: true },
-            { icon: 'map', label: 'Campus Map', link: '/contact', isExternal: false }
+            { icon: 'person', label: t('home.quickLinks.studentPortal'), link: '#', isExternal: true },
+            { icon: 'school', label: t('home.quickLinks.admissions'), link: '/register', isExternal: false },
+            { icon: 'calendar_today', label: t('home.quickLinks.academicCalendar'), link: '#', isExternal: true },
+            { icon: 'map', label: t('home.quickLinks.campusMap'), link: '/contact', isExternal: false }
           ].map((item, idx) => (
             item.isExternal ? (
               <a key={idx} href={item.link} className="group flex items-center gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1e2433] hover:border-primary/50 hover:shadow-lg transition-all">
@@ -90,13 +90,13 @@ const Home: React.FC = () => {
             </div>
             <div className="flex items-center gap-4">
               <div className="hidden md:flex gap-2">
-                <button 
+                <button
                   onClick={() => scroll('left')}
                   className="w-12 h-12 rounded-full border border-[#dbdfe6] dark:border-[#2a303c] flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm"
                 >
                   <span className="material-symbols-outlined">chevron_left</span>
                 </button>
-                <button 
+                <button
                   onClick={() => scroll('right')}
                   className="w-12 h-12 rounded-full border border-[#dbdfe6] dark:border-[#2a303c] flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm"
                 >
@@ -111,15 +111,15 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div 
+        <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar px-2 scroll-smooth"
         >
           {PROGRAMS.map((prog) => (
             <div key={prog.id} className="flex-none w-[300px] sm:w-[350px] snap-start">
               <div className="flex flex-col h-full rounded-[2rem] overflow-hidden bg-white dark:bg-[#1e2433] border border-[#dbdfe6] dark:border-[#2a303c] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(19,91,236,0.15)] group relative">
-                <div 
-                  className="h-64 bg-cover bg-center relative transition-transform duration-700 group-hover:scale-105" 
+                <div
+                  className="h-64 bg-cover bg-center relative transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url("${prog.image}")` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -159,12 +159,12 @@ const Home: React.FC = () => {
         <div className="bg-primary rounded-[2.5rem] p-8 sm:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden relative">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 size-[400px] bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 size-[400px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
-          
+
           <div className="text-white text-center lg:text-left relative z-10 max-w-xl">
             <h2 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight leading-tight">{t('home.readyToStart')}</h2>
             <p className="text-white/80 text-lg sm:text-xl font-medium">{t('home.newsletterSubtitle')}</p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-4 relative z-10">
             <Link to="/register" className="bg-white text-primary font-black px-10 py-5 rounded-2xl hover:bg-gray-100 transition-all text-center shadow-xl shadow-black/10 active:scale-95">
               {t('home.applyNow')}
