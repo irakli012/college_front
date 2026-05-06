@@ -118,7 +118,12 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* About Dropdown */}
-          <div ref={aboutRef} className="relative">
+          <div
+            ref={aboutRef}
+            className="relative"
+            onMouseEnter={() => setIsAboutOpen(true)}
+            onMouseLeave={() => { setIsAboutOpen(false); setIsStrategicOpen(false); }}
+          >
             <button
               onClick={() => { setIsAboutOpen(!isAboutOpen); setIsStrategicOpen(false); }}
               className={`flex items-center gap-1 text-sm leading-normal transition-colors ${isAboutActive() ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}
@@ -127,7 +132,7 @@ const Navbar: React.FC = () => {
               <span className={`material-symbols-outlined text-base transition-transform ${isAboutOpen ? 'rotate-180' : ''}`}>expand_more</span>
             </button>
             {isAboutOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 lg:w-96 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2 z-50">
+              <div className="absolute top-full left-0 mt-2 w-80 lg:w-96 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2 z-50 before:absolute before:content-[''] before:-top-2 before:left-0 before:w-full before:h-2">
                 {aboutItems.map((item) => (
                   <Link
                     key={item.to}
@@ -140,7 +145,11 @@ const Navbar: React.FC = () => {
                 ))}
 
                 {/* Strategic sub-dropdown */}
-                <div className="relative">
+                <div
+                  className="relative"
+                  onMouseEnter={() => setIsStrategicOpen(true)}
+                  onMouseLeave={() => setIsStrategicOpen(false)}
+                >
                   <button
                     onClick={(e) => { e.stopPropagation(); setIsStrategicOpen(!isStrategicOpen); }}
                     className={`flex items-center justify-between w-full px-4 py-3 text-sm transition-colors ${location.pathname.startsWith('/about/strategic') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}
@@ -171,7 +180,12 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Learn Dropdown */}
-          <div ref={learnRef} className="relative">
+          <div
+            ref={learnRef}
+            className="relative"
+            onMouseEnter={() => setIsLearnOpen(true)}
+            onMouseLeave={() => setIsLearnOpen(false)}
+          >
             <button
               onClick={() => setIsLearnOpen(!isLearnOpen)}
               className={`flex items-center gap-1 text-sm leading-normal transition-colors ${isLearnActive() ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}
@@ -180,7 +194,7 @@ const Navbar: React.FC = () => {
               <span className={`material-symbols-outlined text-base transition-transform ${isLearnOpen ? 'rotate-180' : ''}`}>expand_more</span>
             </button>
             {isLearnOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 lg:w-96 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2 z-50">
+              <div className="absolute top-full left-0 mt-2 w-80 lg:w-96 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2 z-50 before:absolute before:content-[''] before:-top-2 before:left-0 before:w-full before:h-2">
                 <Link to="/programs" className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive('/programs') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
                   <span className="material-symbols-outlined text-lg shrink-0">list_alt</span>
                   <span className="flex-1">{t('nav.programs')}</span>
