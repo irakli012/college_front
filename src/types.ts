@@ -16,6 +16,7 @@ export interface NewsItem {
   datetime: string; // ISO 8601 format for sorting and machine readability
   readTime?: string;
   image?: string;
+  images?: string[];
 }
 
 export interface Book {
