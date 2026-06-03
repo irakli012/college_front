@@ -6,7 +6,7 @@
 
 @theme {
   --color-primary: #135bec;
-  --color-background-light: #f6f6f8;
+  --color-background-light: #eaedf3;
   --color-background-dark: #101622;
 
   --font-display: "Lexend", "Noto Sans", sans-serif;
@@ -25,6 +25,7 @@
 }
 
 @layer components {
+
   /* 1. Icon Loading Guard - prevents text flash */
   .material-symbols-outlined {
     visibility: hidden;
@@ -35,7 +36,7 @@
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
   }
-  
+
   .fonts-loaded .material-symbols-outlined {
     visibility: visible;
   }
@@ -45,24 +46,28 @@
     column-count: 3;
     column-gap: 1.5rem;
   }
-  
+
   @media (max-width: 1024px) {
-    .masonry-grid { column-count: 2; }
+    .masonry-grid {
+      column-count: 2;
+    }
   }
-  
+
   @media (max-width: 640px) {
-    .masonry-grid { column-count: 1; }
+    .masonry-grid {
+      column-count: 1;
+    }
   }
-  
+
   .masonry-item {
     break-inside: avoid;
     margin-bottom: 1.5rem;
   }
-  
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;

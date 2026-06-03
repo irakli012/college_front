@@ -132,48 +132,50 @@ const Navbar: React.FC = () => {
               <span className={`material-symbols-outlined text-base transition-transform ${isAboutOpen ? 'rotate-180' : ''}`}>expand_more</span>
             </button>
             {isAboutOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 lg:w-96 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2 z-50 before:absolute before:content-[''] before:-top-2 before:left-0 before:w-full before:h-2">
-                {aboutItems.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive(item.to) ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}
-                  >
-                    <span className="material-symbols-outlined text-lg shrink-0">{item.icon}</span>
-                    <span className="flex-1">{t(item.labelKey)}</span>
-                  </Link>
-                ))}
+              <div className="absolute top-full left-0 pt-2 w-80 lg:w-96 z-50">
+                <div className="flex flex-col gap-0.5 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2">
+                  {aboutItems.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className={`flex items-center gap-3 mx-2 px-4 py-3 text-sm rounded-lg transition-colors whitespace-normal ${isActive(item.to) ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}
+                    >
+                      <span className="material-symbols-outlined text-lg shrink-0">{item.icon}</span>
+                      <span className="flex-1">{t(item.labelKey)}</span>
+                    </Link>
+                  ))}
 
-                {/* Strategic sub-dropdown */}
-                <div
-                  className="relative"
-                  onMouseEnter={() => setIsStrategicOpen(true)}
-                  onMouseLeave={() => setIsStrategicOpen(false)}
-                >
-                  <button
-                    onClick={(e) => { e.stopPropagation(); setIsStrategicOpen(!isStrategicOpen); }}
-                    className={`flex items-center justify-between w-full px-4 py-3 text-sm transition-colors ${location.pathname.startsWith('/about/strategic') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}
+                  {/* Strategic sub-dropdown */}
+                  <div
+                    className="relative flex flex-col"
+                    onMouseEnter={() => setIsStrategicOpen(true)}
+                    onMouseLeave={() => setIsStrategicOpen(false)}
                   >
-                    <span className="flex items-center gap-3">
-                      <span className="material-symbols-outlined text-lg shrink-0">trending_up</span>
-                      <span>{t('nav.strategicLabel')}</span>
-                    </span>
-                    <span className={`material-symbols-outlined text-base transition-transform ${isStrategicOpen ? 'rotate-90' : ''}`}>chevron_right</span>
-                  </button>
-                  {isStrategicOpen && (
-                    <div className="bg-[#f8f9fb] dark:bg-[#111625] border-t border-[#f0f2f4] dark:border-[#2a303c]">
-                      {strategicItems.map((item) => (
-                        <Link
-                          key={item.to}
-                          to={item.to}
-                          className={`flex items-center gap-3 px-6 py-2.5 text-sm transition-colors whitespace-normal ${isActive(item.to) ? 'text-primary font-semibold' : 'text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-[#2a303c]'}`}
-                        >
-                          <span className="material-symbols-outlined text-base shrink-0">{item.icon}</span>
-                          <span className="flex-1">{t(item.labelKey)}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setIsStrategicOpen(!isStrategicOpen); }}
+                      className={`flex items-center justify-between mx-2 px-4 py-3 text-sm rounded-lg transition-colors ${location.pathname.startsWith('/about/strategic') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}
+                    >
+                      <span className="flex items-center gap-3">
+                        <span className="material-symbols-outlined text-lg shrink-0">trending_up</span>
+                        <span>{t('nav.strategicLabel')}</span>
+                      </span>
+                      <span className={`material-symbols-outlined text-base transition-transform ${isStrategicOpen ? 'rotate-90' : ''}`}>chevron_right</span>
+                    </button>
+                    {isStrategicOpen && (
+                      <div className="flex flex-col gap-0.5 bg-[#f8f9fb] dark:bg-[#111625] border border-[#f0f2f4] dark:border-[#2a303c] mx-2 mt-1 mb-1 rounded-lg overflow-hidden">
+                        {strategicItems.map((item) => (
+                          <Link
+                            key={item.to}
+                            to={item.to}
+                            className={`flex items-center gap-3 px-6 py-2.5 text-sm transition-colors whitespace-normal ${isActive(item.to) ? 'text-primary font-semibold' : 'text-gray-600 dark:text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-[#2a303c]'}`}
+                          >
+                            <span className="material-symbols-outlined text-base shrink-0">{item.icon}</span>
+                            <span className="flex-1">{t(item.labelKey)}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
@@ -194,19 +196,21 @@ const Navbar: React.FC = () => {
               <span className={`material-symbols-outlined text-base transition-transform ${isLearnOpen ? 'rotate-180' : ''}`}>expand_more</span>
             </button>
             {isLearnOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 lg:w-96 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2 z-50 before:absolute before:content-[''] before:-top-2 before:left-0 before:w-full before:h-2">
-                <Link to="/programs" className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive('/programs') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
-                  <span className="material-symbols-outlined text-lg shrink-0">list_alt</span>
-                  <span className="flex-1">{t('nav.programs')}</span>
-                </Link>
-                <Link to="/programs-catalog" className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive('/programs-catalog') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
-                  <span className="material-symbols-outlined text-lg shrink-0">menu_book</span>
-                  <span className="flex-1">{t('nav.programsCatalog')}</span>
-                </Link>
-                <Link to="/teachers" className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors whitespace-normal ${isActive('/teachers') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
-                  <span className="material-symbols-outlined text-lg shrink-0">groups</span>
-                  <span className="flex-1">{t('nav.teachers')}</span>
-                </Link>
+              <div className="absolute top-full left-0 pt-2 w-80 lg:w-96 z-50">
+                <div className="flex flex-col gap-0.5 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2">
+                  <Link to="/programs" className={`flex items-center gap-3 mx-2 px-4 py-3 text-sm rounded-lg transition-colors whitespace-normal ${isActive('/programs') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
+                    <span className="material-symbols-outlined text-lg shrink-0">list_alt</span>
+                    <span className="flex-1">{t('nav.programs')}</span>
+                  </Link>
+                  <Link to="/programs-catalog" className={`flex items-center gap-3 mx-2 px-4 py-3 text-sm rounded-lg transition-colors whitespace-normal ${isActive('/programs-catalog') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
+                    <span className="material-symbols-outlined text-lg shrink-0">menu_book</span>
+                    <span className="flex-1">{t('nav.programsCatalog')}</span>
+                  </Link>
+                  <Link to="/teachers" className={`flex items-center gap-3 mx-2 px-4 py-3 text-sm rounded-lg transition-colors whitespace-normal ${isActive('/teachers') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
+                    <span className="material-symbols-outlined text-lg shrink-0">groups</span>
+                    <span className="flex-1">{t('nav.teachers')}</span>
+                  </Link>
+                </div>
               </div>
             )}
           </div>
