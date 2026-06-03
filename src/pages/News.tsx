@@ -1,11 +1,20 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { NEWS } from '../constants';
 
 const News: React.FC = () => {
   const { t } = useTranslation();
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
+
+  const displayedNews = NEWS.slice(0, visibleCount);
+  const hasMore = visibleCount < NEWS.length;
+
   return (
     <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-8 flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-2">
@@ -30,8 +39,8 @@ const News: React.FC = () => {
               <div className="text-[#616f89] dark:text-gray-400 flex items-center justify-center pl-4">
                 <span className="material-symbols-outlined">search</span>
               </div>
-              <input 
-                className="w-full bg-transparent border-none text-[#111318] dark:text-white focus:ring-0 px-4 placeholder:text-[#616f89]" 
+              <input
+                className="w-full bg-transparent border-none text-[#111318] dark:text-white focus:ring-0 px-4 placeholder:text-[#616f89]"
                 placeholder={t('news.searchPlaceholder')}
               />
             </div>
@@ -40,36 +49,35 @@ const News: React.FC = () => {
         </div>
       </div>
 
-      <div className="masonry-grid mt-4">
-        {NEWS.map((item) => (
-          <Link key={item.id} to={`/news/${item.slug}`} className="masonry-item">
-            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-[#f0f2f4] dark:border-gray-800 group cursor-pointer hover:shadow-xl transition-all">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+        {displayedNews.map((item) => (
+          <Link key={item.id} to={`/news/${item.slug}`} className="flex flex-col h-full">
+            <div className="flex flex-col h-full bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-[#f0f2f4] dark:border-gray-800 group cursor-pointer hover:shadow-xl transition-all">
               {item.image && (
-                <div className="relative h-64 overflow-hidden">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" 
+                <div className="relative h-64 overflow-hidden shrink-0">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                     style={{ backgroundImage: `url("${item.image}")` }}
                   ></div>
-                  <div className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${
-                    item.category === 'Achievement' ? 'bg-primary' : item.category === 'Event' ? 'bg-orange-500' : 'bg-purple-600'
-                  }`}>
+                  <div className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${item.category === 'Achievement' ? 'bg-primary' : item.category === 'Event' ? 'bg-orange-500' : 'bg-purple-600'
+                    }`}>
                     {t(`news.items.${item.id}.category`)}
                   </div>
                 </div>
               )}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center gap-2 text-[#616f89] dark:text-gray-400 text-xs font-semibold mb-3">
                   <span className="material-symbols-outlined text-sm">calendar_today</span>
                   {t(`news.items.${item.id}.date`)}
                   {item.readTime && <span className="mx-1">• {item.readTime}</span>}
                 </div>
-                <h3 className="text-xl font-bold text-[#111318] dark:text-white mb-3 leading-tight group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-[#111318] dark:text-white mb-3 leading-tight group-hover:text-primary transition-colors line-clamp-2">
                   {t(`news.items.${item.id}.title`)}
                 </h3>
-                <p className="line-clamp-3 text-[#616f89] dark:text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="line-clamp-3 text-[#616f89] dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
                   {t(`news.items.${item.id}.description`)}
                 </p>
-                <div className="flex items-center text-primary font-bold text-sm">
+                <div className="flex items-center text-primary font-bold text-sm mt-auto">
                   {t('news.readMore')} <span className="material-symbols-outlined ml-1 text-base">arrow_forward</span>
                 </div>
               </div>
@@ -78,11 +86,16 @@ const News: React.FC = () => {
         ))}
       </div>
 
-      <div className="flex justify-center py-10">
-        <button className="flex items-center gap-2 px-8 py-3 bg-white dark:bg-gray-900 border border-[#f0f2f4] dark:border-gray-800 rounded-lg text-primary font-bold hover:bg-[#f0f2f4] dark:hover:bg-gray-800 transition-all">
-          {t('news.loadMore')} <span className="material-symbols-outlined">expand_more</span>
-        </button>
-      </div>
+      {hasMore && (
+        <div className="flex justify-center py-10">
+          <button
+            onClick={handleLoadMore}
+            className="flex items-center gap-2 px-8 py-3 bg-white dark:bg-gray-900 border border-[#f0f2f4] dark:border-gray-800 rounded-lg text-primary font-bold hover:bg-[#f0f2f4] dark:hover:bg-gray-800 transition-all"
+          >
+            {t('news.loadMore')} <span className="material-symbols-outlined">expand_more</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

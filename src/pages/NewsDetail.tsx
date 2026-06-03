@@ -79,6 +79,16 @@ const NewsDetail: React.FC = () => {
           </p>
         </div>
 
+        {newsItem.images && newsItem.images.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            {newsItem.images.map((img, idx) => (
+              <div key={idx} className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-[#f0f2f4] dark:border-gray-800">
+                <img src={img} alt={`${title} image ${idx + 1}`} className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="mt-12 pt-8 border-t border-[#f0f2f4] dark:border-gray-800 flex justify-between items-center">
           <button 
             onClick={() => navigate(-1)}
