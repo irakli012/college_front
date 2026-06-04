@@ -160,6 +160,39 @@ export const NEWS: NewsItem[] = [
       'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/565711065_834911815781907_936458716254517926_n.jpg',
       'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/565749456_834912192448536_1477898766653927122_n.jpg'
     ]
+  },
+  {
+    id: '9',
+    slug: 'college-25th-anniversary-2025',
+    category: 'Achievement',
+    datetime: '2025-11-25',
+    readTime: '3 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/586363826_866014659338289_4177925537430529593_n.jpg',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/588488255_866010592672029_5402399351846453242_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/588435711_866011019338653_190348047142990683_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/588467911_866012939338461_3510544305750106630_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/588664207_866010909338664_5898751201024582876_n.jpg'
+    ]
+  },
+  {
+    id: '10',
+    slug: 'fao-georgia-cream-cheese-technology-workshop-2025',
+    category: 'Event',
+    datetime: '2025-10-22',
+    readTime: '2 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/570588817_839950471944708_6036503938012402327_n.jpg'
+  },
+  {
+    id: '11',
+    slug: 'ideathon-kakheti-innovation-workshop-2025',
+    category: 'Event',
+    datetime: '2025-10-21',
+    readTime: '2 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/568952245_839941611945594_6741043971588565868_n.jpg',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/571217462_839941545278934_5667220124981597240_n.jpg'
+    ]
   }
 ];
 
