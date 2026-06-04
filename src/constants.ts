@@ -215,7 +215,8 @@ export const NEWS: NewsItem[] = [
     slug: 'master-teacher-2025-award',
     category: 'Achievement',
     datetime: '2025-12-21',
-    readTime: '2 min read'
+    readTime: '2 min read',
+    image: '/master_teacher_award.png'
   },
   {
     id: '14',
