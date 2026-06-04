@@ -77,7 +77,8 @@ const Navbar: React.FC = () => {
 
   const toggleTheme = () => setIsDark(!isDark);
   const toggleLanguage = () => {
-    const nextLang = i18n.language === 'en' ? 'ka' : 'en';
+    const isEn = i18n.language?.startsWith('en');
+    const nextLang = isEn ? 'ka' : 'en';
     i18n.changeLanguage(nextLang);
   };
 
@@ -366,9 +367,9 @@ const Navbar: React.FC = () => {
               >
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-gray-600 dark:text-gray-400">language</span>
-                  <span className="text-sm font-medium dark:text-white">{i18n.language === 'en' ? 'English' : 'ქართული'}</span>
+                  <span className="text-sm font-medium dark:text-white">{i18n.language?.startsWith('en') ? 'English' : 'ქართული'}</span>
                 </div>
-                <span className="text-xs font-bold text-primary">{i18n.language === 'en' ? 'KA' : 'EN'}</span>
+                <span className="text-xs font-bold text-primary">{i18n.language?.startsWith('en') ? 'KA' : 'EN'}</span>
               </button>
 
               <button
@@ -399,7 +400,7 @@ const Navbar: React.FC = () => {
           onClick={toggleLanguage}
           className="hidden md:flex items-center justify-center px-3 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-[#111318] dark:text-gray-300 text-xs font-bold uppercase"
         >
-          {i18n.language === 'en' ? 'KA' : 'EN'}
+          {i18n.language?.startsWith('en') ? 'KA' : 'EN'}
         </button>
 
         <button
