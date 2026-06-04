@@ -193,6 +193,41 @@ export const NEWS: NewsItem[] = [
     images: [
       'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/571217462_839941545278934_5667220124981597240_n.jpg'
     ]
+  },
+  {
+    id: '12',
+    slug: 'college-25th-anniversary-celebration-2025',
+    category: 'Achievement',
+    datetime: '2025-12-25',
+    readTime: '3 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+27%2C+2025/607722011_888631803743241_3441297248034004220_n.jpg',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+27%2C+2025/606478133_888631667076588_8854138052253068173_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+27%2C+2025/605541947_888614943744927_7330877882954073070_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+27%2C+2025/605535416_888614857078269_4582086590945182698_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+27%2C+2025/605149764_888614810411607_7931354864177991140_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+27%2C+2025/605143367_888614990411589_1193617098838417232_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+27%2C+2025/602326939_888615020411586_5040667179383353062_n.jpg'
+    ]
+  },
+  {
+    id: '13',
+    slug: 'master-teacher-2025-award',
+    category: 'Achievement',
+    datetime: '2025-12-21',
+    readTime: '2 min read'
+  },
+  {
+    id: '14',
+    slug: 'cybersecurity-and-ai-workshop-2025',
+    category: 'Event',
+    datetime: '2025-12-02',
+    readTime: '3 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+3%2C+2025/593498750_872069308732824_1845621893953009951_n.jpg',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+3%2C+2025/592717845_872069165399505_9138886190633081318_n.jpg',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+3%2C+2025/594504818_872069215399500_6575535273688668433_n.jpg'
+    ]
   }
 ];
 
