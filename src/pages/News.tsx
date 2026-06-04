@@ -12,8 +12,9 @@ const News: React.FC = () => {
     setVisibleCount((prev) => prev + 6);
   };
 
-  const displayedNews = NEWS.slice(0, visibleCount);
-  const hasMore = visibleCount < NEWS.length;
+  const sortedNews = [...NEWS].sort((a, b) => b.datetime.localeCompare(a.datetime));
+  const displayedNews = sortedNews.slice(0, visibleCount);
+  const hasMore = visibleCount < sortedNews.length;
 
   return (
     <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-8 flex flex-col gap-6">

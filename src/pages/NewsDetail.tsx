@@ -113,7 +113,11 @@ const NewsDetail: React.FC = () => {
       <div className="mt-20">
         <h3 className="text-2xl font-bold dark:text-white mb-8">Related News</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {NEWS.filter(item => item.slug !== slug).slice(0, 2).map(item => (
+          {[...NEWS]
+            .filter(item => item.slug !== slug)
+            .sort((a, b) => b.datetime.localeCompare(a.datetime))
+            .slice(0, 2)
+            .map(item => (
             <Link key={item.id} to={`/news/${item.slug}`} className="group h-full">
               <div className="flex flex-col h-full bg-white dark:bg-gray-900 border border-[#f0f2f4] dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-md transition-all">
                 {item.image && (
