@@ -27,6 +27,8 @@ export interface Book {
   image: string;
   badge?: string;
   year?: string;
+  viewUrl?: string;
+  downloadUrl?: string;
 }
 
 export interface TeamMember {

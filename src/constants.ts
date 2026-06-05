@@ -235,26 +235,52 @@ export const NEWS: NewsItem[] = [
 export const BOOKS: Book[] = [
   {
     id: '1',
-    title: 'Clinical Pharmacology: Core Concepts',
-    author: 'Dr. Michael Rosenbaum',
+    title: 'Pharmacy Resources Collection',
+    author: 'College Ilia Library',
     category: 'Pharmacy',
     image: 'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?auto=format&fit=crop&q=80&w=400',
-    badge: 'Updated 2023'
+    badge: '15+ Books',
+    year: '2025',
+    viewUrl: 'https://drive.google.com/drive/folders/1jcd3RbwhpGYrJPJF3aQz0vzxV0Xb6X_h',
+    downloadUrl: 'https://drive.google.com/drive/folders/1jcd3RbwhpGYrJPJF3aQz0vzxV0Xb6X_h'
   },
   {
     id: '2',
-    title: 'Advanced Drug Delivery Systems',
-    author: 'Elena Kostas, PhD',
-    category: 'Biological Sciences',
-    image: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=400',
-    badge: 'Bestseller'
+    title: 'Early Childhood Education Library',
+    author: 'College Ilia Library',
+    category: 'Early Childhood Education',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=400',
+    badge: 'Updated',
+    year: '2025',
+    viewUrl: 'https://drive.google.com/drive/folders/1CfNHeS10SLU12uA1NT5yd6EdBjrm06M6',
+    downloadUrl: 'https://drive.google.com/drive/folders/1CfNHeS10SLU12uA1NT5yd6EdBjrm06M6'
   },
   {
     id: '3',
-    title: 'Pharmacy Practice & Management',
-    author: 'Robert L. Henderson',
-    category: 'Management',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400'
+    title: 'IT & Computer Science Materials',
+    author: 'College Ilia Library',
+    category: 'Information Technology',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=400',
+    badge: 'Resources',
+    year: '2025',
+    viewUrl: 'https://drive.google.com/drive/folders/1MIWsL3jE5311PwDVgfjCztuDKIhXis6p',
+    downloadUrl: 'https://drive.google.com/drive/folders/1MIWsL3jE5311PwDVgfjCztuDKIhXis6p'
+  },
+  {
+    id: '4',
+    title: 'Veterinary Medicine Archives',
+    author: 'College Ilia Library',
+    category: 'Veterinary Medicine',
+    image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400',
+    badge: 'Coming Soon'
+  },
+  {
+    id: '5',
+    title: 'Financial Services & Business',
+    author: 'College Ilia Library',
+    category: 'Financial Services',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400',
+    badge: 'Coming Soon'
   }
 ];
 

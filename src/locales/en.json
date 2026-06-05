@@ -740,7 +740,58 @@
     },
     "strategicPlan": {
       "title": "Strategic Development Plan",
-      "subtitle": "The long-term strategic development plan of College Ilia."
+      "subtitle": "College Ilia's long-term strategic development plan."
+    }
+  },
+  "library": {
+    "pageTitle": "Digital Library",
+    "home": "Home",
+    "categoriesTitle": "Program Categories",
+    "categoriesSubtitle": "Browse resources by department",
+    "categories": {
+      "All": "All Resources",
+      "Pharmacy": "Pharmacy",
+      "Early Childhood Education": "Early Childhood Education",
+      "Information Technology": "Information Technology",
+      "Veterinary Medicine": "Veterinary Medicine",
+      "Financial Services": "Financial Services"
+    },
+    "heroTitle": "Academic Resources",
+    "heroSubtitle": "Access textbooks, clinical journals, and academic papers directly from our Google Drive collections.",
+    "searchPlaceholder": "Search by title, author, or category...",
+    "sortByNewest": "Sort by: Newest",
+    "sortAlphabetical": "Alphabetical",
+    "noResourcesTitle": "No resources found",
+    "noResourcesSubtitle": "Try adjusting your search or selecting a different category.",
+    "openFolder": "Open Folder",
+    "comingSoon": "Coming Soon",
+    "badges": {
+      "15+ Books": "15+ Books",
+      "Updated": "Updated",
+      "Resources": "Resources",
+      "Coming Soon": "Coming Soon"
+    },
+    "books": {
+      "1": {
+        "title": "Pharmacy Resources Collection",
+        "author": "College Ilia Library"
+      },
+      "2": {
+        "title": "Early Childhood Education Library",
+        "author": "College Ilia Library"
+      },
+      "3": {
+        "title": "IT & Computer Science Materials",
+        "author": "College Ilia Library"
+      },
+      "4": {
+        "title": "Veterinary Medicine Archives",
+        "author": "College Ilia Library"
+      },
+      "5": {
+        "title": "Financial Services & Business",
+        "author": "College Ilia Library"
+      }
     }
   }
 }
