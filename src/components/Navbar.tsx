@@ -1,7 +1,8 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { PROGRAMS, NEWS, BOOKS, GALLERY } from '../constants';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -13,6 +14,11 @@ const Navbar: React.FC = () => {
   const [isMobileLearnOpen, setIsMobileLearnOpen] = useState(false);
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
   const [isMobileStrategicOpen, setIsMobileStrategicOpen] = useState(false);
+  
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+  
   const learnRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
 
@@ -42,6 +48,9 @@ const Navbar: React.FC = () => {
       if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
         setIsAboutOpen(false);
         setIsStrategicOpen(false);
+      }
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setIsSearchOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -96,6 +105,42 @@ const Navbar: React.FC = () => {
     { to: '/about/authorization', labelKey: 'nav.authorization', icon: 'verified_user' },
     { to: '/about/partners', labelKey: 'nav.partners', icon: 'handshake' },
   ];
+
+  const PAGES = [
+    { to: '/', labelKey: 'nav.home', icon: 'home' },
+    { to: '/about', labelKey: 'nav.aboutUs', icon: 'info' },
+    { to: '/programs', labelKey: 'nav.programs', icon: 'list_alt' },
+    { to: '/programs-catalog', labelKey: 'nav.programsCatalog', icon: 'menu_book' },
+    { to: '/teachers', labelKey: 'nav.teachers', icon: 'groups' },
+    { to: '/news', labelKey: 'nav.news', icon: 'newspaper' },
+    { to: '/gallery', labelKey: 'nav.gallery', icon: 'photo_library' },
+    { to: '/library', labelKey: 'nav.library', icon: 'menu_book' },
+    { to: '/contact', labelKey: 'contact.title', icon: 'call' }
+  ];
+
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return null;
+    const q = searchQuery.toLowerCase();
+    
+    const results = {
+      pages: PAGES.filter(p => t(p.labelKey).toLowerCase().includes(q)),
+      programs: PROGRAMS.filter(p => 
+        t(`programs.${p.slug}.title`, { defaultValue: p.title }).toLowerCase().includes(q) ||
+        t(`programs.${p.slug}.description`, { defaultValue: p.description }).toLowerCase().includes(q)
+      ),
+      news: NEWS.filter(n => 
+        t(`news.items.${n.id}.title`, { defaultValue: n.title }).toLowerCase().includes(q)
+      ),
+      library: BOOKS.filter(b => 
+        t(`library.books.${b.id}.title`, { defaultValue: b.title }).toLowerCase().includes(q) ||
+        t(`library.books.${b.id}.author`, { defaultValue: b.author }).toLowerCase().includes(q)
+      ),
+      gallery: GALLERY.filter(g => g.title.toLowerCase().includes(q))
+    };
+    
+    const total = results.pages.length + results.programs.length + results.news.length + results.library.length + results.gallery.length;
+    return { ...results, total };
+  }, [searchQuery, t]);
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 md:px-10 py-3 sticky top-0 z-50">
@@ -387,14 +432,107 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="flex flex-1 justify-end gap-2 lg:gap-4 items-center">
-        <label className="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
-          <div className="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
-            <div className="text-[#616f89] flex border-none bg-[#f0f2f4] dark:bg-[#2a303c] items-center justify-center pl-4">
-              <span className="material-symbols-outlined text-xl">search</span>
+        <div className="relative hidden lg:block" ref={searchRef}>
+          <label className="flex flex-col min-w-40 h-10 max-w-64 xl:max-w-xs">
+            <div className={`flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden transition-all ${isSearchOpen ? 'ring-2 ring-primary bg-white dark:bg-[#1a1f2e]' : 'bg-[#f0f2f4] dark:bg-[#2a303c]'}`}>
+              <div className="text-[#616f89] flex border-none items-center justify-center pl-4 bg-transparent">
+                <span className="material-symbols-outlined text-xl">search</span>
+              </div>
+              <input 
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setIsSearchOpen(true);
+                }}
+                onFocus={() => setIsSearchOpen(true)}
+                className="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-sm font-medium leading-normal" 
+                placeholder={t('search.placeholder', { defaultValue: 'Search...' })} 
+              />
+              {searchQuery && (
+                <button onClick={() => { setSearchQuery(''); setIsSearchOpen(false); }} className="flex items-center justify-center pr-3 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors">
+                  <span className="material-symbols-outlined text-sm">close</span>
+                </button>
+              )}
             </div>
-            <input className="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f2f4] dark:bg-[#2a303c] focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-base font-normal leading-normal" placeholder="" />
-          </div>
-        </label>
+          </label>
+          
+          {/* Dropdown */}
+          {isSearchOpen && searchQuery.trim() && searchResults && (
+            <div className="absolute top-full right-0 mt-3 w-96 max-h-[70vh] overflow-y-auto bg-white dark:bg-[#1a1f2e] border border-[#f0f2f4] dark:border-[#2a303c] rounded-xl shadow-2xl z-50 p-2 flex flex-col gap-2 custom-scrollbar">
+              {searchResults.total === 0 ? (
+                <div className="p-6 text-center flex flex-col items-center">
+                  <span className="material-symbols-outlined text-4xl text-gray-300 dark:text-gray-600 mb-2">search_off</span>
+                  <div className="text-[#111318] dark:text-white font-bold">{t('search.noResults', { defaultValue: 'No results found' })}</div>
+                  <div className="text-[#616f89] text-xs mt-1">{t('search.noResultsDesc', { defaultValue: 'Try adjusting your search keywords.' })}</div>
+                </div>
+              ) : (
+                <>
+                  {searchResults.pages.length > 0 && (
+                    <div>
+                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.pages', { defaultValue: 'Pages' })}</div>
+                      {searchResults.pages.map(p => (
+                        <Link key={p.to} to={p.to} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">{p.icon}</span>
+                          <span className="text-sm dark:text-white font-semibold">{t(p.labelKey)}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {searchResults.programs.length > 0 && (
+                    <div className="mt-1">
+                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.programs', { defaultValue: 'Programs' })}</div>
+                      {searchResults.programs.map(p => (
+                        <Link key={p.id} to={`/programs/${p.slug}`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">{p.icon}</span>
+                          <div className="flex flex-col flex-1 min-w-0">
+                            <span className="text-sm dark:text-white font-semibold line-clamp-1">{t(`programs.${p.slug}.title`, { defaultValue: p.title })}</span>
+                            <span className="text-[11px] text-[#616f89] dark:text-gray-500 line-clamp-1">{t(`programs.${p.slug}.description`, { defaultValue: p.description })}</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {searchResults.news.length > 0 && (
+                    <div className="mt-1">
+                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.news', { defaultValue: 'News' })}</div>
+                      {searchResults.news.map(n => (
+                        <Link key={n.id} to={`/news/${n.slug}`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">newspaper</span>
+                          <span className="text-sm dark:text-white font-semibold line-clamp-1 flex-1">{t(`news.items.${n.id}.title`, { defaultValue: n.title })}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {searchResults.library.length > 0 && (
+                    <div className="mt-1">
+                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.library', { defaultValue: 'Library' })}</div>
+                      {searchResults.library.map(b => (
+                        <Link key={b.id} to={`/library`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">menu_book</span>
+                          <div className="flex flex-col flex-1 min-w-0">
+                            <span className="text-sm dark:text-white font-semibold line-clamp-1">{t(`library.books.${b.id}.title`, { defaultValue: b.title })}</span>
+                            <span className="text-[11px] text-[#616f89] dark:text-gray-500 line-clamp-1">{t(`library.books.${b.id}.author`, { defaultValue: b.author })}</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {searchResults.gallery.length > 0 && (
+                    <div className="mt-1">
+                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.gallery', { defaultValue: 'Gallery' })}</div>
+                      {searchResults.gallery.map(g => (
+                        <Link key={g.id} to={`/gallery`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                          <img src={g.image} alt="" className="w-8 h-8 rounded border border-gray-200 dark:border-gray-700 object-cover shrink-0" />
+                          <span className="text-sm dark:text-white font-semibold line-clamp-1 flex-1">{g.title}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          )}
+        </div>
 
         <button
           onClick={toggleLanguage}

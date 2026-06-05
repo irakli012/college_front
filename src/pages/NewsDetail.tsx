@@ -18,8 +18,8 @@ const NewsDetail: React.FC = () => {
   if (!newsItem) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4">
-        <h2 className="text-2xl font-bold dark:text-white">News item not found</h2>
-        <Link to="/news" className="text-primary font-bold">Back to News</Link>
+        <h2 className="text-2xl font-bold dark:text-white">{t('news.notFound')}</h2>
+        <Link to="/news" className="text-primary font-bold">{t('news.backToNews')}</Link>
       </div>
     );
   }
@@ -95,7 +95,7 @@ const NewsDetail: React.FC = () => {
             className="flex items-center gap-2 text-primary font-bold hover:translate-x-[-4px] transition-transform"
           >
             <span className="material-symbols-outlined">arrow_back</span>
-            Back
+            {t('news.back')}
           </button>
           
           <div className="flex gap-4">
@@ -111,7 +111,7 @@ const NewsDetail: React.FC = () => {
 
       {/* Suggested News */}
       <div className="mt-20">
-        <h3 className="text-2xl font-bold dark:text-white mb-8">Related News</h3>
+        <h3 className="text-2xl font-bold dark:text-white mb-8">{t('news.relatedNews')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[...NEWS]
             .filter(item => item.slug !== slug)

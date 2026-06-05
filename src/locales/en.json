@@ -126,6 +126,10 @@
     "searchButton": "Search",
     "readMore": "Read More",
     "loadMore": "Load More Updates",
+    "notFound": "News item not found",
+    "backToNews": "Back to News",
+    "back": "Back",
+    "relatedNews": "Related News",
     "items": {
       "0": {
         "title": "Authorization Success - College Secures 6-Year Status",
@@ -793,5 +797,15 @@
         "author": "College Ilia Library"
       }
     }
+  },
+  "search": {
+    "placeholder": "Search...",
+    "noResults": "No results found",
+    "noResultsDesc": "Try adjusting your search keywords.",
+    "pages": "Pages",
+    "programs": "Programs",
+    "news": "News",
+    "library": "Library",
+    "gallery": "Gallery"
   }
 }
