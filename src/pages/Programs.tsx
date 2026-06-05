@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { PROGRAMS } from '../constants';
+import Seo from '../components/Seo';
 
 const Programs: React.FC = () => {
   const { t } = useTranslation();
@@ -26,6 +27,7 @@ const Programs: React.FC = () => {
 
   return (
     <div className="animate-fade-in max-w-[1280px] mx-auto px-4 sm:px-10 py-10">
+      <Seo title={t('nav.programs')} description={t('programsPage.subtitle')} />
       <div className="flex flex-col gap-6 mb-10">
         <div className="flex flex-col gap-3">
           <h1 className="text-[#111318] dark:text-white text-4xl sm:text-5xl font-black leading-tight tracking-tight">

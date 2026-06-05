@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { NEWS } from '../constants';
+import Seo from '../components/Seo';
 
 const NewsDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -31,6 +32,12 @@ const NewsDetail: React.FC = () => {
 
   return (
     <div className="animate-fade-in max-w-[900px] mx-auto px-6 py-8">
+      <Seo 
+        title={title} 
+        description={description} 
+        image={newsItem.image} 
+        type="article"
+      />
       {/* Breadcrumbs */}
       <div className="flex flex-wrap items-center gap-2 mb-8">
         <Link className="text-[#616f89] dark:text-gray-400 text-sm font-medium flex items-center gap-1 hover:text-primary transition-colors" to="/">

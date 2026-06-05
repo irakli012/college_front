@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BOOKS } from '../constants';
+import Seo from '../components/Seo';
 
 const CATEGORIES = [
   { id: 'All', icon: 'auto_stories' },
@@ -55,6 +56,7 @@ const Library: React.FC = () => {
 
   return (
     <div className="animate-fade-in max-w-[1440px] mx-auto w-full flex flex-col md:flex-row gap-6 p-4 md:p-10">
+      <Seo title={t('nav.library')} description={t('library.subtitle')} />
       <aside className="w-full md:w-72 flex-shrink-0 space-y-8">
         <div className="flex flex-col gap-6 bg-white dark:bg-[#1a2133] p-6 rounded-xl shadow-sm border border-[#f0f2f4] dark:border-gray-800">
           <div>

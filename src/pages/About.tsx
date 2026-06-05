@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { TeamMember } from '../types';
+import Seo from '../components/Seo';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -11,6 +12,7 @@ const About: React.FC = () => {
 
   return (
     <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-10">
+      <Seo title={t('nav.aboutUs')} description={t('about.heroSubtitle')} />
 
       {/* Hero Banner */}
       <section className="mb-14">

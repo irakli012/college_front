@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { PROGRAMS } from '../constants';
+import Seo from '../components/Seo';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -18,6 +19,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="animate-fade-in">
+      <Seo 
+        title={t('nav.home')} 
+        description={t('home.heroSubtitle')}
+      />
       {/* Hero Section */}
       <section className="mt-8">
         <div className="relative overflow-hidden rounded-xl h-[500px] sm:h-[520px]">

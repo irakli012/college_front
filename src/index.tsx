@@ -5,12 +5,16 @@ import App from './App';
 import './i18n';
 import './index.css';
 
+import { HelmetProvider } from 'react-helmet-async';
+
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error("Could not find root element to mount to");
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>
 );

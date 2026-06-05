@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Seo from '../components/Seo';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -32,6 +33,7 @@ const Contact = () => {
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50 dark:bg-slate-900">
+      <Seo title={t('contact.title')} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info Cards */}
