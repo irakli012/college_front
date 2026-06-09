@@ -64,8 +64,7 @@ export const NEWS: NewsItem[] = [
     slug: 'authorization-2026',
     category: 'Achievement',
     datetime: '2026-01-16',
-    readTime: '3 min read',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800'
+    readTime: '3 min read'
   },
   {
     id: '1',
@@ -215,8 +214,7 @@ export const NEWS: NewsItem[] = [
     slug: 'master-teacher-2025-award',
     category: 'Achievement',
     datetime: '2025-12-21',
-    readTime: '2 min read',
-    image: '/master_teacher_award.png'
+    readTime: '2 min read'
   },
   {
     id: '14',

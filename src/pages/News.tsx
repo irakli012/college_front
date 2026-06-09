@@ -54,7 +54,7 @@ const News: React.FC = () => {
         {displayedNews.map((item) => (
           <Link key={item.id} to={`/news/${item.slug}`} className="flex flex-col h-full">
             <div className="flex flex-col h-full bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-[#f0f2f4] dark:border-gray-800 group cursor-pointer hover:shadow-xl transition-all">
-              {item.image && (
+              {item.image ? (
                 <div className="relative h-64 overflow-hidden shrink-0">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -62,6 +62,23 @@ const News: React.FC = () => {
                   ></div>
                   <div className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${item.category === 'Achievement' ? 'bg-primary' : item.category === 'Event' ? 'bg-orange-500' : 'bg-purple-600'
                     }`}>
+                    {t(`news.items.${item.id}.category`)}
+                  </div>
+                </div>
+              ) : (
+                <div className={`relative h-48 flex flex-col items-center justify-center shrink-0 border-b border-[#f0f2f4] dark:border-gray-800 transition-colors duration-500 ${
+                  item.category === 'Achievement' ? 'bg-blue-50 dark:bg-blue-900/10 text-primary group-hover:bg-blue-100 dark:group-hover:bg-blue-900/20' : 
+                  item.category === 'Event' ? 'bg-orange-50 dark:bg-orange-900/10 text-orange-500 group-hover:bg-orange-100 dark:group-hover:bg-orange-900/20' : 
+                  'bg-purple-50 dark:bg-purple-900/10 text-purple-600 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/20'
+                }`}>
+                  <span className="material-symbols-outlined text-6xl opacity-80 transition-transform duration-500 group-hover:scale-110">
+                    {item.category === 'Achievement' ? 'emoji_events' : item.category === 'Event' ? 'event' : 'article'}
+                  </span>
+                  <div className={`absolute top-4 left-4 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${
+                    item.category === 'Achievement' ? 'bg-primary' : 
+                    item.category === 'Event' ? 'bg-orange-500' : 
+                    'bg-purple-600'
+                  }`}>
                     {t(`news.items.${item.id}.category`)}
                   </div>
                 </div>

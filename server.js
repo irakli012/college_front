@@ -45,9 +45,9 @@ const authenticate = (req, res, next) => {
 // Login Route (Rate limited)
 app.post('/api/login', loginLimiter, (req, res) => {
   const { username, password } = req.body;
-  
+
   if (
-    username === process.env.ADMIN_USER && 
+    username === process.env.ADMIN_USER &&
     password === process.env.ADMIN_PASS
   ) {
     const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: '8h' });
