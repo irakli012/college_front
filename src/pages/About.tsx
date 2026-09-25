@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { TeamMember } from '../types';
+import { SITE_IMAGES } from '../constants';
 import Seo from '../components/Seo';
 
 const About: React.FC = () => {
@@ -19,8 +20,7 @@ const About: React.FC = () => {
         <div
           className="flex min-h-[420px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 relative overflow-hidden shadow-xl"
           style={{
-            backgroundImage:
-              'linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&q=80&w=1200")',
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url("${SITE_IMAGES.flags}")`,
           }}
         >
           <div className="flex flex-col gap-4 text-center z-10 max-w-3xl">
@@ -59,7 +59,7 @@ const About: React.FC = () => {
           <div className="relative">
             <img
               className="rounded-xl shadow-2xl object-cover h-[300px] sm:h-[440px] w-full"
-              src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800"
+              src={SITE_IMAGES.building}
               alt="College Ilia campus"
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg hidden md:block">

@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { PROGRAMS } from '../constants';
+import { PROGRAMS, SITE_IMAGES } from '../constants';
 import Seo from '../components/Seo';
 
 const Home: React.FC = () => {
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1600")'
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%), url("${SITE_IMAGES.building}")`
             }}
           ></div>
           <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-16">
@@ -44,9 +44,6 @@ const Home: React.FC = () => {
                 <Link to="/programs" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-bold transition-all flex items-center gap-2">
                   {t('home.explorePrograms')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </Link>
-                <button className="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white px-8 py-4 rounded-lg font-bold transition-all">
-                  Virtual Tour
-                </button>
               </div>
             </div>
           </div>
@@ -57,7 +54,6 @@ const Home: React.FC = () => {
       <section className="mt-12">
         <div className="flex items-center justify-between px-2 mb-6">
           <h2 className="text-2xl font-bold tracking-tight">{t('home.resources')}</h2>
-          <Link to="/about" className="text-primary text-sm font-semibold hover:underline">View All Portal Links</Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
@@ -161,9 +157,10 @@ const Home: React.FC = () => {
 
       {/* CTA Section */}
       <section className="mt-20 mb-20">
-        <div className="bg-primary rounded-[2.5rem] p-8 sm:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden relative">
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 size-[400px] bg-white/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 size-[400px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
+        <div
+          className="bg-primary bg-cover bg-center rounded-[2.5rem] p-8 sm:p-16 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden relative"
+          style={{ backgroundImage: `linear-gradient(90deg, rgba(19, 91, 236, 0.95) 0%, rgba(19, 91, 236, 0.8) 50%, rgba(19, 91, 236, 0.35) 100%), url("${SITE_IMAGES.flags}")` }}
+        >
 
           <div className="text-white text-center lg:text-left relative z-10 max-w-xl">
             <h2 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight leading-tight">{t('home.readyToStart')}</h2>

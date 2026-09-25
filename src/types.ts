@@ -41,7 +41,13 @@ export interface TeamMember {
 
 export interface GalleryItem {
   id: string;
-  title: string;
-  category: string;
   image: string;
+  thumb: string;
+}
+
+export interface CollegeDocument {
+  id: string; // translation key under documentsPage.items
+  url: string;
+  kind: 'document' | 'folder';
+  icon: string;
 }

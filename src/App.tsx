@@ -29,6 +29,7 @@ const MissionValues = lazy(() => import('./pages/MissionValues'));
 const Structure = lazy(() => import('./pages/Structure'));
 const Authorization = lazy(() => import('./pages/Authorization'));
 const Partners = lazy(() => import('./pages/Partners'));
+const Documents = lazy(() => import('./pages/Documents'));
 
 // Strategic sub-pages
 const ActionPlans = lazy(() => import('./pages/strategic/ActionPlans'));
@@ -57,6 +58,7 @@ const App: React.FC = () => {
               <Route path="/about/structure" element={<Structure />} />
               <Route path="/about/authorization" element={<Authorization />} />
               <Route path="/about/partners" element={<Partners />} />
+              <Route path="/about/documents" element={<Documents />} />
               <Route path="/about/strategic/action-plans" element={<ActionPlans />} />
               <Route path="/about/strategic/action-reports" element={<ActionReports />} />
               <Route path="/about/strategic/financial" element={<FinancialIndicators />} />

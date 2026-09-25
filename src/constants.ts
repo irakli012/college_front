@@ -1,5 +1,5 @@
 
-import { Program, NewsItem, Book, TeamMember, GalleryItem } from './types';
+import { Program, NewsItem, Book, TeamMember, GalleryItem, CollegeDocument } from './types';
 
 export const PROGRAMS: Program[] = [
   {
@@ -626,9 +626,30 @@ export const BOOKS: Book[] = [
   }
 ];
 
-export const GALLERY: GalleryItem[] = [
-  { id: '1', title: 'Campus Archway', category: 'Architecture', image: 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800' },
-  { id: '2', title: 'Main Library', category: 'Facilities', image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=800' },
-  { id: '3', title: 'Student Lab', category: 'Academic', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800' },
-  { id: '4', title: 'Commencement', category: 'Events', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800' }
+const ASSETS_URL = 'https://college-website-assets.s3.eu-north-1.amazonaws.com';
+
+export const SITE_IMAGES = {
+  building: `${ASSETS_URL}/site/home/hero-building.webp`,
+  flags: `${ASSETS_URL}/site/home/flags.webp`
+};
+
+// Photos live in S3 as gallery/NN.webp with a 600px version in gallery/thumb/NN.webp
+export const GALLERY: GalleryItem[] = Array.from({ length: 30 }, (_, i) => {
+  const name = String(i + 1).padStart(2, '0');
+  return {
+    id: name,
+    image: `${ASSETS_URL}/gallery/${name}.webp`,
+    thumb: `${ASSETS_URL}/gallery/thumb/${name}.webp`
+  };
+});
+
+// Mandatory college documents, hosted in the college's Google Drive
+export const DOCUMENTS: CollegeDocument[] = [
+  { id: 'publicRelations', kind: 'document', icon: 'campaign', url: 'https://docs.google.com/document/d/1or4eWvJRUjJzINJTnlf-tzcI_gTrY0rl/edit?usp=sharing' },
+  { id: 'studentEthics', kind: 'document', icon: 'gavel', url: 'https://docs.google.com/document/d/1U9GQJpp8jViuYHoW0S1gLBA3RyZsOb2q/edit?usp=sharing' },
+  { id: 'diplomaSamples', kind: 'folder', icon: 'workspace_premium', url: 'https://drive.google.com/drive/folders/1IWdVe_Y8cA8YXRKY6c-K-1q2NBc4x0FG' },
+  { id: 'studentSupport', kind: 'document', icon: 'support_agent', url: 'https://docs.google.com/document/d/1gQg6ChJW7mbra1ecRkb0RvgkquCtWDEx/edit?usp=sharing' },
+  { id: 'libraryRegulations', kind: 'document', icon: 'local_library', url: 'https://docs.google.com/document/d/1fefcn7rLjEZctD5ABduoKayf5nUHFMBW/edit?usp=sharing' },
+  { id: 'eLearning', kind: 'document', icon: 'laptop_chromebook', url: 'https://docs.google.com/document/d/19QFCUP7AetnMvJvS0VCCAmMEWfneNzPO/edit?usp=sharing' },
+  { id: 'materialResources', kind: 'document', icon: 'inventory_2', url: 'https://docs.google.com/document/d/1Iv_Z6LnTqvgI8ztF4Mi_2smQY1P_qNQn/edit?usp=sharing' }
 ];

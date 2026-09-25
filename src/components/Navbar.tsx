@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { PROGRAMS, NEWS, BOOKS, GALLERY } from '../constants';
+import { PROGRAMS, NEWS, BOOKS } from '../constants';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -104,6 +104,7 @@ const Navbar: React.FC = () => {
     { to: '/about/structure', labelKey: 'nav.structure', icon: 'account_tree' },
     { to: '/about/authorization', labelKey: 'nav.authorization', icon: 'verified_user' },
     { to: '/about/partners', labelKey: 'nav.partners', icon: 'handshake' },
+    { to: '/about/documents', labelKey: 'nav.documents', icon: 'folder_copy' },
   ];
 
   const PAGES = [
@@ -115,6 +116,7 @@ const Navbar: React.FC = () => {
     { to: '/news', labelKey: 'nav.news', icon: 'newspaper' },
     { to: '/gallery', labelKey: 'nav.gallery', icon: 'photo_library' },
     { to: '/library', labelKey: 'nav.library', icon: 'menu_book' },
+    { to: '/about/documents', labelKey: 'nav.documents', icon: 'folder_copy' },
     { to: '/contact', labelKey: 'contact.title', icon: 'call' }
   ];
 
@@ -129,16 +131,15 @@ const Navbar: React.FC = () => {
         t(`programs.${p.slug}.description`, { defaultValue: p.description }).toLowerCase().includes(q)
       ),
       news: NEWS.filter(n => 
-        t(`news.items.${n.id}.title`, { defaultValue: n.title }).toLowerCase().includes(q)
+        t(`news.items.${n.id}.title`).toLowerCase().includes(q)
       ),
       library: BOOKS.filter(b => 
         t(`library.books.${b.id}.title`, { defaultValue: b.title }).toLowerCase().includes(q) ||
         t(`library.books.${b.id}.author`, { defaultValue: b.author }).toLowerCase().includes(q)
-      ),
-      gallery: GALLERY.filter(g => g.title.toLowerCase().includes(q))
+      )
     };
-    
-    const total = results.pages.length + results.programs.length + results.news.length + results.library.length + results.gallery.length;
+
+    const total = results.pages.length + results.programs.length + results.news.length + results.library.length;
     return { ...results, total };
   }, [searchQuery, t]);
 
@@ -498,7 +499,7 @@ const Navbar: React.FC = () => {
                       {searchResults.news.map(n => (
                         <Link key={n.id} to={`/news/${n.slug}`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
                           <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">newspaper</span>
-                          <span className="text-sm dark:text-white font-semibold line-clamp-1 flex-1">{t(`news.items.${n.id}.title`, { defaultValue: n.title })}</span>
+                          <span className="text-sm dark:text-white font-semibold line-clamp-1 flex-1">{t(`news.items.${n.id}.title`)}</span>
                         </Link>
                       ))}
                     </div>
@@ -513,17 +514,6 @@ const Navbar: React.FC = () => {
                             <span className="text-sm dark:text-white font-semibold line-clamp-1">{t(`library.books.${b.id}.title`, { defaultValue: b.title })}</span>
                             <span className="text-[11px] text-[#616f89] dark:text-gray-500 line-clamp-1">{t(`library.books.${b.id}.author`, { defaultValue: b.author })}</span>
                           </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                  {searchResults.gallery.length > 0 && (
-                    <div className="mt-1">
-                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.gallery', { defaultValue: 'Gallery' })}</div>
-                      {searchResults.gallery.map(g => (
-                        <Link key={g.id} to={`/gallery`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
-                          <img src={g.image} alt="" className="w-8 h-8 rounded border border-gray-200 dark:border-gray-700 object-cover shrink-0" />
-                          <span className="text-sm dark:text-white font-semibold line-clamp-1 flex-1">{g.title}</span>
                         </Link>
                       ))}
                     </div>
