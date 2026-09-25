@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment files (keys must never be committed - the repo is public)
+.env
+.env.*
+!.env.example
