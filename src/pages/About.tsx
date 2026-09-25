@@ -116,10 +116,7 @@ const About: React.FC = () => {
       <section className="py-12 sm:py-16">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="flex flex-col gap-2">
-              <h2 className="text-primary text-sm font-bold uppercase tracking-widest">{t('about.leadership')}</h2>
-              <h3 className="text-[#111318] dark:text-white text-3xl font-bold">{t('about.adminTeam')}</h3>
-            </div>
+            <h2 className="text-[#111318] dark:text-white text-3xl font-bold">{t('about.adminTeam')}</h2>
             <Link to="/teachers" className="text-primary font-bold flex items-center gap-2 hover:underline self-start sm:self-auto">
               {t('about.meetFaculty')} <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
