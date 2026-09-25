@@ -28,7 +28,7 @@ const Seo: React.FC<SeoProps> = ({
   const finalTitle = title ? `${title} | ${siteName}` : defaultTitle;
   const finalDescription = description || defaultDescription;
   const finalImage = image || defaultImage;
-  const finalUrl = url || typeof window !== 'undefined' ? window.location.href : '';
+  const finalUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
 
   return (
     <Helmet>

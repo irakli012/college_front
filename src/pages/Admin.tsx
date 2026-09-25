@@ -150,7 +150,7 @@ const Admin: React.FC = () => {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             {currentPath.join(' → ')}
           </label>
-          {value.length > 100 ? (
+          {String(value).length > 100 ? (
             <textarea
               className="w-full p-2 border rounded-md dark:bg-gray-800 dark:text-white dark:border-gray-700"
               rows={4}

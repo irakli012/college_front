@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { BOOKS } from '../constants';
 import Seo from '../components/Seo';
 
@@ -84,7 +85,7 @@ const Library: React.FC = () => {
 
       <main className="flex-1 flex flex-col gap-6">
         <div className="flex items-center gap-2 px-1">
-          <a className="text-[#616f89] text-sm font-medium hover:text-primary transition-colors" href="/">{t('library.home')}</a>
+          <Link className="text-[#616f89] text-sm font-medium hover:text-primary transition-colors" to="/">{t('library.home')}</Link>
           <span className="material-symbols-outlined text-base text-[#616f89]">chevron_right</span>
           <span className="text-primary text-sm font-semibold">{t('library.pageTitle')}</span>
         </div>
