@@ -1,5 +1,5 @@
 
-import { Program, NewsItem, Book, TeamMember, GalleryItem, CollegeDocument } from './types';
+import { Program, NewsItem, Book, TeamMember, GalleryItem, CollegeDocument, Partner } from './types';
 
 export const PROGRAMS: Program[] = [
   {
@@ -642,6 +642,22 @@ export const GALLERY: GalleryItem[] = Array.from({ length: 30 }, (_, i) => {
     thumb: `${ASSETS_URL}/gallery/thumb/${name}.webp`
   };
 });
+
+// Same order as the partners page on iliaedu.ge; logos live in S3 under partners/
+export const PARTNERS: Partner[] = [
+  { id: 'mes', url: 'https://www.mes.gov.ge/' },
+  { id: 'emis', url: 'https://www.emis.ge/' },
+  { id: 'eqe', url: 'https://eqe.ge/ka' },
+  { id: 'pcag', url: 'https://www.ccol.ge/' },
+  { id: 'liberty-bank', url: 'https://libertybank.ge' },
+  { id: 'psp', url: 'https://psp.ge/' },
+  { id: 'sagarejo-municipality', url: 'https://sagarejo.gov.ge/' },
+  { id: 'biotecsi', url: 'https://biotecsi.ge' },
+  { id: 'roqi', url: 'https://roqi.ge/ka' },
+  { id: 'care-caucasus', url: 'https://care-caucasus.org.ge/' },
+  { id: 'first-medical-school', url: 'https://www.medicalschool.edu.ge/ge' },
+  { id: 'finforce', url: 'https://www.finforce.ge/' }
+].map((p) => ({ ...p, logo: `${ASSETS_URL}/partners/${p.id}.webp` }));
 
 // Mandatory college documents, hosted in the college's Google Drive
 export const DOCUMENTS: CollegeDocument[] = [

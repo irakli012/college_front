@@ -235,9 +235,9 @@
         "category": "Event"
       },
       "17": {
-        "title": "Thank You to Biotex and Roki",
+        "title": "Thank You to Biotecsi and Roqi",
         "date": "March 30, 2026",
-        "description": "Sincere thanks to Biotex, a manufacturer of veterinary medicines, and its distributor Roki for their continued support of our students, their warm welcome, and their contribution to the development of vocational education!",
+        "description": "Sincere thanks to Biotecsi, a manufacturer of veterinary medicines, and its distributor Roqi for their continued support of our students, their warm welcome, and their contribution to the development of vocational education!",
         "category": "Campus Life"
       },
       "18": {
@@ -875,7 +875,21 @@
     "sectionDesc": "We collaborate with local and international organizations that support the professional development of our students.",
     "ctaTitle": "Become Our Partner",
     "ctaDesc": "Interested in collaborating with College Ilia? Get in touch with us.",
-    "ctaButton": "Contact Us"
+    "ctaButton": "Contact Us",
+    "items": {
+      "mes": "Ministry of Education, Science and Youth of Georgia",
+      "emis": "Education Management Information System (EMIS)",
+      "eqe": "National Center for Educational Quality Enhancement",
+      "pcag": "Private Colleges Association of Georgia",
+      "liberty-bank": "Liberty Bank",
+      "psp": "PSP",
+      "sagarejo-municipality": "Sagarejo Municipality City Hall",
+      "biotecsi": "Biotecsi",
+      "roqi": "Roqi",
+      "care-caucasus": "CARE Caucasus",
+      "first-medical-school": "First Medical School",
+      "finforce": "FinForce"
+    }
   },
   "strategic": {
     "comingSoon": "Coming Soon",

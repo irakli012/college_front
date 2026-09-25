@@ -45,6 +45,12 @@ export interface GalleryItem {
   thumb: string;
 }
 
+export interface Partner {
+  id: string; // translation key under partnersPage.items
+  url: string;
+  logo: string;
+}
+
 export interface CollegeDocument {
   id: string; // translation key under documentsPage.items
   url: string;

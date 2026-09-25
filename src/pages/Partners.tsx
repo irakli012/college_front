@@ -1,31 +1,23 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { PARTNERS, SITE_IMAGES } from '../constants';
+import Seo from '../components/Seo';
 
 const Partners: React.FC = () => {
     const { t } = useTranslation();
 
-    // Partner placeholder data - replace src with actual logo URLs
-    const partners = [
-        { id: 1, name: 'პარტნიორი 1', logo: null },
-        { id: 2, name: 'პარტნიორი 2', logo: null },
-        { id: 3, name: 'პარტნიორი 3', logo: null },
-        { id: 4, name: 'პარტნიორი 4', logo: null },
-        { id: 5, name: 'პარტნიორი 5', logo: null },
-        { id: 6, name: 'პარტნიორი 6', logo: null },
-        { id: 7, name: 'პარტნიორი 7', logo: null },
-        { id: 8, name: 'პარტნიორი 8', logo: null },
-    ];
-
     return (
         <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-10">
+            <Seo title={t('nav.partners')} description={t('partnersPage.sectionDesc')} />
             {/* Hero section */}
             <section className="mb-14">
                 <div
                     className="flex min-h-[280px] flex-col gap-5 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 relative overflow-hidden shadow-xl"
                     style={{
                         backgroundImage:
-                            'linear-gradient(rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.72) 100%), url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200")',
+                            `linear-gradient(rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.72) 100%), url("${SITE_IMAGES.building}")`,
                     }}
                 >
                     <div className="flex flex-col gap-3 text-center z-10 max-w-2xl">
@@ -54,26 +46,27 @@ const Partners: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {partners.map((partner) => (
-                        <div
+                    {PARTNERS.map((partner) => (
+                        <a
                             key={partner.id}
-                            className="group flex flex-col items-center justify-center gap-3 p-6 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1c2331] shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+                            href={partner.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex flex-col items-center gap-4 p-4 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1c2331] shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
                         >
-                            {partner.logo ? (
+                            {/* White tile so logos with white backgrounds look right in dark mode too */}
+                            <div className="w-full h-24 flex items-center justify-center bg-white rounded-lg p-3">
                                 <img
                                     src={partner.logo}
-                                    alt={partner.name}
-                                    className="h-16 object-contain grayscale group-hover:grayscale-0 transition-all"
+                                    alt={t(`partnersPage.items.${partner.id}`)}
+                                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
                                 />
-                            ) : (
-                                <div className="w-full h-16 flex items-center justify-center bg-[#f0f2f4] dark:bg-[#2a303c] rounded-lg">
-                                    <span className="material-symbols-outlined text-3xl text-[#616f89] dark:text-[#9ea7b8]">business</span>
-                                </div>
-                            )}
-                            <p className="text-xs font-medium text-[#616f89] dark:text-[#9ea7b8] text-center">
-                                {partner.name}
+                            </div>
+                            <p className="text-xs font-medium text-[#616f89] dark:text-[#9ea7b8] text-center leading-snug group-hover:text-primary transition-colors">
+                                {t(`partnersPage.items.${partner.id}`)}
                             </p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </section>
@@ -88,13 +81,13 @@ const Partners: React.FC = () => {
                     <p className="text-[#616f89] dark:text-[#9ea7b8] text-base mb-6 max-w-md mx-auto">
                         {t('partnersPage.ctaDesc')}
                     </p>
-                    <a
-                        href="/contact"
+                    <Link
+                        to="/contact"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                     >
                         {t('partnersPage.ctaButton')}
                         <span className="material-symbols-outlined text-base">arrow_forward</span>
-                    </a>
+                    </Link>
                 </div>
             </section>
         </div>
