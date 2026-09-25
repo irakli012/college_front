@@ -5,23 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "cross-env NODE_ENV=development node server.js",
-    "admin-dev": "concurrently \"npm run dev\" \"npm run server\"",
     "build": "vite build",
-    "preview": "vite preview",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "bcryptjs": "^3.0.3",
-    "cors": "^2.8.5",
-    "cross-env": "^10.1.0",
-    "dotenv": "^16.6.1",
-    "express": "^4.21.2",
-    "express-rate-limit": "^8.2.1",
+    "@supabase/supabase-js": "^2.117.2",
     "i18next": "^25.8.0",
     "i18next-browser-languagedetector": "^8.2.0",
-    "jsonwebtoken": "^9.0.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-helmet-async": "^3.0.0",
@@ -35,7 +26,6 @@
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.24",
-    "concurrently": "^9.1.2",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "~5.8.2",

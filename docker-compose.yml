@@ -5,7 +5,6 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "3000:3000" # Maps the Vite frontend
-      - "5000:5000" # Maps the Express backend
     volumes:
       # Maps your local code to the container so edits happen instantly
       - .:/app

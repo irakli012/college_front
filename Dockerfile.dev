@@ -13,8 +13,8 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Expose the ports for Vite and the Express server
-EXPOSE 3000 5000
+# Expose the Vite dev server port
+EXPOSE 3000
 
-# Start the application using your existing admin-dev script
-CMD ["npm", "run", "admin-dev"]
+# Start the Vite dev server
+CMD ["npm", "run", "dev"]

@@ -20,8 +20,7 @@ const FinancialServices = lazy(() => import('./pages/programs/FinancialServices'
 const AdministrativeServices = lazy(() => import('./pages/programs/AdministrativeServices'));
 const Register = lazy(() => import('./pages/Register'));
 const Contact = lazy(() => import('./pages/Contact'));
-const Admin = lazy(() => import('./pages/Admin'));
-const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
+const AdminApp = lazy(() => import('./pages/admin/AdminApp'));const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
 const Teachers = lazy(() => import('./pages/Teachers'));
 
 // About sub-pages
@@ -43,10 +42,8 @@ const LoadingFallback = () => (
   </div>
 );
 
-const App: React.FC = () => {
+const SiteLayout: React.FC = () => {
   return (
-    <Router>
-      <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-background-light dark:bg-background-dark">
         <Navbar />
         <main className="flex-1 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto w-full">
@@ -78,12 +75,22 @@ const App: React.FC = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/programs-catalog" element={<ProgramsCatalog />} />
               <Route path="/teachers" element={<Teachers />} />
-              <Route path="/admin" element={<Admin />} />
             </Routes>
           </Suspense>
         </main>
         <Footer />
       </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        {/* The admin panel has its own full-screen layout */}
+        <Route path="/admin/*" element={<Suspense fallback={<LoadingFallback />}><AdminApp /></Suspense>} />        <Route path="/*" element={<SiteLayout />} />
+      </Routes>
     </Router>
   );
 };
