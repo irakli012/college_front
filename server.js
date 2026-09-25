@@ -18,7 +18,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 5000;
-const SECRET_KEY = process.env.ADMIN_JWT_SECRET || 'fallback_secret';
+const SECRET_KEY = process.env.ADMIN_JWT_SECRET;
+if (!SECRET_KEY) {
+  console.error('ERROR: ADMIN_JWT_SECRET is not set in .env.local — refusing to start.');
+  process.exit(1);
+}
+const ALLOWED_LANGS = ['en', 'ka'];
 
 // Security: Rate limiting to prevent brute force
 const loginLimiter = rateLimit({
@@ -59,8 +64,16 @@ app.post('/api/login', loginLimiter, (req, res) => {
 
 const LOCALES_DIR = path.join(__dirname, 'src', 'locales');
 
+// Only allow known locale files to be read or written
+const validateLang = (req, res, next) => {
+  if (!ALLOWED_LANGS.includes(req.params.lang)) {
+    return res.status(400).json({ error: 'Unsupported language' });
+  }
+  next();
+};
+
 // Get all keys for a specific language (Protected)
-app.get('/api/locales/:lang', authenticate, async (req, res) => {
+app.get('/api/locales/:lang', authenticate, validateLang, async (req, res) => {
   try {
     const filePath = path.join(LOCALES_DIR, `${req.params.lang}.json`);
     const data = await fs.readFile(filePath, 'utf8');
@@ -71,7 +84,10 @@ app.get('/api/locales/:lang', authenticate, async (req, res) => {
 });
 
 // Save keys for a specific language (Protected)
-app.post('/api/locales/:lang', authenticate, async (req, res) => {
+app.post('/api/locales/:lang', authenticate, validateLang, async (req, res) => {
+  if (!req.body || typeof req.body !== 'object' || Array.isArray(req.body) || Object.keys(req.body).length === 0) {
+    return res.status(400).json({ error: 'Invalid locale data' });
+  }
   try {
     const filePath = path.join(LOCALES_DIR, `${req.params.lang}.json`);
     const newData = JSON.stringify(req.body, null, 2);
