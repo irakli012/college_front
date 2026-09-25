@@ -227,6 +227,350 @@ export const NEWS: NewsItem[] = [
       'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+3%2C+2025/592717845_872069165399505_9138886190633081318_n.jpg',
       'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/siakhleebi/collegepics+dec+3+2025-+jan+16/December+3%2C+2025/594504818_872069215399500_6575535273688668433_n.jpg'
     ]
+  },
+  {
+    id: '15',
+    slug: 'veterinary-chemistry-lab-2026',
+    category: 'Campus Life',
+    datetime: '2026-03-09',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-09-veterinary-chemistry-lab/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-09-veterinary-chemistry-lab/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-09-veterinary-chemistry-lab/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-09-veterinary-chemistry-lab/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-09-veterinary-chemistry-lab/04.webp'
+    ]
+  },
+  {
+    id: '16',
+    slug: 'career-management-services-meeting-2026',
+    category: 'Event',
+    datetime: '2026-03-14',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-14-career-management-services-meeting/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-14-career-management-services-meeting/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-14-career-management-services-meeting/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-14-career-management-services-meeting/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-14-career-management-services-meeting/04.webp'
+    ]
+  },
+  {
+    id: '17',
+    slug: 'thanks-to-biotex-and-roki-2026',
+    category: 'Campus Life',
+    datetime: '2026-03-30',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-thanks-to-biotex-and-roki/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-thanks-to-biotex-and-roki/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-thanks-to-biotex-and-roki/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-thanks-to-biotex-and-roki/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-thanks-to-biotex-and-roki/04.webp'
+    ]
+  },
+  {
+    id: '18',
+    slug: 'pharmacy-chemistry-lab-2026',
+    category: 'Campus Life',
+    datetime: '2026-03-30',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-pharmacy-chemistry-lab/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-pharmacy-chemistry-lab/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-pharmacy-chemistry-lab/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-pharmacy-chemistry-lab/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-30-pharmacy-chemistry-lab/04.webp'
+    ]
+  },
+  {
+    id: '19',
+    slug: 'teacher-professional-development-training-2026',
+    category: 'Event',
+    datetime: '2026-03-31',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-31-teacher-professional-development-training/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-31-teacher-professional-development-training/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-31-teacher-professional-development-training/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-31-teacher-professional-development-training/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-03-31-teacher-professional-development-training/04.webp'
+    ]
+  },
+  {
+    id: '20',
+    slug: 'vocational-registration-with-national-exams-2026',
+    category: 'Announcement',
+    datetime: '2026-04-03',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-04-03-vocational-registration-with-national-exams/cover.webp'
+  },
+  {
+    id: '21',
+    slug: 'new-college-logo-2026',
+    category: 'Announcement',
+    datetime: '2026-04-07',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-04-07-new-college-logo/cover.webp'
+  },
+  {
+    id: '22',
+    slug: 'spring-admission-2026',
+    category: 'Announcement',
+    datetime: '2026-04-13',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-04-13-spring-admission/cover.webp'
+  },
+  {
+    id: '23',
+    slug: 'registration-ends-may-29-2026',
+    category: 'Announcement',
+    datetime: '2026-04-16',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-04-16-registration-ends-may-29/cover.webp'
+  },
+  {
+    id: '24',
+    slug: 'waste2wealth-training-of-trainers-2026',
+    category: 'Achievement',
+    datetime: '2026-05-06',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-06-waste2wealth-training-of-trainers/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-06-waste2wealth-training-of-trainers/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-06-waste2wealth-training-of-trainers/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-06-waste2wealth-training-of-trainers/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-06-waste2wealth-training-of-trainers/04.webp'
+    ]
+  },
+  {
+    id: '25',
+    slug: 'pharmacy-textbook-presentation-2026',
+    category: 'Achievement',
+    datetime: '2026-05-25',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-pharmacy-textbook-presentation/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-pharmacy-textbook-presentation/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-pharmacy-textbook-presentation/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-pharmacy-textbook-presentation/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-pharmacy-textbook-presentation/04.webp'
+    ]
+  },
+  {
+    id: '26',
+    slug: 'caregiver-creative-activities-2026',
+    category: 'Campus Life',
+    datetime: '2026-05-25',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-caregiver-creative-activities/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-caregiver-creative-activities/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-caregiver-creative-activities/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-caregiver-creative-activities/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-05-25-caregiver-creative-activities/04.webp'
+    ]
+  },
+  {
+    id: '27',
+    slug: 'private-colleges-association-peer-visit-2026',
+    category: 'Event',
+    datetime: '2026-06-06',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-06-private-colleges-association-peer-visit/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-06-private-colleges-association-peer-visit/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-06-private-colleges-association-peer-visit/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-06-private-colleges-association-peer-visit/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-06-private-colleges-association-peer-visit/04.webp'
+    ]
+  },
+  {
+    id: '28',
+    slug: 'exam-schedule-announced-2026',
+    category: 'Announcement',
+    datetime: '2026-06-15',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-15-exam-schedule-announced/cover.webp'
+  },
+  {
+    id: '29',
+    slug: 'collegial-learning-sessions-1-2026',
+    category: 'Event',
+    datetime: '2026-06-20',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-collegial-learning-sessions-1/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-collegial-learning-sessions-1/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-collegial-learning-sessions-1/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-collegial-learning-sessions-1/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-collegial-learning-sessions-1/04.webp'
+    ]
+  },
+  {
+    id: '30',
+    slug: 'it-program-motivational-interviews-2026',
+    category: 'Event',
+    datetime: '2026-06-20',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-it-program-motivational-interviews/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-it-program-motivational-interviews/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-it-program-motivational-interviews/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-it-program-motivational-interviews/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-06-20-it-program-motivational-interviews/04.webp'
+    ]
+  },
+  {
+    id: '31',
+    slug: 'collegial-learning-sessions-2-2026',
+    category: 'Event',
+    datetime: '2026-07-02',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-02-collegial-learning-sessions-2/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-02-collegial-learning-sessions-2/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-02-collegial-learning-sessions-2/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-02-collegial-learning-sessions-2/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-02-collegial-learning-sessions-2/04.webp'
+    ]
+  },
+  {
+    id: '32',
+    slug: 'tsu-vocational-education-conference-2026',
+    category: 'Achievement',
+    datetime: '2026-07-07',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-tsu-vocational-education-conference/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-tsu-vocational-education-conference/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-tsu-vocational-education-conference/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-tsu-vocational-education-conference/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-tsu-vocational-education-conference/04.webp'
+    ]
+  },
+  {
+    id: '33',
+    slug: 'staff-excursion-2026',
+    category: 'Campus Life',
+    datetime: '2026-07-07',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-staff-excursion/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-staff-excursion/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-staff-excursion/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-staff-excursion/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-07-staff-excursion/04.webp'
+    ]
+  },
+  {
+    id: '34',
+    slug: 'preschool-success-formula-workshop-2026',
+    category: 'Event',
+    datetime: '2026-07-11',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-11-preschool-success-formula-workshop/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-11-preschool-success-formula-workshop/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-11-preschool-success-formula-workshop/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-11-preschool-success-formula-workshop/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-11-preschool-success-formula-workshop/04.webp'
+    ]
+  },
+  {
+    id: '35',
+    slug: 'education-elevator-program-2026',
+    category: 'Achievement',
+    datetime: '2026-07-12',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-12-education-elevator-program/cover.webp'
+  },
+  {
+    id: '36',
+    slug: 'caregiver-learning-by-doing-2026',
+    category: 'Campus Life',
+    datetime: '2026-07-17',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-17-caregiver-learning-by-doing/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-17-caregiver-learning-by-doing/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-17-caregiver-learning-by-doing/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-17-caregiver-learning-by-doing/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-17-caregiver-learning-by-doing/04.webp'
+    ]
+  },
+  {
+    id: '37',
+    slug: 'pharmacy-qualification-exam-2026',
+    category: 'Achievement',
+    datetime: '2026-07-23',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-23-pharmacy-qualification-exam/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-23-pharmacy-qualification-exam/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-23-pharmacy-qualification-exam/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-23-pharmacy-qualification-exam/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-23-pharmacy-qualification-exam/04.webp'
+    ]
+  },
+  {
+    id: '38',
+    slug: 'caregiver-practical-project-presentations-2026',
+    category: 'Achievement',
+    datetime: '2026-07-26',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-26-caregiver-practical-project-presentations/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-26-caregiver-practical-project-presentations/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-26-caregiver-practical-project-presentations/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-26-caregiver-practical-project-presentations/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-07-26-caregiver-practical-project-presentations/04.webp'
+    ]
+  },
+  {
+    id: '39',
+    slug: 'network-technologies-training-ankara-2026',
+    category: 'Achievement',
+    datetime: '2026-08-06',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-08-06-network-technologies-training-ankara/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-08-06-network-technologies-training-ankara/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-08-06-network-technologies-training-ankara/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-08-06-network-technologies-training-ankara/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-08-06-network-technologies-training-ankara/04.webp'
+    ]
+  },
+  {
+    id: '41',
+    slug: 'applicants-chose-vocational-education-2026',
+    category: 'Announcement',
+    datetime: '2026-08-26',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-08-26-applicants-chose-vocational-education/cover.webp'
+  },
+  {
+    id: '42',
+    slug: 'secondary-enrollment-2026',
+    category: 'Announcement',
+    datetime: '2026-09-14',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-09-14-secondary-enrollment/cover.webp'
+  },
+  {
+    id: '43',
+    slug: 'collegial-learning-sessions-3-2026',
+    category: 'Event',
+    datetime: '2026-09-25',
+    readTime: '1 min read',
+    image: 'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-09-25-collegial-learning-sessions-3/cover.webp',
+    images: [
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-09-25-collegial-learning-sessions-3/01.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-09-25-collegial-learning-sessions-3/02.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-09-25-collegial-learning-sessions-3/03.webp',
+      'https://college-website-assets.s3.eu-north-1.amazonaws.com/news/2026/2026-09-25-collegial-learning-sessions-3/04.webp'
+    ]
   }
 ];
 
