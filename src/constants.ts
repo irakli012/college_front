@@ -643,6 +643,13 @@ export const GALLERY: GalleryItem[] = Array.from({ length: 30 }, (_, i) => {
   };
 });
 
+// Pin of "საგარეჯოს საზოგადოებრივი კოლეჯი" on Google Maps
+export const COLLEGE_LOCATION = {
+  lat: 41.7362356,
+  lng: 45.3135941,
+  mapsUrl: 'https://maps.app.goo.gl/5ZwQZng31Y2cVJ9WA'
+};
+
 // Same order as the partners page on iliaedu.ge; logos live in S3 under partners/
 export const PARTNERS: Partner[] = [
   { id: 'mes', url: 'https://www.mes.gov.ge/' },

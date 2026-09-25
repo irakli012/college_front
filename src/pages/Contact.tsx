@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Seo from '../components/Seo';
+import { COLLEGE_LOCATION } from '../constants';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ const Contact = () => {
       icon: 'location_on',
       title: t('contact.address'),
       value: t('contact.addressDetails'),
-      href: 'https://maps.app.goo.gl/WMhHwtP8gHVUXDgq6'
+      href: COLLEGE_LOCATION.mapsUrl
     },
     {
       icon: 'schedule',
@@ -59,7 +60,8 @@ const Contact = () => {
           {/* Map */}
           <div className="lg:col-span-2 h-[500px] bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
             <iframe 
-              src="https://www.google.com/maps?q=საგარეჯო,ლეონიძის33ა&output=embed"
+              src={`https://www.google.com/maps?q=${COLLEGE_LOCATION.lat},${COLLEGE_LOCATION.lng}&z=17&output=embed`}
+              title={t('contact.address')}
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
