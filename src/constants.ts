@@ -13,7 +13,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     id: '2',
-    title: 'Information Technology',
+    title: 'Information Technology Support',
     slug: 'information-technology',
     category: 'Technology',
     description: 'Advance your career in software engineering, cybersecurity, and data science in our tech-driven labs.',

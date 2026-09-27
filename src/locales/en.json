@@ -399,7 +399,7 @@
   },
   "programs": {
     "information-technology": {
-      "title": "Information Technology",
+      "title": "Information Technology Support",
       "description": "Qualified training of specialists for personal computer hardware and software support.",
       "degree": "Information Technology Support",
       "subtitle": "Basic Vocational Qualification in Information Technology Support",
@@ -916,7 +916,7 @@
       "All": "All Resources",
       "Pharmacy": "Pharmacy",
       "Early Childhood Education": "Early Childhood Education",
-      "Information Technology": "Information Technology",
+      "Information Technology": "Information Technology Support",
       "Veterinary Medicine": "Veterinary Medicine",
       "Financial Services": "Financial Services"
     },

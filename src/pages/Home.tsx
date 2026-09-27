@@ -130,7 +130,7 @@ const Home: React.FC = () => {
                   </div>
                 </div>
                 <div className="p-8 flex flex-col grow relative">
-                  <h3 className="text-2xl font-black mb-3 group-hover:text-primary transition-colors line-clamp-1 tracking-tight">
+                  <h3 className="text-2xl font-black mb-3 group-hover:text-primary transition-colors tracking-tight">
                     {t(`programs.${prog.slug}.title`)}
                   </h3>
                   <p className="text-sm text-[#616f89] dark:text-gray-400 mb-8 leading-relaxed line-clamp-3 font-medium">
