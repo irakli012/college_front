@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { TeamMember } from '../types';
 import { SITE_IMAGES } from '../constants';
@@ -117,9 +116,6 @@ const About: React.FC = () => {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <h2 className="text-[#111318] dark:text-white text-3xl font-bold">{t('about.adminTeam')}</h2>
-            <Link to="/teachers" className="text-primary font-bold flex items-center gap-2 hover:underline self-start sm:self-auto">
-              {t('about.meetFaculty')} <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member) => (

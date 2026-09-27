@@ -19,8 +19,6 @@
     "programs": "Programs",
     "programsCatalog": "Professional Education Programs Catalog",
     "programsCatalogShort": "Programs Catalog",
-    "teachers": "Professional Teachers",
-    "teachersShort": "Teachers",
     "news": "News",
     "gallery": "Gallery",
     "library": "Library",
@@ -92,7 +90,6 @@
     },
     "leadership": "Leadership",
     "adminTeam": "Administration Team",
-    "meetFaculty": "Meet all faculty",
     "team": {
       "1": {
         "name": "Dr. Helena Vance",
@@ -794,7 +791,6 @@
     "careers": "Career Opportunities",
     "programStructure": "Program Structure",
     "evaluation": "Assessment & Credits",
-    "facultySpotlight": "Faculty Spotlight",
     "quickFacts": "Quick Facts",
     "applyNow": "Apply Now",
     "downloadBrochure": "Download Brochure",
@@ -833,10 +829,6 @@
     "subtitle": "Complete catalog of professional educational programs.",
     "comingSoon": "Coming Soon"
   },
-  "teachers": {
-    "subtitle": "Meet our professional teachers.",
-    "comingSoon": "Coming Soon"
-  },
   "missionPage": {
     "heroTitle": "Mission, Vision & Values",
     "heroSubtitle": "The founding principles, strategic goals, and development vision of College Ilia.",
@@ -869,7 +861,6 @@
   },
   "partnersPage": {
     "heroTitle": "Partners",
-    "heroSubtitle": "The strategic partners and collaborating organizations of College Ilia.",
     "sectionLabel": "Our Partners",
     "sectionTitle": "Trusted Partners",
     "sectionDesc": "We collaborate with local and international organizations that support the professional development of our students.",

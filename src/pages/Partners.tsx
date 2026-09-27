@@ -24,9 +24,6 @@ const Partners: React.FC = () => {
                         <h1 className="text-white text-3xl sm:text-5xl font-black leading-tight">
                             {t('partnersPage.heroTitle')}
                         </h1>
-                        <p className="text-white/85 text-base sm:text-lg font-medium">
-                            {t('partnersPage.heroSubtitle')}
-                        </p>
                     </div>
                 </div>
             </section>

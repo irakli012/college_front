@@ -93,28 +93,6 @@ const InformationTechnology: React.FC = () => {
               </div>
             </div>
           </section>
-
-          <section className="flex flex-col gap-8" id="faculty">
-            <h2 className="text-[#111318] dark:text-white text-3xl font-bold border-l-4 border-primary pl-4">{t('programDetail.facultySpotlight')}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex gap-4 p-4 bg-white dark:bg-[#1c2331] rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] items-center">
-                <img alt="Dr. Robert Chen" className="w-20 h-20 rounded-full object-cover shadow-md" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"/>
-                <div>
-                  <h4 className="font-bold dark:text-white">{t('about.team.4.name')}</h4>
-                  <p className="text-xs text-primary font-bold uppercase mb-1">Expert in AI & ML</p>
-                  <p className="text-xs text-[#616f89] dark:text-[#9ea7b8]">Published 40+ papers on neural network optimization.</p>
-                </div>
-              </div>
-              <div className="flex gap-4 p-4 bg-white dark:bg-[#1c2331] rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] items-center">
-                <img alt="Prof. Marcus Sterling" className="w-20 h-20 rounded-full object-cover shadow-md" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"/>
-                <div>
-                  <h4 className="font-bold dark:text-white">{t('about.team.2.name')}</h4>
-                  <p className="text-xs text-primary font-bold uppercase mb-1">Cybersecurity Specialist</p>
-                  <p className="text-xs text-[#616f89] dark:text-[#9ea7b8]">Former lead security consultant for Fortune 500 companies.</p>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
 
         <aside className="lg:w-80 flex-none">

@@ -21,7 +21,6 @@ const AdministrativeServices = lazy(() => import('./pages/programs/Administrativ
 const Register = lazy(() => import('./pages/Register'));
 const Contact = lazy(() => import('./pages/Contact'));
 const AdminApp = lazy(() => import('./pages/admin/AdminApp'));const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
-const Teachers = lazy(() => import('./pages/Teachers'));
 
 // About sub-pages
 const MissionValues = lazy(() => import('./pages/MissionValues'));
@@ -74,7 +73,6 @@ const SiteLayout: React.FC = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/programs-catalog" element={<ProgramsCatalog />} />
-              <Route path="/teachers" element={<Teachers />} />
             </Routes>
           </Suspense>
         </main>

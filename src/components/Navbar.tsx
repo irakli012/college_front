@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
   const isLearnActive = () =>
-    ['/programs', '/programs-catalog', '/teachers'].some((p) => location.pathname.startsWith(p));
+    ['/programs', '/programs-catalog', '/library'].some((p) => location.pathname.startsWith(p));
   const isAboutActive = () =>
     ['/about', '/about/mission', '/about/structure', '/about/authorization', '/about/partners', '/about/strategic'].some(
       (p) => location.pathname.startsWith(p)
@@ -112,7 +112,6 @@ const Navbar: React.FC = () => {
     { to: '/about', labelKey: 'nav.aboutUs', icon: 'info' },
     { to: '/programs', labelKey: 'nav.programs', icon: 'list_alt' },
     { to: '/programs-catalog', labelKey: 'nav.programsCatalog', icon: 'menu_book' },
-    { to: '/teachers', labelKey: 'nav.teachers', icon: 'groups' },
     { to: '/news', labelKey: 'nav.news', icon: 'newspaper' },
     { to: '/gallery', labelKey: 'nav.gallery', icon: 'photo_library' },
     { to: '/library', labelKey: 'nav.library', icon: 'menu_book' },
@@ -253,9 +252,9 @@ const Navbar: React.FC = () => {
                     <span className="material-symbols-outlined text-lg shrink-0">menu_book</span>
                     <span className="flex-1">{t('nav.programsCatalog')}</span>
                   </Link>
-                  <Link to="/teachers" className={`flex items-center gap-3 mx-2 px-4 py-3 text-sm rounded-lg transition-colors whitespace-normal ${isActive('/teachers') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
-                    <span className="material-symbols-outlined text-lg shrink-0">groups</span>
-                    <span className="flex-1">{t('nav.teachers')}</span>
+                  <Link to="/library" className={`flex items-center gap-3 mx-2 px-4 py-3 text-sm rounded-lg transition-colors whitespace-normal ${isActive('/library') ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}>
+                    <span className="material-symbols-outlined text-lg shrink-0">local_library</span>
+                    <span className="flex-1">{t('nav.library')}</span>
                   </Link>
                 </div>
               </div>
@@ -264,7 +263,6 @@ const Navbar: React.FC = () => {
 
           <Link to="/news" className={`text-sm leading-normal transition-colors ${isActive('/news') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.news')}</Link>
           <Link to="/gallery" className={`text-sm leading-normal transition-colors ${isActive('/gallery') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.gallery')}</Link>
-          <Link to="/library" className={`text-sm leading-normal transition-colors ${isActive('/library') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.library')}</Link>
         </nav>
       </div>
 
@@ -376,7 +374,7 @@ const Navbar: React.FC = () => {
                   {[
                     { to: '/programs', label: t('nav.programs'), icon: 'list_alt' },
                     { to: '/programs-catalog', label: t('nav.programsCatalogShort'), icon: 'menu_book' },
-                    { to: '/teachers', label: t('nav.teachersShort'), icon: 'groups' },
+                    { to: '/library', label: t('nav.library'), icon: 'local_library' },
                   ].map((item) => (
                     <Link
                       key={item.to}
@@ -393,7 +391,6 @@ const Navbar: React.FC = () => {
               {[
                 { to: '/news', label: t('nav.news'), icon: 'newspaper' },
                 { to: '/gallery', label: t('nav.gallery'), icon: 'photo_library' },
-                { to: '/library', label: t('nav.library'), icon: 'menu_book' },
               ].map((item) => (
                 <Link
                   key={item.to}
