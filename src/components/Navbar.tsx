@@ -143,22 +143,22 @@ const Navbar: React.FC = () => {
   }, [searchQuery, t]);
 
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 md:px-10 py-3 sticky top-0 z-50">
-      <div className="flex items-center gap-0 md:gap-4 lg:gap-8">
+    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 lg:px-6 2xl:px-10 py-3 sticky top-0 z-50">
+      <div className="flex items-center gap-2 lg:gap-4 2xl:gap-8">
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="flex md:hidden items-center justify-center p-2 text-[#111318] dark:text-white"
+          className="flex lg:hidden items-center justify-center p-2 text-[#111318] dark:text-white"
           aria-label="Open menu"
         >
           <span className="material-symbols-outlined">menu</span>
         </button>
 
-        <Link to="/" className="flex items-center gap-2 lg:gap-1 text-[#111318] dark:text-white">
+        <Link to="/" className="flex items-center gap-2 shrink-0 text-[#111318] dark:text-white">
           <img src="https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png" alt="Logo" className="h-12 w-auto rounded-md" />
-          <h2 className="text-base lg:text-lg font-bold leading-tight tracking-[-0.015em]">{t('collegeName')}</h2>
+          <h2 className="text-sm 2xl:text-base font-bold leading-tight tracking-[-0.015em] whitespace-normal max-w-[170px] 2xl:max-w-[210px]">{t('collegeName')}</h2>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-4 lg:gap-9">
+        <nav className="hidden lg:flex items-center gap-4 2xl:gap-8">
           <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>
             {t('nav.home')}
           </Link>
@@ -268,7 +268,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] transition-opacity duration-300 md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] transition-opacity duration-300 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsMenuOpen(false)}
       >
         <div
@@ -276,12 +276,12 @@ const Navbar: React.FC = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between p-6 border-b border-[#f0f2f4] dark:border-[#2a303c]">
-              <div className="flex items-center gap-2">
-                <img src="https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png" alt="Logo" className="h-12 w-auto rounded-md" />
-                <span className="font-bold dark:text-white">{t('collegeName')}</span>
+            <div className="flex items-center justify-between gap-2 p-5 border-b border-[#f0f2f4] dark:border-[#2a303c]">
+              <div className="flex items-center gap-2 min-w-0">
+                <img src="https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png" alt="Logo" className="h-12 w-auto rounded-md shrink-0" />
+                <span className="text-sm font-bold leading-tight whitespace-normal dark:text-white">{t('collegeName')}</span>
               </div>
-              <button onClick={() => setIsMenuOpen(false)} className="p-2 dark:text-white">
+              <button onClick={() => setIsMenuOpen(false)} className="p-2 shrink-0 dark:text-white">
                 <span className="material-symbols-outlined">close</span>
               </button>
             </div>
@@ -429,8 +429,8 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-1 justify-end gap-2 lg:gap-4 items-center">
-        <div className="relative hidden lg:block" ref={searchRef}>
+      <div className="flex flex-1 justify-end gap-2 2xl:gap-4 items-center">
+        <div className="relative hidden xl:block" ref={searchRef}>
           <label className="flex flex-col min-w-40 h-10 max-w-64 xl:max-w-xs">
             <div className={`flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden transition-all ${isSearchOpen ? 'ring-2 ring-primary bg-white dark:bg-[#1a1f2e]' : 'bg-[#f0f2f4] dark:bg-[#2a303c]'}`}>
               <div className="text-[#616f89] flex border-none items-center justify-center pl-4 bg-transparent">
@@ -523,14 +523,14 @@ const Navbar: React.FC = () => {
 
         <button
           onClick={toggleLanguage}
-          className="hidden md:flex items-center justify-center px-3 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-[#111318] dark:text-gray-300 text-xs font-bold uppercase"
+          className="hidden lg:flex items-center justify-center px-3 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-[#111318] dark:text-gray-300 text-xs font-bold uppercase"
         >
           {i18n.language?.startsWith('en') ? 'KA' : 'EN'}
         </button>
 
         <button
           onClick={toggleTheme}
-          className="hidden md:flex items-center justify-center w-10 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
+          className="hidden lg:flex items-center justify-center w-10 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
           aria-label="Toggle dark mode"
         >
           <span className="material-symbols-outlined">{isDark ? 'light_mode' : 'dark_mode'}</span>

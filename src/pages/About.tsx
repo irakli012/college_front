@@ -59,7 +59,7 @@ const About: React.FC = () => {
             <img
               className="rounded-xl shadow-2xl object-cover h-[300px] sm:h-[440px] w-full"
               src={SITE_IMAGES.building}
-              alt="College Ilia campus"
+              alt={t('collegeName')}
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg hidden md:block">
               <p className="text-4xl font-bold">25+</p>

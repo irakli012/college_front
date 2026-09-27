@@ -1,5 +1,5 @@
 {
-  "collegeName": "Ilia College",
+  "collegeName": "Ilia Chavchavadze Community College",
   "nav": {
     "home": "Home",
     "about": "About",
@@ -50,7 +50,7 @@
     "universityStatus": "Community College",
     "historyLabel": "History",
     "historyP1": "Ilia Ltd – Ilia Chavchavadze Community College of Sagarejo has been operating since 2000 and over two decades has become one of the most important centers for the development of professional education in the region. The college is multi-profile and offers students the opportunity to gain modern knowledge and practical skills in various fields. The college actively participates in the life of the local community and makes a significant contribution to the development of the region through its activities. For the people of Sagarejo, the college is not just an educational institution, but a source of initiatives and opportunities that promotes new ideas, cooperation, and professional growth. Today, when the education of young people and improvement of their labor prospects is particularly important in the region, the college continues to fulfill its mission — to provide quality professional education, promote the implementation of innovative approaches, and become an exemplary educational space that opens new opportunities for future generations.",
-    "reputationTitle": "College Ilia",
+    "reputationTitle": "Ilia Chavchavadze Community College",
     "reputationDesc": "Over the years, the college has built a solid reputation as a reliable educational institution distinguished not only by academic quality but also by a student-oriented environment. The professionalism of teachers, special emphasis on practical learning, and cooperation with partner organizations creates an educational space that effectively combines theory and practice. Educational programs address new and in-demand professions, which is particularly important in terms of expanding employment opportunities in the region and increasing choices for young people.",
     "highlights": {
       "highlight1": "Multi-profile academic programs",
@@ -64,7 +64,7 @@
     "fbButton": "Follow us on Facebook",
     "foundation": "Our History",
     "missionVision": "Mission, Vision & Values",
-    "missionSubtitle": "College Ilia has been serving the regional professional development since 2000.",
+    "missionSubtitle": "Ilia Chavchavadze Community College has been serving the regional professional development since 2000.",
     "missionTitle": "Mission",
     "missionDesc": "To prepare competitive and highly qualified personnel tailored to the requirements of the local and national labor market, promoting the country's economic development and individual progress.",
     "visionTitle": "Vision",
@@ -733,13 +733,13 @@
     "quickLinks": "Quick Links",
     "resources": "Resources",
     "support": "Support",
-    "allRightsReserved": "College Ilia. All rights reserved."
+    "allRightsReserved": "Ilia Chavchavadze Community College. All rights reserved."
   },
   "register": {
     "title": "Start Your Journey",
     "subtitle": "Join a community of innovators and leaders. Fill out the form below to begin your application process.",
     "successTitle": "Application Received!",
-    "successMessage": "Thank you for choosing College Ilia. Our admissions office will review your application and contact you within 48 business hours.",
+    "successMessage": "Thank you for choosing Ilia Chavchavadze Community College. Our admissions office will review your application and contact you within 48 business hours.",
     "backToForm": "Submit another application",
     "submitButton": "Submit Application",
     "disclaimer": "By submitting, you agree to our terms of service and privacy policy regarding your student data.",
@@ -831,7 +831,7 @@
   },
   "missionPage": {
     "heroTitle": "Mission, Vision & Values",
-    "heroSubtitle": "The founding principles, strategic goals, and development vision of College Ilia.",
+    "heroSubtitle": "The founding principles, strategic goals, and development vision of Ilia Chavchavadze Community College.",
     "missionTitle": "Mission",
     "missionP1": "Ilia Ltd – Ilia Chavchavadze Community College of Sagarejo is a multi-profile professional educational institution whose mission is to prepare competitive and highly qualified personnel tailored to the requirements of the local and national labor market, thereby promoting the country's economic development, increasing social inclusion, and advancing individual professional growth.",
     "missionP2": "The college aims to increase access to professional education and promote lifelong learning. It creates an inclusive, innovative, and student-centered educational environment directed at developing students' independent, entrepreneurial, and creative skills. The college's activities are based on close cooperation with the private sector and continuous improvement of compliance with modern standards of professional education.",
@@ -850,7 +850,7 @@
   },
   "structurePage": {
     "title": "Structure",
-    "subtitle": "The organizational structure of College Ilia.",
+    "subtitle": "The organizational structure of Ilia Chavchavadze Community College.",
     "openInDrive": "Open in Google Drive"
   },
   "authorizationPage": {
@@ -865,7 +865,7 @@
     "sectionTitle": "Trusted Partners",
     "sectionDesc": "We collaborate with local and international organizations that support the professional development of our students.",
     "ctaTitle": "Become Our Partner",
-    "ctaDesc": "Interested in collaborating with College Ilia? Get in touch with us.",
+    "ctaDesc": "Interested in collaborating with Ilia Chavchavadze Community College? Get in touch with us.",
     "ctaButton": "Contact Us",
     "items": {
       "mes": "Ministry of Education, Science and Youth of Georgia",
@@ -904,7 +904,7 @@
     },
     "strategicPlan": {
       "title": "Strategic Development Plan",
-      "subtitle": "College Ilia's long-term strategic development plan."
+      "subtitle": "Ilia Chavchavadze Community College's long-term strategic development plan."
     }
   },
   "library": {
@@ -938,23 +938,23 @@
     "books": {
       "1": {
         "title": "Pharmacy Resources Collection",
-        "author": "College Ilia Library"
+        "author": "College Library"
       },
       "2": {
         "title": "Early Childhood Education Library",
-        "author": "College Ilia Library"
+        "author": "College Library"
       },
       "3": {
         "title": "IT & Computer Science Materials",
-        "author": "College Ilia Library"
+        "author": "College Library"
       },
       "4": {
         "title": "Veterinary Medicine Archives",
-        "author": "College Ilia Library"
+        "author": "College Library"
       },
       "5": {
         "title": "Financial Services & Business",
-        "author": "College Ilia Library"
+        "author": "College Library"
       }
     }
   },

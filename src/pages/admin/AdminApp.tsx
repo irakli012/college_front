@@ -80,7 +80,7 @@ const AdminGate: React.FC = () => {
 const AdminApp: React.FC = () => (
   <>
     <Helmet>
-      <title>Content Manager | College Ilia</title>
+      <title>Content Manager</title>
       <meta name="robots" content="noindex, nofollow" />
     </Helmet>
     <AdminGate />

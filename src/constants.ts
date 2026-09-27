@@ -578,7 +578,7 @@ export const BOOKS: Book[] = [
   {
     id: '1',
     title: 'Pharmacy Resources Collection',
-    author: 'College Ilia Library',
+    author: 'College Library',
     category: 'Pharmacy',
     image: 'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?auto=format&fit=crop&q=80&w=400',
     badge: '15+ Books',
@@ -589,7 +589,7 @@ export const BOOKS: Book[] = [
   {
     id: '2',
     title: 'Early Childhood Education Library',
-    author: 'College Ilia Library',
+    author: 'College Library',
     category: 'Early Childhood Education',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=400',
     badge: 'Updated',
@@ -600,7 +600,7 @@ export const BOOKS: Book[] = [
   {
     id: '3',
     title: 'IT & Computer Science Materials',
-    author: 'College Ilia Library',
+    author: 'College Library',
     category: 'Information Technology',
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=400',
     badge: 'Resources',
@@ -611,7 +611,7 @@ export const BOOKS: Book[] = [
   {
     id: '4',
     title: 'Veterinary Medicine Archives',
-    author: 'College Ilia Library',
+    author: 'College Library',
     category: 'Veterinary Medicine',
     image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400',
     badge: 'Coming Soon'
@@ -619,7 +619,7 @@ export const BOOKS: Book[] = [
   {
     id: '5',
     title: 'Financial Services & Business',
-    author: 'College Ilia Library',
+    author: 'College Library',
     category: 'Financial Services',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400',
     badge: 'Coming Soon'

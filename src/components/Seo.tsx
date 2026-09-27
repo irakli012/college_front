@@ -19,9 +19,9 @@ const Seo: React.FC<SeoProps> = ({
 }) => {
   const { t } = useTranslation();
   
-  const siteName = t('collegeName', { defaultValue: 'College Ilia' });
-  const defaultTitle = t('collegeName', { defaultValue: 'College Ilia' });
-  const defaultDescription = t('home.heroSubtitle', { defaultValue: 'College Ilia offers modern professional education programs.' });
+  const siteName = t('collegeName', { defaultValue: 'Ilia Chavchavadze Community College' });
+  const defaultTitle = t('collegeName', { defaultValue: 'Ilia Chavchavadze Community College' });
+  const defaultDescription = t('home.heroSubtitle', { defaultValue: 'Ilia Chavchavadze Community College offers vocational education programs in Sagarejo.' });
   // Default image is the college logo
   const defaultImage = 'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png';
 
