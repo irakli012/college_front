@@ -462,8 +462,10 @@ const TextEditor: React.FC<{ session: Session }> = ({ session }) => {
                 Nothing found.
               </div>
             ) : (
-              groups.map((group) => (
-                <section key={group.id} className="flex flex-col gap-3">
+              groups.map((group, groupIndex) => (
+                // The same group can appear more than once (e.g. page texts before and after
+                // a nested list), so the position is part of the key.
+                <section key={`${group.id}#${groupIndex}`} className="flex flex-col gap-3">
                   {group.title && (
                     <h3 className="text-sm font-bold text-primary mt-3 line-clamp-1">{group.title}</h3>
                   )}
