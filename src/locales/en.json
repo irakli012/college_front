@@ -826,8 +826,8 @@
     "hoursDetails": "Monday - Friday: 09:00 - 18:00"
   },
   "programsCatalog": {
-    "subtitle": "Complete catalog of professional educational programs.",
-    "comingSoon": "Coming Soon"
+    "subtitle": "Catalogs of the vocational education programs offered by the college.",
+    "catalogTitle": "Vocational Education Programs Catalog {{year}}"
   },
   "missionPage": {
     "heroTitle": "Mission, Vision & Values",

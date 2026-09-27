@@ -666,6 +666,12 @@ export const PARTNERS: Partner[] = [
   { id: 'finforce', url: 'https://www.finforce.ge/' }
 ].map((p) => ({ ...p, logo: `${ASSETS_URL}/partners/${p.id}.webp` }));
 
+// Programs catalogs (PDFs in Google Drive), newest first
+export const PROGRAM_CATALOGS = [
+  { year: 2025, fileId: '1b_cL0HAItfkIA0GPQBjGZYiKQl13Dtcc' },
+  { year: 2024, fileId: '1ZnOjxIF2pdSBSilr0YpNywSQt9FxcUpG' }
+];
+
 // Mandatory college documents, hosted in the college's Google Drive
 export const DOCUMENTS: CollegeDocument[] = [
   { id: 'publicRelations', kind: 'document', icon: 'campaign', url: 'https://docs.google.com/document/d/1or4eWvJRUjJzINJTnlf-tzcI_gTrY0rl/edit?usp=sharing' },
