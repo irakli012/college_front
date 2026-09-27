@@ -5,6 +5,7 @@ import { supabase } from '../../lib/supabase';
 import { DEFAULT_TEXTS, LANGS, Lang, TextOverride, fetchOverrides, flattenTexts, loadOverrides } from '../../lib/translations';
 import { humanize, sectionLabel } from './sections';
 import HistoryView from './HistoryView';
+import { matchText } from './search';
 
 const LOGO = 'https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png';
 const LANG_LABEL: Record<Lang, string> = { ka: 'ქართული', en: 'English' };
@@ -231,12 +232,25 @@ const TextEditor: React.FC<{ session: Session }> = ({ session }) => {
   }, [dirtyEntries.length, save]);
 
   const q = query.trim().toLowerCase();
-  const visible = useMemo(() => {
-    let list = q
-      ? ENTRIES.filter((e) => e.key.toLowerCase().includes(q) || LANGS.some((l) => current(e, l).toLowerCase().includes(q)))
-      : ENTRIES.filter((e) => e.section === section && (!hasParts(section) || SUBSECTION_OF.get(e.key) === part));
+  const { visible, onlyCloseMatches } = useMemo(() => {
+    let list: Entry[];
+    let closeOnly = false;
+    if (q) {
+      // Exact matches first, then close matches (small typos)
+      const exact: Entry[] = [];
+      const close: Entry[] = [];
+      for (const e of ENTRIES) {
+        const kind = matchText(q, [e.key, ...LANGS.map((l) => current(e, l))]);
+        if (kind === 'exact') exact.push(e);
+        else if (kind === 'close') close.push(e);
+      }
+      list = [...exact, ...close];
+      closeOnly = exact.length === 0 && close.length > 0;
+    } else {
+      list = ENTRIES.filter((e) => e.section === section && (!hasParts(section) || SUBSECTION_OF.get(e.key) === part));
+    }
     if (editedOnly) list = list.filter((e) => isEdited(e) || isDirty(e));
-    return list;
+    return { visible: list, onlyCloseMatches: closeOnly };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q, section, part, editedOnly, overrides, drafts]);
 
@@ -434,6 +448,9 @@ const TextEditor: React.FC<{ session: Session }> = ({ session }) => {
                 {q && visible.length > SEARCH_LIMIT ? `First ${SEARCH_LIMIT} of ${visible.length}` : `${visible.length} texts`}
               </p>
             </div>
+            {onlyCloseMatches && (
+              <p className="-mt-3 text-sm text-amber-700 dark:text-amber-300">No exact match — showing texts with similar words.</p>
+            )}
 
             {loading ? (
               <div className="flex justify-center py-20">
