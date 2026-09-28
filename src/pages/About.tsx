@@ -1,14 +1,11 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { TeamMember } from '../types';
 import { SITE_IMAGES } from '../constants';
 import Seo from '../components/Seo';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
-  const teamData = t('about.team', { returnObjects: true }) as Record<string, TeamMember>;
-  const team = Object.entries(teamData).map(([id, member]) => ({ ...member, id }));
 
   return (
     <div className="animate-fade-in max-w-[1200px] mx-auto px-6 py-10">
@@ -108,29 +105,6 @@ const About: React.FC = () => {
           <p className="text-[#616f89] dark:text-[#9ea7b8] text-base leading-relaxed">
             {t('about.reputationP2')}
           </p>
-        </div>
-      </section>
-
-      {/* Admin Team */}
-      <section className="py-12 sm:py-16">
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <h2 className="text-[#111318] dark:text-white text-3xl font-bold">{t('about.adminTeam')}</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member) => (
-              <div key={member.id} className="bg-white dark:bg-[#1c2331] rounded-xl overflow-hidden border border-[#dbdfe6] dark:border-[#2a303c] shadow-sm group hover:shadow-lg transition-all">
-                <div className="aspect-square overflow-hidden bg-gray-200">
-                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={member.image} alt={member.name} />
-                </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-bold dark:text-white">{member.name}</h4>
-                  <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                  <p className="text-[#616f89] dark:text-[#9ea7b8] text-xs leading-relaxed">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

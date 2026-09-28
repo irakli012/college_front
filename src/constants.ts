@@ -1,5 +1,5 @@
 
-import { Program, NewsItem, Book, TeamMember, GalleryItem, CollegeDocument, Partner } from './types';
+import { Program, NewsItem, Book, GalleryItem, CollegeDocument, Partner } from './types';
 
 export const PROGRAMS: Program[] = [
   {

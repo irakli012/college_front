@@ -31,14 +31,6 @@ export interface Book {
   downloadUrl?: string;
 }
 
-export interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  bio: string;
-  image: string;
-}
-
 export interface GalleryItem {
   id: string;
   image: string;
