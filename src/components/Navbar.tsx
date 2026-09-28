@@ -372,8 +372,10 @@ const Navbar: React.FC = () => {
               onClick={() => setIsIntlOpen(!isIntlOpen)}
               className={`flex items-center gap-1 text-sm leading-normal transition-colors ${isIntlActive() ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}
             >
-              {/* Short label in the top bar; the full name is used everywhere else */}
-              <span title={t('nav.international')}>{t('nav.internationalShort')}</span>
+              {/* Two lines on laptops so the whole menu still fits; one line on wide screens */}
+              <span className="whitespace-normal leading-tight text-left max-w-[107px] min-[1680px]:max-w-none min-[1680px]:whitespace-nowrap">
+                {t('nav.international')}
+              </span>
               <span className={`material-symbols-outlined text-base transition-transform ${isIntlOpen ? 'rotate-180' : ''}`}>expand_more</span>
             </button>
             {isIntlOpen && (
@@ -590,7 +592,7 @@ const Navbar: React.FC = () => {
 
       <div className="flex flex-1 justify-end gap-2 items-center">
         {/* Wide screens: search box right in the header */}
-        <div className="relative hidden min-[1380px]:block" ref={searchRef}>
+        <div className="relative hidden min-[1390px]:block" ref={searchRef}>
           <label className="flex flex-col h-10 w-36 2xl:w-60">
             <div className={`flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden transition-all ${isSearchOpen ? 'ring-2 ring-primary bg-white dark:bg-[#1a1f2e]' : 'bg-[#f0f2f4] dark:bg-[#2a303c]'}`}>
               <div className="text-[#616f89] flex border-none items-center justify-center pl-3 bg-transparent">
@@ -623,7 +625,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Narrower screens and phones: a search icon that opens a panel under the header */}
-        <div className="min-[1380px]:hidden" ref={searchPanelRef}>
+        <div className="min-[1390px]:hidden" ref={searchPanelRef}>
           <button
             onClick={() => setIsSearchPanelOpen((open) => !open)}
             className={`flex items-center justify-center w-10 h-10 rounded-lg transition-colors ${isSearchPanelOpen ? 'bg-primary text-white' : 'bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300'}`}

@@ -26,8 +26,7 @@
     "international": "საერთაშორისო ურთიერთობები",
     "internationalization": "ინტერნაციონალიზაცია",
     "projects": "პროექტები",
-    "activities": "აქტივობები",
-    "internationalShort": "საერთაშორისო"
+    "activities": "აქტივობები"
   },
   "home": {
     "heroTitle": "ისიამოვნე სწავლით,\nდასაქმდი წარმატებით",
@@ -45,8 +44,8 @@
     "quickLinks": {
       "studentPortal": "სტუდენტური პორტალი",
       "admissions": "მიღება",
-      "academicCalendar": "აკადემიური კალენდარი",
-      "campusMap": "კამპუსის რუკა"
+      "news": "სიახლეები",
+      "contact": "კონტაქტი"
     }
   },
   "about": {

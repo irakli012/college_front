@@ -26,8 +26,7 @@
     "international": "International Relations",
     "internationalization": "Internationalization",
     "projects": "Projects",
-    "activities": "Activities",
-    "internationalShort": "International"
+    "activities": "Activities"
   },
   "home": {
     "heroTitle": "Enjoy Learning,\nSucceed in Your Career",
@@ -45,8 +44,8 @@
     "quickLinks": {
       "studentPortal": "Student Portal",
       "admissions": "Admissions",
-      "academicCalendar": "Academic Calendar",
-      "campusMap": "Campus Map"
+      "news": "News",
+      "contact": "Contact"
     }
   },
   "about": {

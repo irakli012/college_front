@@ -59,8 +59,8 @@ const Home: React.FC = () => {
           {[
             { icon: 'person', label: t('home.quickLinks.studentPortal'), link: '#', isExternal: true },
             { icon: 'school', label: t('home.quickLinks.admissions'), link: '/register', isExternal: false },
-            { icon: 'calendar_today', label: t('home.quickLinks.academicCalendar'), link: '#', isExternal: true },
-            { icon: 'map', label: t('home.quickLinks.campusMap'), link: '/contact', isExternal: false }
+            { icon: 'newspaper', label: t('home.quickLinks.news'), link: '/news', isExternal: false },
+            { icon: 'call', label: t('home.quickLinks.contact'), link: '/contact', isExternal: false }
           ].map((item, idx) => (
             item.isExternal ? (
               <a key={idx} href={item.link} className="group flex items-center gap-4 p-5 rounded-xl border border-[#dbdfe6] dark:border-[#2a303c] bg-white dark:bg-[#1e2433] hover:border-primary/50 hover:shadow-lg transition-all">
