@@ -643,6 +643,14 @@ export const GALLERY: GalleryItem[] = Array.from({ length: 30 }, (_, i) => {
   };
 });
 
+export const COLLEGE_CONTACT = {
+  phone: '+995 595 944 244',
+  phoneHref: 'tel:+995595944244',
+  email: 'iliasagarejo@gmail.com',
+  facebook: 'https://www.facebook.com/profile.php?id=100077892887379',
+  logo: `${ASSETS_URL}/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png`
+};
+
 // Pin of "საგარეჯოს საზოგადოებრივი კოლეჯი" on Google Maps
 export const COLLEGE_LOCATION = {
   lat: 41.7362356,

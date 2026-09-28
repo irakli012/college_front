@@ -729,12 +729,11 @@
     }
   },
   "footer": {
-    "description": "Inspiring students to explore, innovate, and lead. Our multi-disciplinary approach prepares you for the careers of tomorrow.",
     "quickLinks": "Quick Links",
-    "resources": "Resources",
-    "support": "Support",
     "allRightsReserved": "Ilia Chavchavadze Community College. All rights reserved.",
-    "privacyPolicy": "Privacy Policy"
+    "register": "Registration",
+    "college": "College",
+    "authorization": "Authorization"
   },
   "register": {
     "title": "Start Your Journey",

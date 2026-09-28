@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Seo from '../components/Seo';
-import { COLLEGE_LOCATION } from '../constants';
+import { COLLEGE_CONTACT, COLLEGE_LOCATION } from '../constants';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -10,14 +10,14 @@ const Contact = () => {
     {
       icon: 'phone',
       title: t('contact.phone'),
-      value: '+995 595 944 244',
-      href: 'tel:+995595944244'
+      value: COLLEGE_CONTACT.phone,
+      href: COLLEGE_CONTACT.phoneHref
     },
     {
       icon: 'mail',
       title: t('contact.email'),
-      value: 'iliasagarejo@gmail.com',
-      href: 'mailto:iliasagarejo@gmail.com'
+      value: COLLEGE_CONTACT.email,
+      href: `mailto:${COLLEGE_CONTACT.email}`
     },
     {
       icon: 'location_on',
