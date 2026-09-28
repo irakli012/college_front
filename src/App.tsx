@@ -1,9 +1,10 @@
 
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import { LEGACY_REDIRECTS } from './legacyRedirects';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -20,7 +21,8 @@ const FinancialServices = lazy(() => import('./pages/programs/FinancialServices'
 const AdministrativeServices = lazy(() => import('./pages/programs/AdministrativeServices'));
 const Register = lazy(() => import('./pages/Register'));
 const Contact = lazy(() => import('./pages/Contact'));
-const AdminApp = lazy(() => import('./pages/admin/AdminApp'));const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
+const AdminApp = lazy(() => import('./pages/admin/AdminApp'));
+const NotFound = lazy(() => import('./pages/NotFound'));const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
 
 // About sub-pages
 const MissionValues = lazy(() => import('./pages/MissionValues'));
@@ -73,6 +75,12 @@ const SiteLayout: React.FC = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/programs-catalog" element={<ProgramsCatalog />} />
+              {Object.entries(LEGACY_REDIRECTS).map(([from, to]) => (
+                <React.Fragment key={from}>
+                  <Route path={from} element={<Navigate to={to} replace />} />
+                </React.Fragment>
+              ))}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </main>
@@ -87,7 +95,8 @@ const App: React.FC = () => {
       <ScrollToTop />
       <Routes>
         {/* The admin panel has its own full-screen layout */}
-        <Route path="/admin/*" element={<Suspense fallback={<LoadingFallback />}><AdminApp /></Suspense>} />        <Route path="/*" element={<SiteLayout />} />
+        <Route path="/admin/*" element={<Suspense fallback={<LoadingFallback />}><AdminApp /></Suspense>} />
+        <Route path="/*" element={<SiteLayout />} />
       </Routes>
     </Router>
   );

@@ -982,5 +982,10 @@
       "eLearning": "E-Learning Instructions",
       "materialResources": "Rules for the Management of Material Resources"
     }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist or has moved. Use the menu or go back to the home page.",
+    "home": "Back to home"
   }
 }
