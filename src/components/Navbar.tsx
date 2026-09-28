@@ -20,6 +20,8 @@ const Navbar: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
+  const [isSearchPanelOpen, setIsSearchPanelOpen] = useState(false);
+  const searchPanelRef = useRef<HTMLDivElement>(null);
   
   const learnRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -44,6 +46,8 @@ const Navbar: React.FC = () => {
     setIsMobileStrategicOpen(false);
     setIsIntlOpen(false);
     setIsMobileIntlOpen(false);
+    setIsSearchOpen(false);
+    setIsSearchPanelOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -61,9 +65,22 @@ const Navbar: React.FC = () => {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setIsSearchOpen(false);
       }
+      if (searchPanelRef.current && !searchPanelRef.current.contains(e.target as Node)) {
+        setIsSearchPanelOpen(false);
+      }
     };
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsSearchOpen(false);
+        setIsSearchPanelOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
   }, []);
 
   useEffect(() => {
@@ -157,6 +174,73 @@ const Navbar: React.FC = () => {
     const total = results.pages.length + results.programs.length + results.news.length + results.library.length;
     return { ...results, total };
   }, [searchQuery, t]);
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+    setIsSearchPanelOpen(false);
+  };
+
+  // Shared by the search box (wide screens) and the search panel (narrower screens and phones)
+  const searchResultsContent = searchResults && (searchResults.total === 0 ? (
+      <div className="p-6 text-center flex flex-col items-center">
+        <span className="material-symbols-outlined text-4xl text-gray-300 dark:text-gray-600 mb-2">search_off</span>
+        <div className="text-[#111318] dark:text-white font-bold">{t('search.noResults', { defaultValue: 'No results found' })}</div>
+        <div className="text-[#616f89] text-xs mt-1">{t('search.noResultsDesc', { defaultValue: 'Try adjusting your search keywords.' })}</div>
+      </div>
+    ) : (
+      <>
+        {searchResults.pages.length > 0 && (
+          <div>
+            <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.pages', { defaultValue: 'Pages' })}</div>
+            {searchResults.pages.map(p => (
+              <Link key={p.to} to={p.to} onClick={closeSearch} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">{p.icon}</span>
+                <span className="text-sm dark:text-white font-semibold">{t(p.labelKey)}</span>
+              </Link>
+            ))}
+          </div>
+        )}
+        {searchResults.programs.length > 0 && (
+          <div className="mt-1">
+            <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.programs', { defaultValue: 'Programs' })}</div>
+            {searchResults.programs.map(p => (
+              <Link key={p.id} to={`/programs/${p.slug}`} onClick={closeSearch} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">{p.icon}</span>
+                <div className="flex flex-col flex-1 min-w-0">
+                  <span className="text-sm dark:text-white font-semibold line-clamp-1">{t(`programs.${p.slug}.title`, { defaultValue: p.title })}</span>
+                  <span className="text-[11px] text-[#616f89] dark:text-gray-500 line-clamp-1">{t(`programs.${p.slug}.description`, { defaultValue: p.description })}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+        {searchResults.news.length > 0 && (
+          <div className="mt-1">
+            <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.news', { defaultValue: 'News' })}</div>
+            {searchResults.news.map(n => (
+              <Link key={n.id} to={`/news/${n.slug}`} onClick={closeSearch} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">newspaper</span>
+                <span className="text-sm dark:text-white font-semibold line-clamp-1 flex-1">{t(`news.items.${n.id}.title`)}</span>
+              </Link>
+            ))}
+          </div>
+        )}
+        {searchResults.library.length > 0 && (
+          <div className="mt-1">
+            <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.library', { defaultValue: 'Library' })}</div>
+            {searchResults.library.map(b => (
+              <Link key={b.id} to={`/library`} onClick={closeSearch} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
+                <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">menu_book</span>
+                <div className="flex flex-col flex-1 min-w-0">
+                  <span className="text-sm dark:text-white font-semibold line-clamp-1">{t(`library.books.${b.id}.title`, { defaultValue: b.title })}</span>
+                  <span className="text-[11px] text-[#616f89] dark:text-gray-500 line-clamp-1">{t(`library.books.${b.id}.author`, { defaultValue: b.author })}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+      </>
+    ));
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 lg:px-6 py-3 sticky top-0 z-50">
@@ -505,21 +589,22 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="flex flex-1 justify-end gap-2 items-center">
-        <div className="relative hidden 2xl:block" ref={searchRef}>
-          <label className="flex flex-col min-w-40 h-10 max-w-64 xl:max-w-xs">
+        {/* Wide screens: search box right in the header */}
+        <div className="relative hidden min-[1380px]:block" ref={searchRef}>
+          <label className="flex flex-col h-10 w-36 2xl:w-60">
             <div className={`flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden transition-all ${isSearchOpen ? 'ring-2 ring-primary bg-white dark:bg-[#1a1f2e]' : 'bg-[#f0f2f4] dark:bg-[#2a303c]'}`}>
-              <div className="text-[#616f89] flex border-none items-center justify-center pl-4 bg-transparent">
+              <div className="text-[#616f89] flex border-none items-center justify-center pl-3 bg-transparent">
                 <span className="material-symbols-outlined text-xl">search</span>
               </div>
-              <input 
+              <input
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
                   setIsSearchOpen(true);
                 }}
                 onFocus={() => setIsSearchOpen(true)}
-                className="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-sm font-medium leading-normal" 
-                placeholder={t('search.placeholder', { defaultValue: 'Search...' })} 
+                className="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-sm font-medium leading-normal"
+                placeholder={t('search.placeholder', { defaultValue: 'Search...' })}
               />
               {searchQuery && (
                 <button onClick={() => { setSearchQuery(''); setIsSearchOpen(false); }} className="flex items-center justify-center pr-3 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors">
@@ -528,70 +613,53 @@ const Navbar: React.FC = () => {
               )}
             </div>
           </label>
-          
+
           {/* Dropdown */}
           {isSearchOpen && searchQuery.trim() && searchResults && (
             <div className="absolute top-full right-0 mt-3 w-96 max-h-[70vh] overflow-y-auto bg-white dark:bg-[#1a1f2e] border border-[#f0f2f4] dark:border-[#2a303c] rounded-xl shadow-2xl z-50 p-2 flex flex-col gap-2 custom-scrollbar">
-              {searchResults.total === 0 ? (
-                <div className="p-6 text-center flex flex-col items-center">
-                  <span className="material-symbols-outlined text-4xl text-gray-300 dark:text-gray-600 mb-2">search_off</span>
-                  <div className="text-[#111318] dark:text-white font-bold">{t('search.noResults', { defaultValue: 'No results found' })}</div>
-                  <div className="text-[#616f89] text-xs mt-1">{t('search.noResultsDesc', { defaultValue: 'Try adjusting your search keywords.' })}</div>
+              {searchResultsContent}
+            </div>
+          )}
+        </div>
+
+        {/* Narrower screens and phones: a search icon that opens a panel under the header */}
+        <div className="min-[1380px]:hidden" ref={searchPanelRef}>
+          <button
+            onClick={() => setIsSearchPanelOpen((open) => !open)}
+            className={`flex items-center justify-center w-10 h-10 rounded-lg transition-colors ${isSearchPanelOpen ? 'bg-primary text-white' : 'bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300'}`}
+            aria-label={t('search.placeholder', { defaultValue: 'Search...' })}
+            aria-expanded={isSearchPanelOpen}
+          >
+            <span className="material-symbols-outlined">{isSearchPanelOpen ? 'close' : 'search'}</span>
+          </button>
+
+          {isSearchPanelOpen && (
+            // Positioned against the sticky header, so it spans the full width right below it
+            <div className="absolute top-full inset-x-0 bg-white dark:bg-[#111318] border-b border-[#f0f2f4] dark:border-[#2a303c] shadow-xl z-50 px-4 py-3 whitespace-normal">
+              <div className="max-w-2xl mx-auto flex flex-col gap-2">
+                <div className="flex items-stretch h-11 rounded-lg overflow-hidden ring-2 ring-primary bg-white dark:bg-[#1a1f2e]">
+                  <div className="text-[#616f89] flex items-center justify-center pl-3">
+                    <span className="material-symbols-outlined text-xl">search</span>
+                  </div>
+                  <input
+                    autoFocus
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-[#111318] dark:text-white placeholder:text-[#616f89] px-2 text-base font-medium"
+                    placeholder={t('search.placeholder', { defaultValue: 'Search...' })}
+                  />
+                  {searchQuery && (
+                    <button onClick={() => setSearchQuery('')} className="flex items-center justify-center pr-3 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors" aria-label="Clear">
+                      <span className="material-symbols-outlined text-sm">close</span>
+                    </button>
+                  )}
                 </div>
-              ) : (
-                <>
-                  {searchResults.pages.length > 0 && (
-                    <div>
-                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.pages', { defaultValue: 'Pages' })}</div>
-                      {searchResults.pages.map(p => (
-                        <Link key={p.to} to={p.to} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
-                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">{p.icon}</span>
-                          <span className="text-sm dark:text-white font-semibold">{t(p.labelKey)}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                  {searchResults.programs.length > 0 && (
-                    <div className="mt-1">
-                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.programs', { defaultValue: 'Programs' })}</div>
-                      {searchResults.programs.map(p => (
-                        <Link key={p.id} to={`/programs/${p.slug}`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
-                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">{p.icon}</span>
-                          <div className="flex flex-col flex-1 min-w-0">
-                            <span className="text-sm dark:text-white font-semibold line-clamp-1">{t(`programs.${p.slug}.title`, { defaultValue: p.title })}</span>
-                            <span className="text-[11px] text-[#616f89] dark:text-gray-500 line-clamp-1">{t(`programs.${p.slug}.description`, { defaultValue: p.description })}</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                  {searchResults.news.length > 0 && (
-                    <div className="mt-1">
-                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.news', { defaultValue: 'News' })}</div>
-                      {searchResults.news.map(n => (
-                        <Link key={n.id} to={`/news/${n.slug}`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
-                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">newspaper</span>
-                          <span className="text-sm dark:text-white font-semibold line-clamp-1 flex-1">{t(`news.items.${n.id}.title`)}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                  {searchResults.library.length > 0 && (
-                    <div className="mt-1">
-                      <div className="text-[10px] font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider px-3 py-1.5 mb-0.5 bg-gray-50 dark:bg-[#232936] rounded">{t('search.library', { defaultValue: 'Library' })}</div>
-                      {searchResults.library.map(b => (
-                        <Link key={b.id} to={`/library`} onClick={() => setIsSearchOpen(false)} className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-[#2a303c] rounded-lg group transition-colors">
-                          <span className="material-symbols-outlined text-gray-400 group-hover:text-primary text-base">menu_book</span>
-                          <div className="flex flex-col flex-1 min-w-0">
-                            <span className="text-sm dark:text-white font-semibold line-clamp-1">{t(`library.books.${b.id}.title`, { defaultValue: b.title })}</span>
-                            <span className="text-[11px] text-[#616f89] dark:text-gray-500 line-clamp-1">{t(`library.books.${b.id}.author`, { defaultValue: b.author })}</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </>
-              )}
+                {searchQuery.trim() && searchResults && (
+                  <div className="max-h-[70vh] overflow-y-auto flex flex-col gap-2 custom-scrollbar">
+                    {searchResultsContent}
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
