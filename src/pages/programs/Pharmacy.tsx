@@ -124,13 +124,6 @@ const Pharmacy: React.FC = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-[#111318] dark:bg-primary p-6 rounded-xl text-white shadow-lg">
-              <h4 className="font-bold mb-2">{t('programDetail.questions.title')}</h4>
-              <p className="text-sm opacity-80 mb-4">{t('programDetail.questions.subtitle')}</p>
-              <a className="inline-flex items-center gap-2 text-sm font-bold hover:underline" href="#">
-                {t('programDetail.questions.link')} <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
           </div>
         </aside>
       </div>
