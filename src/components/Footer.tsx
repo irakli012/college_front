@@ -22,27 +22,20 @@ const Footer: React.FC = () => {
             <h5 className="font-bold dark:text-white text-sm">{t('footer.quickLinks')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
               <li><Link className="hover:text-primary" to="/programs">{t('nav.programs')}</Link></li>
-              <li><a className="hover:text-primary" href="#">Admissions</a></li>
-              <li><a className="hover:text-primary" href="#">Campus Life</a></li>
-              <li><a className="hover:text-primary" href="#">Alumni</a></li>
             </ul>
           </div>
           <div className="flex flex-col gap-4">
             <h5 className="font-bold dark:text-white text-sm">{t('footer.resources')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
-              <li><a className="hover:text-primary" href="#">Student Portal</a></li>
-              <li><Link className="hover:text-primary" to="/library">Library</Link></li>
-              <li><a className="hover:text-primary" href="#">Career Center</a></li>
-              <li><a className="hover:text-primary" href="#">Safety</a></li>
+              <li><a className="hover:text-primary" href="#">{t('home.quickLinks.studentPortal')}</a></li>
+              <li><Link className="hover:text-primary" to="/library">{t('nav.library')}</Link></li>
             </ul>
           </div>
           <div className="flex flex-col gap-4">
             <h5 className="font-bold dark:text-white text-sm">{t('footer.support')}</h5>
             <ul className="flex flex-col gap-2 text-sm text-[#616f89] dark:text-[#9ea7b8]">
               <li><Link className="hover:text-primary" to="/contact">{t('contact.title')}</Link></li>
-              <li><a className="hover:text-primary" href="#">Help Desk</a></li>
-              <li><a className="hover:text-primary" href="#">Privacy Policy</a></li>
-              <li><a className="hover:text-primary" href="#">Terms</a></li>
+              <li><a className="hover:text-primary" href="#">{t('footer.privacyPolicy')}</a></li>
             </ul>
           </div>
         </div>
