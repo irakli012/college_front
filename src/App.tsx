@@ -22,7 +22,12 @@ const AdministrativeServices = lazy(() => import('./pages/programs/Administrativ
 const Register = lazy(() => import('./pages/Register'));
 const Contact = lazy(() => import('./pages/Contact'));
 const AdminApp = lazy(() => import('./pages/admin/AdminApp'));
-const NotFound = lazy(() => import('./pages/NotFound'));const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+// International relations
+const Internationalization = lazy(() => import('./pages/international/Internationalization'));
+const InternationalProjects = lazy(() => import('./pages/international/Projects'));
+const InternationalActivities = lazy(() => import('./pages/international/Activities'));const ProgramsCatalog = lazy(() => import('./pages/ProgramsCatalog'));
 
 // About sub-pages
 const MissionValues = lazy(() => import('./pages/MissionValues'));
@@ -75,6 +80,10 @@ const SiteLayout: React.FC = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/programs-catalog" element={<ProgramsCatalog />} />
+              <Route path="/international" element={<Navigate to="/international/internationalization" replace />} />
+              <Route path="/international/internationalization" element={<Internationalization />} />
+              <Route path="/international/projects" element={<InternationalProjects />} />
+              <Route path="/international/activities" element={<InternationalActivities />} />
               {Object.entries(LEGACY_REDIRECTS).map(([from, to]) => (
                 <React.Fragment key={from}>
                   <Route path={from} element={<Navigate to={to} replace />} />

@@ -14,17 +14,21 @@ const Navbar: React.FC = () => {
   const [isMobileLearnOpen, setIsMobileLearnOpen] = useState(false);
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
   const [isMobileStrategicOpen, setIsMobileStrategicOpen] = useState(false);
-  
+  const [isIntlOpen, setIsIntlOpen] = useState(false);
+  const [isMobileIntlOpen, setIsMobileIntlOpen] = useState(false);
+
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   
   const learnRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const intlRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => location.pathname === path;
   const isLearnActive = () =>
     ['/programs', '/programs-catalog', '/library'].some((p) => location.pathname.startsWith(p));
+  const isIntlActive = () => location.pathname.startsWith('/international');
   const isAboutActive = () =>
     ['/about', '/about/mission', '/about/structure', '/about/authorization', '/about/partners', '/about/strategic'].some(
       (p) => location.pathname.startsWith(p)
@@ -38,12 +42,17 @@ const Navbar: React.FC = () => {
     setIsMobileLearnOpen(false);
     setIsMobileAboutOpen(false);
     setIsMobileStrategicOpen(false);
+    setIsIntlOpen(false);
+    setIsMobileIntlOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (learnRef.current && !learnRef.current.contains(e.target as Node)) {
         setIsLearnOpen(false);
+      }
+      if (intlRef.current && !intlRef.current.contains(e.target as Node)) {
+        setIsIntlOpen(false);
       }
       if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
         setIsAboutOpen(false);
@@ -98,6 +107,12 @@ const Navbar: React.FC = () => {
     { to: '/about/strategic/plan', labelKey: 'nav.strategic.strategicPlan', icon: 'rocket_launch' },
   ];
 
+  const intlItems = [
+    { to: '/international/internationalization', labelKey: 'nav.internationalization', icon: 'public' },
+    { to: '/international/projects', labelKey: 'nav.projects', icon: 'handshake' },
+    { to: '/international/activities', labelKey: 'nav.activities', icon: 'photo_camera' },
+  ];
+
   const aboutItems = [
     { to: '/about', labelKey: 'nav.aboutUs', icon: 'info' },
     { to: '/about/mission', labelKey: 'nav.mission', icon: 'lightbulb' },
@@ -116,6 +131,7 @@ const Navbar: React.FC = () => {
     { to: '/gallery', labelKey: 'nav.gallery', icon: 'photo_library' },
     { to: '/library', labelKey: 'nav.library', icon: 'menu_book' },
     { to: '/about/documents', labelKey: 'nav.documents', icon: 'folder_copy' },
+    ...intlItems,
     { to: '/contact', labelKey: 'contact.title', icon: 'call' }
   ];
 
@@ -143,11 +159,11 @@ const Navbar: React.FC = () => {
   }, [searchQuery, t]);
 
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 lg:px-6 2xl:px-10 py-3 sticky top-0 z-50">
-      <div className="flex items-center gap-2 lg:gap-4 2xl:gap-8">
+    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 lg:px-6 py-3 sticky top-0 z-50">
+      <div className="flex items-center gap-2 xl:gap-4">
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="flex lg:hidden items-center justify-center p-2 text-[#111318] dark:text-white"
+          className="flex xl:hidden items-center justify-center p-2 text-[#111318] dark:text-white"
           aria-label="Open menu"
         >
           <span className="material-symbols-outlined">menu</span>
@@ -155,10 +171,10 @@ const Navbar: React.FC = () => {
 
         <Link to="/" className="flex items-center gap-2 shrink-0 text-[#111318] dark:text-white">
           <img src="https://college-website-assets.s3.eu-north-1.amazonaws.com/college+pics/CollegeNewWebsiteMandatory/collegeLogo_1_30.png" alt="Logo" className="h-12 w-auto rounded-md" />
-          <h2 className="text-sm 2xl:text-base font-bold leading-tight tracking-[-0.015em] whitespace-normal max-w-[170px] 2xl:max-w-[210px]">{t('collegeName')}</h2>
+          <h2 className="text-sm font-bold leading-tight tracking-[-0.015em] whitespace-normal max-w-[170px]">{t('collegeName')}</h2>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-4 2xl:gap-8">
+        <nav className="hidden xl:flex items-center gap-4">
           <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>
             {t('nav.home')}
           </Link>
@@ -261,6 +277,39 @@ const Navbar: React.FC = () => {
             )}
           </div>
 
+          {/* International Relations Dropdown */}
+          <div
+            ref={intlRef}
+            className="relative"
+            onMouseEnter={() => setIsIntlOpen(true)}
+            onMouseLeave={() => setIsIntlOpen(false)}
+          >
+            <button
+              onClick={() => setIsIntlOpen(!isIntlOpen)}
+              className={`flex items-center gap-1 text-sm leading-normal transition-colors ${isIntlActive() ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}
+            >
+              {/* Short label in the top bar; the full name is used everywhere else */}
+              <span title={t('nav.international')}>{t('nav.internationalShort')}</span>
+              <span className={`material-symbols-outlined text-base transition-transform ${isIntlOpen ? 'rotate-180' : ''}`}>expand_more</span>
+            </button>
+            {isIntlOpen && (
+              <div className="absolute top-full left-0 pt-2 w-72 z-50">
+                <div className="flex flex-col gap-0.5 bg-white dark:bg-[#1a1f2e] rounded-lg shadow-xl border border-[#f0f2f4] dark:border-[#2a303c] py-2">
+                  {intlItems.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className={`flex items-center gap-3 mx-2 px-4 py-3 text-sm rounded-lg transition-colors whitespace-normal ${isActive(item.to) ? 'text-primary bg-primary/5 font-semibold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#2a303c]'}`}
+                    >
+                      <span className="material-symbols-outlined text-lg shrink-0">{item.icon}</span>
+                      <span className="flex-1">{t(item.labelKey)}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           <Link to="/news" className={`text-sm leading-normal transition-colors ${isActive('/news') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.news')}</Link>
           <Link to="/gallery" className={`text-sm leading-normal transition-colors ${isActive('/gallery') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.gallery')}</Link>
         </nav>
@@ -268,7 +317,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] transition-opacity duration-300 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] transition-opacity duration-300 xl:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsMenuOpen(false)}
       >
         <div
@@ -388,6 +437,32 @@ const Navbar: React.FC = () => {
                 </div>
               )}
 
+              {/* Mobile International Relations Collapsible */}
+              <button
+                onClick={() => setIsMobileIntlOpen(!isMobileIntlOpen)}
+                className={`flex items-center justify-between w-full p-3 rounded-lg transition-all ${isIntlActive() ? 'bg-primary/10 text-primary' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+              >
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <span className="material-symbols-outlined text-xl shrink-0">public</span>
+                  <span className="font-medium text-sm flex-1 min-w-0 text-left break-words leading-snug">{t('nav.international')}</span>
+                </div>
+                <span className={`material-symbols-outlined text-xl shrink-0 ml-2 transition-transform ${isMobileIntlOpen ? 'rotate-180' : ''}`}>expand_more</span>
+              </button>
+              {isMobileIntlOpen && (
+                <div className="flex flex-col gap-0.5 ml-3 pl-3 border-l-2 border-gray-200 dark:border-gray-700">
+                  {intlItems.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className={`flex items-start gap-2 px-2 py-2.5 rounded-lg transition-all text-sm ${isActive(item.to) ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                    >
+                      <span className="material-symbols-outlined text-base shrink-0 mt-0.5">{item.icon}</span>
+                      <span className="font-medium flex-1 min-w-0 break-words leading-snug">{t(item.labelKey)}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+
               {[
                 { to: '/news', label: t('nav.news'), icon: 'newspaper' },
                 { to: '/gallery', label: t('nav.gallery'), icon: 'photo_library' },
@@ -429,8 +504,8 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-1 justify-end gap-2 2xl:gap-4 items-center">
-        <div className="relative hidden xl:block" ref={searchRef}>
+      <div className="flex flex-1 justify-end gap-2 items-center">
+        <div className="relative hidden 2xl:block" ref={searchRef}>
           <label className="flex flex-col min-w-40 h-10 max-w-64 xl:max-w-xs">
             <div className={`flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden transition-all ${isSearchOpen ? 'ring-2 ring-primary bg-white dark:bg-[#1a1f2e]' : 'bg-[#f0f2f4] dark:bg-[#2a303c]'}`}>
               <div className="text-[#616f89] flex border-none items-center justify-center pl-4 bg-transparent">
@@ -523,14 +598,14 @@ const Navbar: React.FC = () => {
 
         <button
           onClick={toggleLanguage}
-          className="hidden lg:flex items-center justify-center px-3 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-[#111318] dark:text-gray-300 text-xs font-bold uppercase"
+          className="hidden xl:flex items-center justify-center px-3 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-[#111318] dark:text-gray-300 text-xs font-bold uppercase"
         >
           {i18n.language?.startsWith('en') ? 'KA' : 'EN'}
         </button>
 
         <button
           onClick={toggleTheme}
-          className="hidden lg:flex items-center justify-center w-10 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
+          className="hidden xl:flex items-center justify-center w-10 h-10 rounded-lg bg-[#f0f2f4] dark:bg-[#2a303c] hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300"
           aria-label="Toggle dark mode"
         >
           <span className="material-symbols-outlined">{isDark ? 'light_mode' : 'dark_mode'}</span>

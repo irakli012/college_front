@@ -674,6 +674,37 @@ export const PARTNERS: Partner[] = [
   { id: 'finforce', url: 'https://www.finforce.ge/' }
 ].map((p) => ({ ...p, logo: `${ASSETS_URL}/partners/${p.id}.webp` }));
 
+// International relations: projects (texts under international.projects.items.<id>)
+export const INTERNATIONAL_PROJECTS = [
+  {
+    id: 'tika',
+    url: 'https://tika.gov.tr/en/',
+    logo: null as string | null,
+    news: ['network-technologies-training-ankara-2026']
+  },
+  {
+    id: 'visionest',
+    url: 'https://visionest.institute/en/2026/03/27/education-elevator-georgias-education-services-make-the-global-move/',
+    logo: `${ASSETS_URL}/news/2026/2026-07-12-education-elevator-program/cover.webp`,
+    news: ['education-elevator-program-2026']
+  },
+  {
+    id: 'care',
+    url: 'https://care-international.org/our-work/where-we-work/Georgia',
+    logo: `${ASSETS_URL}/partners/care-caucasus.webp`,
+    news: ['care-caucasus-project-continuation', 'care-caucasus-camp']
+  }
+];
+
+// News items shown on the International activities page (sorted by date there)
+export const INTERNATIONAL_ACTIVITY_NEWS = [
+  'network-technologies-training-ankara-2026',
+  'education-elevator-program-2026',
+  'waste2wealth-training-of-trainers-2026',
+  'care-caucasus-project-continuation',
+  'care-caucasus-camp'
+];
+
 // Programs catalogs (PDFs in Google Drive), newest first
 export const PROGRAM_CATALOGS = [
   { year: 2025, fileId: '1b_cL0HAItfkIA0GPQBjGZYiKQl13Dtcc' },

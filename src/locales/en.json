@@ -22,7 +22,12 @@
     "news": "News",
     "gallery": "Gallery",
     "library": "Library",
-    "documents": "Documents"
+    "documents": "Documents",
+    "international": "International Relations",
+    "internationalization": "Internationalization",
+    "projects": "Projects",
+    "activities": "Activities",
+    "internationalShort": "International"
   },
   "home": {
     "heroTitle": "Enjoy Learning,\nSucceed in Your Career",
@@ -954,5 +959,36 @@
     "title": "Page not found",
     "text": "This page does not exist or has moved. Use the menu or go back to the home page.",
     "home": "Back to home"
+  },
+  "international": {
+    "internationalization": {
+      "p1": "The college strives to gradually develop cooperation with international educational institutions, organizations and other relevant bodies in the field of vocational education.",
+      "p2": "It is important for us to share international experience and best practice, to develop joint educational initiatives and projects, and to expand opportunities for international experience and professional development for students and staff.",
+      "p3": "In the future, the college plans to gradually develop international cooperation, educational exchanges and mobility opportunities, taking into account its existing resources, needs and capabilities.",
+      "p4": "We believe that the consistent development of international cooperation will help improve the college’s educational activities, support the development of its professional staff and create new opportunities for students."
+    },
+    "projects": {
+      "subtitle": "International organizations and projects the college takes part in.",
+      "website": "Website",
+      "relatedNews": "News",
+      "items": {
+        "tika": {
+          "name": "Turkish Cooperation and Coordination Agency — Türk İşbirliği ve Koordinasyon Ajansı Başkanlığı (TİKA)",
+          "description": "From July 27 to August 3, 2026, the head of the college’s Information Technology program took part in a network technologies training in Ankara, organized by TİKA together with the Ministry of National Education of Türkiye."
+        },
+        "visionest": {
+          "name": "Visionest Institute - Women for Waste (W2W)",
+          "description": "The college was selected among the top 7 participating organizations of Visionest Institute’s Education Elevator program. The program is supported by the European Union; representatives of the college administration will take part in a study visit to Estonia and Finland."
+        },
+        "care": {
+          "name": "Care Caucasus",
+          "description": "With the support of CARE Caucasus, the college’s students take part in camps and in the project “For a Safe and Equal Society”."
+        }
+      }
+    },
+    "activities": {
+      "subtitle": "The college’s international activities and projects in photos.",
+      "readMore": "Read more"
+    }
   }
 }

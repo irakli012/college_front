@@ -15,6 +15,7 @@ export const SECTION_LABELS: Record<string, string> = {
   programs: 'Program details',
   programDetail: 'Program page labels',
   programsCatalog: 'Programs catalog',
+  international: 'International relations',
   news: 'News',
   gallery: 'Gallery',
   library: 'Library',
