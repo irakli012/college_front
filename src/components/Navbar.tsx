@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 lg:px-6 py-3 sticky top-0 z-50">
-      <div className="flex items-center gap-2 xl:gap-4">
+      <div className="flex items-center gap-2 xl:gap-10">
         <button
           onClick={() => setIsMenuOpen(true)}
           className="flex xl:hidden items-center justify-center p-2 text-[#111318] dark:text-white"
@@ -174,7 +174,7 @@ const Navbar: React.FC = () => {
           <h2 className="text-sm font-bold leading-tight tracking-[-0.015em] whitespace-normal max-w-[170px]">{t('collegeName')}</h2>
         </Link>
 
-        <nav className="hidden xl:flex items-center gap-4">
+        <nav className="hidden xl:flex items-center gap-6">
           <Link to="/" className={`text-sm leading-normal transition-colors ${isActive('/') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>
             {t('nav.home')}
           </Link>
