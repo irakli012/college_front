@@ -10,9 +10,11 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    // Copies: i18next merges admin-panel edits into these objects, and the
+    // imported originals must stay untouched (the admin panel compares against them)
     resources: {
-      en: { translation: en },
-      ka: { translation: ka }
+      en: { translation: structuredClone(en) },
+      ka: { translation: structuredClone(ka) }
     },
     fallbackLng: 'en',
     load: 'languageOnly',
