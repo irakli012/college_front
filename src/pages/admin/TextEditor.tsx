@@ -212,6 +212,22 @@ const TextEditor: React.FC<{ session: Session }> = ({ session }) => {
     }
   }, [dirtyEntries, drafts, reload, saving, showToast]);
 
+  // After a change was reverted from the history: refresh, and drop any unsaved edit of that text
+  const handleReverted = useCallback(
+    async (key: string) => {
+      await reload();
+      setDrafts((prev) => {
+        if (!(key in prev)) return prev;
+        const next = { ...prev };
+        delete next[key];
+        return next;
+      });
+      loadOverrides(i18n);
+      showToast('ok', 'Change reverted. The website is updated.');
+    },
+    [reload, showToast]
+  );
+
   // Warn before leaving with unsaved changes; Ctrl/Cmd+S saves.
   useEffect(() => {
     const onBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -395,7 +411,12 @@ const TextEditor: React.FC<{ session: Session }> = ({ session }) => {
         {/* Main */}
         <main className="flex-1 min-w-0 px-4 md:px-8 py-6 pb-28">
           {view === 'history' ? (
-            <HistoryView onOpenText={openText} />
+            <HistoryView
+              overrides={overrides}
+              onOpenText={openText}
+              onReverted={handleReverted}
+              onError={(text) => showToast('error', text)}
+            />
           ) : (
           <div className="max-w-5xl mx-auto flex flex-col gap-5">
             <div className="flex flex-col sm:flex-row gap-3">

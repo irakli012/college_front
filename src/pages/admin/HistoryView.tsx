@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabase';
-import { DEFAULT_TEXTS, LANGS, Lang, flattenTexts } from '../../lib/translations';
+import { DEFAULT_TEXTS, LANGS, Lang, TextOverride, flattenTexts } from '../../lib/translations';
 import { humanize, sectionLabel } from './sections';
 
 const PAGE_SIZE = 50;
@@ -26,12 +26,24 @@ const describeKey = (key: string) => {
   return rest.length ? `${sectionLabel(section)} › ${humanize(rest.join('.'))}` : sectionLabel('_general');
 };
 
-const HistoryView: React.FC<{ onOpenText: (key: string) => void }> = ({ onOpenText }) => {
+// null in the history or in overrides means "the built-in text"
+const effective = (lang: Lang, key: string, value: string | null | undefined) => value ?? DEFAULTS[lang][key] ?? '';
+const changedLangsOf = (row: HistoryRow) => LANGS.filter((l) => row[`old_${l}`] !== row[`new_${l}`]);
+
+interface Props {
+  overrides: Record<string, TextOverride>;
+  onOpenText: (key: string) => void;
+  onReverted: (key: string) => Promise<void>;
+  onError: (text: string) => void;
+}
+
+const HistoryView: React.FC<Props> = ({ overrides, onOpenText, onReverted, onError }) => {
   const [rows, setRows] = useState<HistoryRow[]>([]);
   const [filter, setFilter] = useState('');
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(false);
   const [error, setError] = useState('');
+  const [revertingId, setRevertingId] = useState<number | null>(null);
 
   const load = useCallback(async (from: number, search: string) => {
     if (!supabase) return;
@@ -59,6 +71,39 @@ const HistoryView: React.FC<{ onOpenText: (key: string) => void }> = ({ onOpenTe
     const id = window.setTimeout(() => load(0, filter), 300);
     return () => window.clearTimeout(id);
   }, [filter, load]);
+
+  const currentText = (lang: Lang, key: string) => effective(lang, key, overrides[key]?.[lang]);
+
+  // Puts back the "Before" text, only in the language(s) this change touched.
+  // The revert itself is saved as a normal edit, so it shows up in the history too.
+  const revert = async (row: HistoryRow, changedSince: boolean) => {
+    if (!supabase || revertingId !== null) return;
+    const message =
+      'Revert this change? The text goes back to "Before".' +
+      (changedSince ? '\n\nThis text was changed again after this edit. Reverting replaces those later changes too.' : '');
+    if (!window.confirm(message)) return;
+
+    setRevertingId(row.id);
+    try {
+      const current = overrides[row.key];
+      const next: TextOverride = { key: row.key, ka: current?.ka ?? null, en: current?.en ?? null };
+      for (const lang of changedLangsOf(row)) next[lang] = row[`old_${lang}`];
+      // Texts equal to the built-in version are stored as null (= use the default), like the editor does
+      for (const lang of LANGS) if (next[lang] === DEFAULTS[lang][row.key]) next[lang] = null;
+
+      const { error } =
+        next.ka === null && next.en === null
+          ? await supabase.from('translation_overrides').delete().eq('key', row.key)
+          : await supabase.from('translation_overrides').upsert(next);
+      if (error) throw error;
+      await onReverted(row.key);
+      await load(0, filter);
+    } catch (err: any) {
+      onError(`Could not revert: ${err.message ?? err}`);
+    } finally {
+      setRevertingId(null);
+    }
+  };
 
   return (
     <div className="max-w-5xl mx-auto flex flex-col gap-5">
@@ -89,7 +134,12 @@ const HistoryView: React.FC<{ onOpenText: (key: string) => void }> = ({ onOpenTe
 
       {rows.map((row) => {
         const restored = row.new_ka === null && row.new_en === null;
-        const changedLangs = LANGS.filter((l) => row[`old_${l}`] !== row[`new_${l}`]);
+        const changedLangs = changedLangsOf(row);
+        const stillExists = LANGS.some((l) => row.key in DEFAULTS[l]);
+        // Only offer a revert when the text currently differs from "Before"
+        const canRevert =
+          stillExists && changedLangs.some((l) => currentText(l, row.key) !== effective(l, row.key, row[`old_${l}`]));
+        const changedSince = changedLangs.some((l) => currentText(l, row.key) !== effective(l, row.key, row[`new_${l}`]));
         return (
           <div key={row.id} className="bg-white dark:bg-[#1a2133] rounded-xl border border-[#f0f2f4] dark:border-[#2a303c] p-4 flex flex-col gap-3">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
@@ -105,6 +155,19 @@ const HistoryView: React.FC<{ onOpenText: (key: string) => void }> = ({ onOpenTe
               >
                 {describeKey(row.key)} <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </button>
+              {canRevert && (
+                <button
+                  onClick={() => revert(row, changedSince)}
+                  disabled={revertingId !== null}
+                  className="flex items-center gap-1 h-8 px-3 rounded-lg text-xs font-semibold border border-[#dbdfe6] dark:border-[#2a303c] hover:border-red-400 hover:text-red-600 dark:hover:text-red-300 transition-colors disabled:opacity-50"
+                  title={changedSince ? 'Changed again later - reverting replaces those changes too' : 'Put back the "Before" text'}
+                >
+                  <span className={`material-symbols-outlined text-sm ${revertingId === row.id ? 'animate-spin' : ''}`}>
+                    {revertingId === row.id ? 'progress_activity' : 'undo'}
+                  </span>
+                  Revert
+                </button>
+              )}
             </div>
             {changedLangs.map((lang) => {
               const before = row[`old_${lang}`] ?? DEFAULTS[lang][row.key] ?? '';
