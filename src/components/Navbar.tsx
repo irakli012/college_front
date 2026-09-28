@@ -120,7 +120,6 @@ const Navbar: React.FC = () => {
   const strategicItems = [
     { to: '/about/strategic/action-plans', labelKey: 'nav.strategic.actionPlans', icon: 'task_alt' },
     { to: '/about/strategic/action-reports', labelKey: 'nav.strategic.actionReports', icon: 'assignment_turned_in' },
-    { to: '/about/strategic/financial', labelKey: 'nav.strategic.financialIndicators', icon: 'monitoring' },
     { to: '/about/strategic/plan', labelKey: 'nav.strategic.strategicPlan', icon: 'rocket_launch' },
   ];
 
@@ -244,7 +243,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] dark:border-b-[#2a303c] bg-white dark:bg-[#111318] px-4 lg:px-6 py-3 sticky top-0 z-50">
-      <div className="flex items-center gap-2 xl:gap-10">
+      <div className="flex items-center gap-2 xl:gap-8">
         <button
           onClick={() => setIsMenuOpen(true)}
           className="flex xl:hidden items-center justify-center p-2 text-[#111318] dark:text-white"
@@ -372,10 +371,7 @@ const Navbar: React.FC = () => {
               onClick={() => setIsIntlOpen(!isIntlOpen)}
               className={`flex items-center gap-1 text-sm leading-normal transition-colors ${isIntlActive() ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}
             >
-              {/* Two lines on laptops so the whole menu still fits; one line on wide screens */}
-              <span className="whitespace-normal leading-tight text-left max-w-[107px] min-[1680px]:max-w-none min-[1680px]:whitespace-nowrap">
-                {t('nav.international')}
-              </span>
+              {t('nav.international')}
               <span className={`material-symbols-outlined text-base transition-transform ${isIntlOpen ? 'rotate-180' : ''}`}>expand_more</span>
             </button>
             {isIntlOpen && (
@@ -396,7 +392,6 @@ const Navbar: React.FC = () => {
             )}
           </div>
 
-          <Link to="/news" className={`text-sm leading-normal transition-colors ${isActive('/news') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.news')}</Link>
           <Link to="/gallery" className={`text-sm leading-normal transition-colors ${isActive('/gallery') ? 'text-primary font-semibold' : 'font-medium hover:text-primary'}`}>{t('nav.gallery')}</Link>
         </nav>
       </div>
@@ -550,7 +545,6 @@ const Navbar: React.FC = () => {
               )}
 
               {[
-                { to: '/news', label: t('nav.news'), icon: 'newspaper' },
                 { to: '/gallery', label: t('nav.gallery'), icon: 'photo_library' },
               ].map((item) => (
                 <Link

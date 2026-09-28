@@ -13,7 +13,6 @@ const PAGES = [
   '/about/documents',
   '/about/strategic/action-plans',
   '/about/strategic/action-reports',
-  '/about/strategic/financial',
   '/about/strategic/plan',
   '/programs',
   '/programs/information-technology',

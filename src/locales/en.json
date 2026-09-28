@@ -12,7 +12,6 @@
     "strategic": {
       "actionPlans": "Action Plans",
       "actionReports": "Action Plan Reports",
-      "financialIndicators": "Financial Indicators",
       "strategicPlan": "Strategic Development Plan"
     },
     "learn": "Learn",
@@ -868,10 +867,6 @@
       "subtitle": "Reports on the fulfillment of action plans.",
       "doc1": "Action Plan Report 2024-2025",
       "doc2": "Action Plan Report 2023-2024"
-    },
-    "financialIndicators": {
-      "title": "Financial Indicators",
-      "subtitle": "The college's financial indicators and reports."
     },
     "strategicPlan": {
       "title": "Strategic Development Plan",

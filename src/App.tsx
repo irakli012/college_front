@@ -39,7 +39,6 @@ const Documents = lazy(() => import('./pages/Documents'));
 // Strategic sub-pages
 const ActionPlans = lazy(() => import('./pages/strategic/ActionPlans'));
 const ActionReports = lazy(() => import('./pages/strategic/ActionReports'));
-const FinancialIndicators = lazy(() => import('./pages/strategic/FinancialIndicators'));
 const StrategicPlan = lazy(() => import('./pages/strategic/StrategicPlan'));
 
 const LoadingFallback = () => (
@@ -64,7 +63,7 @@ const SiteLayout: React.FC = () => {
               <Route path="/about/documents" element={<Documents />} />
               <Route path="/about/strategic/action-plans" element={<ActionPlans />} />
               <Route path="/about/strategic/action-reports" element={<ActionReports />} />
-              <Route path="/about/strategic/financial" element={<FinancialIndicators />} />
+              <Route path="/about/strategic/financial" element={<Navigate to="/about" replace />} />
               <Route path="/about/strategic/plan" element={<StrategicPlan />} />
               <Route path="/programs" element={<Programs />} />
               <Route path="/programs/information-technology" element={<InformationTechnology />} />
