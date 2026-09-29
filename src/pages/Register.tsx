@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
-import { PROGRAMS } from '../constants';
+import { PROGRAMS, COLLEGE_CONTACT } from '../constants';
 
 const Register: React.FC = () => {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ const Register: React.FC = () => {
       phone: formData.phone,
       program: formData.program,
       message: formData.message,
-      to_email: 'iraklimate@gmail.com'
+      to_email: COLLEGE_CONTACT.email
     };
 
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
